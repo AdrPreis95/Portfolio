@@ -1,0 +1,38 @@
+<section class="projects">
+    <h2 class="section-title">My Projects</h2>
+  
+    <nav class="tabs">
+      <span *ngFor="let tab of tabs; let i = index"
+            (click)="selectTab(i)"
+            [class.active]="i === selectedTab">{{ tab.label }}</span>
+    </nav>
+  
+    <div class="project-details">
+      <div class="text">
+        <div *ngFor="let point of tabs[selectedTab].points">
+          <div class="bullet">
+            <span class="dot"></span>
+            <div class="content">
+              <h4>{{ point.title }} <span *ngIf="point.duration"> – {{ point.duration }}</span></h4>
+              <p>{{ point.text }}</p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="buttons">
+          <a class="btn" *ngIf="tabs[selectedTab].live" [href]="tabs[selectedTab].live" target="_blank">Live Test</a>
+          <a class="btn secondary" *ngIf="tabs[selectedTab].github" [href]="tabs[selectedTab].github" target="_blank">GitHub</a>
+        </div>
+      </div>
+  
+      <div class="preview">
+        <h5>Technologies</h5>
+        <div class="techs">
+          <img *ngFor="let tech of tabs[selectedTab].technologies" [src]="tech" />
+        </div>
+  
+        <img class="screenshot" [src]="tabs[selectedTab].screenshot" alt="Project Screenshot" />
+      </div>
+    </div>
+  </section>
+  

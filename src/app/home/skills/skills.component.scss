@@ -1,0 +1,83 @@
+.skills {
+    padding: 80px 20px;
+    text-align: center;
+  
+    .section-title {
+      font-size: 2.5rem;
+      color: #75c1e2;
+      margin-bottom: 3rem;
+    }
+  
+    .skills-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem;
+  
+      .skills-icons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+  
+        .skill {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+  
+          img {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 0.5rem;
+          }
+  
+          span {
+            color: #75c1e2;
+            font-size: 0.9rem;
+          }
+        }
+      }
+  
+      .currently-learning {
+        background-color: rgba(255, 255, 255, 0.03);
+        padding: 2rem;
+        border-radius: 50%;
+        max-width: 280px;
+        text-align: center;
+  
+        p {
+          margin-bottom: 1rem;
+          color: #fff;
+        }
+  
+        .learning-icons {
+          display: flex;
+          justify-content: center;
+          gap: 2rem;
+  
+          .skill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+  
+            img {
+              width: 40px;
+              height: 40px;
+              margin-bottom: 0.3rem;
+            }
+  
+            span {
+              color: #75c1e2;
+              font-size: 0.85rem;
+            }
+          }
+        }
+  
+        .learning-text {
+          font-size: 0.8rem;
+          margin-top: 1rem;
+          color: #ccc;
+        }
+      }
+    }
+  }
+  

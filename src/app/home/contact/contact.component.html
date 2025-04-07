@@ -1,0 +1,31 @@
+<section class="contact">
+    <h2 class="section-title">Contact me</h2>
+  
+    <div class="contact-top">
+      <p class="intro">
+        Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.  
+        Example: Feel free to get in touch with job offers or opportunities such as: ...
+      </p>
+      <div class="contact-info">
+        <p><img src="assets/icons/mail.svg" alt="mail icon" /> E-mail: <strong>fohrer.developer.com</strong></p>
+        <p><img src="assets/icons/phone.svg" alt="phone icon" /> Tel: 0157 123 456 68</p>
+      </div>
+    </div>
+  
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <input type="text" formControlName="name" placeholder="Your name" />
+        <input type="email" formControlName="email" placeholder="Your Email" />
+      </div>
+  
+      <textarea formControlName="message" rows="5" placeholder="Your Message"></textarea>
+  
+      <label class="checkbox">
+        <input type="checkbox" formControlName="privacy" />
+        I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.
+      </label>
+  
+      <button type="submit" [disabled]="!contactForm.valid">Send</button>
+    </form>
+  </section>
+  

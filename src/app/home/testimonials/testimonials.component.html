@@ -1,0 +1,13 @@
+<section class="testimonials">
+    <h2 class="section-title">Need a teamplayer? Here’s what my colleagues said about me</h2>
+  
+    <div class="testimonial-cards">
+      <div class="card" *ngFor="let t of testimonials">
+        <h3>{{ t.name }}</h3>
+        <p class="project">Project <span>{{ t.project }}</span></p>
+        <blockquote>“{{ t.quote }}”</blockquote>
+        <a [href]="t.link" target="_blank">LinkedIn Profile</a>
+      </div>
+    </div>
+  </section>
+  
