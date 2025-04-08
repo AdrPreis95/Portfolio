@@ -7,8 +7,8 @@
         Example: Feel free to get in touch with job offers or opportunities such as: ...
       </p>
       <div class="contact-info">
-        <p><img src="assets/icons/mail.svg" alt="mail icon" /> E-mail: <strong>fohrer.developer.com</strong></p>
-        <p><img src="assets/icons/phone.svg" alt="phone icon" /> Tel: 0157 123 456 68</p>
+        <p><img src="/assets/contact/icons/Mail.svg" alt="mail icon" /> E-mail: <strong>adrianpreis86&#64;gmail.com</strong></p>
+        <p><img src="/assets/contact/icons/Phone.svg" alt="phone icon" /> Tel: 0179 239 5976 </p>
       </div>
     </div>
   
@@ -20,10 +20,13 @@
   
       <textarea formControlName="message" rows="5" placeholder="Your Message"></textarea>
   
-      <label class="checkbox">
+      <label class="custom-checkbox">
         <input type="checkbox" formControlName="privacy" />
+        <span class="checkbox-icon"></span>
         I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.
       </label>
+      
+      
   
       <button type="submit" [disabled]="!contactForm.valid">Send</button>
     </form>

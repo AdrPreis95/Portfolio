@@ -112,5 +112,43 @@
         }
       }
     }
+    .custom-checkbox {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    
+      input[type="checkbox"] {
+        display: none;
+      }
+    
+      .checkbox-icon {
+        width: 24px;
+        height: 24px;
+        background-image: url('/assets/contact/icons/Check box.svg');
+        background-size: cover;
+        transition: background-image 0.2s ease, transform 0.2s ease;
+      }
+    
+      /* Hover (auch wenn nicht gecheckt) */
+      .checkbox-icon:hover {
+        transform: scale(1.1); // leichtes Vergrößern beim Hover
+        opacity: 0.8;
+      }
+    
+      /* Checked */
+      input[type="checkbox"]:checked + .checkbox-icon {
+        background-image: url('/assets/contact/icons/Check box filled.svg');
+      }
+    
+      /* Optional: Hover im Checked-Zustand */
+      input[type="checkbox"]:checked + .checkbox-icon:hover {
+        opacity: 0.95;
+        transform: scale(1.05);
+      }
+    }
+    
+    
+    
   }
   
