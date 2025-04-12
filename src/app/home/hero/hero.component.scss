@@ -1,23 +1,9 @@
-@font-face {
-  font-family: 'Figtree';
-  src: url('/assets/fonts/figtree/Figtree-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-style: normal;
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-@font-face {
-  font-family: 'Figtree';
-  src: url('/assets/fonts/figtree/Figtree-SemiBold.woff2') format('woff2');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Figtree';
-  src: url('/assets/fonts/figtree/Figtree-Bold.woff2') format('woff2');
-  font-weight: 700;
-  font-style: normal;
-}
 
 
 html,
@@ -35,87 +21,91 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 3px solid yellow;
 
+    img {
+      height: 200px;
+      object-fit: cover;
+    }
+  }
+}
+
+.shape {
+  border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
+  background-color: aqua;
+  height: 200px;
+}
+
+.right-section {
+  flex: 1;
+  background-color: #1f2630;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .content-box {
+    @include flex-column-center;
+    width: 80%;
+    height: 90%;
+    padding: 2rem;
+    position: relative;
+    color: white;
+    text-align: left;
+
+    .top-logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
 
       img {
-        height: 200px;
-        object-fit: cover;
-      }
-    }
-  }
-
-  .right-section {
-    flex: 1;
-    background-color: #1f2630;
-    border: 3px solid green;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .content-box {
-      width: 80%;
-      height: 90%;
-      border: 3px solid lightblue;
-      padding: 2rem;
-      position: relative;
-      color: white;
-      text-align: left;
-
-      .top-logo {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-
-        img {
-          height: 40px;
-        }
-
-        p {
-          font-size: 0.9rem;
-          span {
-            font-size: 0.7rem;
-            color: #ccc;
-          }
-        }
+        height: 70px;
       }
 
-      h1 {
-        font-size: 2.5rem;
-        margin: 1rem 0 0.5rem;
-      }
+      p {
+        font-size: 0.9rem;
 
-      h2 {
-        font-size: 1.5rem;
-        color: #ccc;
-      }
-
-      .social-icons {
-        position: absolute;
-        top: 2rem;
-        right: 2rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        border: 2px solid yellow;
-        padding: 1rem;
-
-        a img {
-          width: 20px;
-          height: 20px;
-        }
-      }
-
-      .scroll-icon {
-        position: absolute;
-        bottom: 1rem;
-        left: 50%;
-        transform: translateX(-50%);
-        img {
-          width: 30px;
-          height: auto;
+        span {
+          font-size: 0.7rem;
+          color: #ccc;
         }
       }
     }
-  }
 
+    h1 {
+      font-size: 88px;
+      margin: 1rem 0 0.5rem;
+    }
+
+    h2 {
+      font-size: 40px;
+      color: #ccc;
+    }
+
+    .social-icons {
+      position: absolute;
+      top: 2rem;
+      right: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding: 1rem;
+
+      a img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+
+    .scroll-icon {
+      position: absolute;
+      bottom: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+
+      img {
+        width: 38px;
+
+      }
+    }
+  }
+}

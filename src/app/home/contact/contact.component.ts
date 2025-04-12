@@ -8,6 +8,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class ContactComponent {
   contactForm: FormGroup;
+  showConfirmation = false;
+  submitted = false;
 
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
@@ -19,10 +21,43 @@ export class ContactComponent {
   }
 
   onSubmit() {
-    if (this.contactForm.valid) {
-      console.log('SENT ✅', this.contactForm.value);
-      // später evtl. API/EmailService integrieren
+    this.submitted = true;
+  
+    // 💡 Alle Felder "als berührt" markieren
+    Object.values(this.contactForm.controls).forEach(control => {
+      control.markAsTouched();
+      control.updateValueAndValidity();
+    });
+  
+    if (this.contactForm.valid && !this.showConfirmation) {
+      const data = this.contactForm.value;
+  
+      fetch('https://formspree.io/f/xvgkdaon', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          message: data.message
+        })
+      }).then(() => {
+        this.showConfirmation = true;
+        this.contactForm.reset();
+        this.submitted = false;
+  
+        setTimeout(() => {
+          this.closeConfirmation();
+        }, 5000);
+      });
     }
   }
+  
+  
+  
+  closeConfirmation() {
+    this.showConfirmation = false;
+    this.submitted = false;
+  }
+  
 }
 
