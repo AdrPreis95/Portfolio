@@ -61,7 +61,7 @@
   form {
     max-width: 900px;
     margin: 0 auto;
-    text-align: left;
+    text-align: right;
 
     .row {
       display: flex;
@@ -78,7 +78,7 @@
       width: 100%;
       padding: 1rem;
       background: transparent;
-      border: 1px solid #89bcd9;
+      border: 2px solid #89bcd9;
       ;
       border-radius: 999px;
       color: white;
@@ -87,6 +87,11 @@
 
       &::placeholder {
         color: #aaa;
+      }
+
+      &:focus-visible{
+        text-decoration: none;
+  
       }
     }
 
@@ -115,8 +120,10 @@
 
     button {
       background: transparent;
-      color: #75c1e2;
-      border: 1px solid #75c1e2;
+      max-height: 48px;
+      height: 100%;
+      color: #F8F5EC;
+      border: 2px solid #F8F5EC ;
       padding: 0.5rem 2rem;
       border-radius: 999px;
       cursor: pointer;
@@ -125,6 +132,7 @@
 
       &:hover {
         background: #75c1e2;
+        border: 2px solid #75c1e2 ;
         color: #000;
       }
 
