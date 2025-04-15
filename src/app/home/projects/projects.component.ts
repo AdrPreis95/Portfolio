@@ -1,103 +1,85 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
-  styleUrl: './projects.component.scss'
+  styleUrls: ['./projects.component.scss']
 })
-
 export class ProjectsComponent {
   selectedTab = 0;
+  tabs: any[] = [];
 
-  tabs = [
-    {
-      label: '1. DA Bubble',
-      screenshot: 'assets/projects/da-bubble/screenshot.png',
-      technologies: [
-        'assets/projects/da-bubble/technologies/angular.svg',
-        'assets/projects/da-bubble/technologies/typescript.svg',
-        'assets/projects/da-bubble/technologies/firebase.svg'
-      ],
-      live: '#',
-      github: '#',
-      points: [
+  constructor(private translate: TranslateService) {
+    this.loadTabs();
+    this.translate.onLangChange.subscribe(() => this.loadTabs());
+  }
+
+  loadTabs() {
+    this.translate.get([
+      'PROJECTS.EL_POLLO',
+      'PROJECTS.JOIN',
+      'PROJECTS.DA_BUBBLE'
+    ]).subscribe(translations => {
+      this.tabs = [
         {
-          title: 'About the project',
-          duration: 'Duration: 3 weeks',
-          text: 'This App is a Slack Clone App. It revolutionizes team communication...'
+          label: '1. ' + translations['PROJECTS.EL_POLLO'].LABEL,
+          screenshot: '/assets/projects/img/ElPolloLoco.svg',
+          technologies: [
+            'assets/skills/icons/JavaScript.svg',
+            'assets/skills/icons/CSS.svg',
+            'assets/skills/icons/HTML.svg',
+            'assets/skills/icons/GIT.svg'
+          ],
+          live: 'https://deine-el-pollo-live-url.com',
+          github: 'https://github.com/dein-projekt/el-pollo-loco',
+          points: translations['PROJECTS.EL_POLLO'].POINTS.map((p: any) => ({
+            title: p.TITLE,
+            duration: p.DURATION,
+            text: p.TEXT
+          }))
         },
         {
-          title: 'How I have organised my work process',
-          text: 'How do you keep your code clean and maintainable?...'
+          label: '2. ' + translations['PROJECTS.JOIN'].LABEL,
+          screenshot: '/assets/projects/img/Join.svg',
+          technologies: [
+            'assets/skills/icons/JavaScript.svg',
+            'assets/skills/icons/CSS.svg',
+            'assets/skills/icons/HTML.svg',
+            'assets/skills/icons/GIT.svg',
+            'assets/projects/icons/Firebase.svg'
+          ],
+          live: 'https://dein-join-live-url.com',
+          github: 'https://github.com/dein-projekt/join',
+          points: translations['PROJECTS.JOIN'].POINTS.map((p: any) => ({
+            title: p.TITLE,
+            duration: p.DURATION,
+            text: p.TEXT
+          }))
         },
         {
-          title: 'My group work experience',
-          text: 'How many people were in the team and what was your role?...'
+          label: '3. ' + translations['PROJECTS.DA_BUBBLE'].LABEL,
+          screenshot: '/assets/projects/img/DaBubble.svg',
+          technologies: [
+            'assets/skills/icons/JavaScript.svg',
+            'assets/skills/icons/CSS.svg',
+            'assets/skills/icons/HTML.svg',
+            'assets/skills/icons/GIT.svg',
+            'assets/projects/icons/Firebase.svg'
+          ],
+          live: '#',
+          github: '#',
+          points: translations['PROJECTS.DA_BUBBLE'].POINTS.map((p: any) => ({
+            title: p.TITLE,
+            duration: p.DURATION,
+            text: p.TEXT
+          }))
         }
-      ]
-    },
-    {
-      label: '2. El Pollo Loco',
-      screenshot: '/assets/projects/img/ElPolloLoco.svg',
-      technologies: [
-        'assets/skills/icons/JavaScript.svg',
-        'assets/skills/icons/CSS.svg',
-        'assets/skills/icons/HTML.svg'
-      ],
-      live: 'https://deine-el-pollo-live-url.com',
-      github: 'https://github.com/dein-projekt/el-pollo-loco',
-      points: [
-        {
-          title: 'About the project',
-          duration: 'Duration: 2 weeks',
-          text: 'This is a fun jump & run game made with vanilla JavaScript.'
-        },
-        {
-          title: 'How I have organised my work process',
-          text: 'Game logic was modularized into classes and cleanly separated.'
-        },
-        {
-          title: 'My group work experience',
-          text: 'Solo project with mentoring, focused on OOP and animations.'
-        }
-      ]
-    },
-    {
-      label: '3. Join',
-      screenshot: '/assets/projects/img/Join.svg',
-      technologies: [
-        'assets/skills/icons/JavaScript.svg',
-        'assets/skills/icons/CSS.svg',
-        'assets/skills/icons/HTML.svg'
-      ],
-      live: 'https://deine-el-pollo-live-url.com',
-      github: 'https://github.com/dein-projekt/el-pollo-loco',
-      points: [
-        {
-          title: 'About the project',
-          duration: 'Duration: 2 weeks',
-          text: 'This is a fun jump & run game made with vanilla JavaScript.'
-        },
-        {
-          title: 'How I have organised my work process',
-          text: 'Game logic was modularized into classes and cleanly separated.'
-        },
-        {
-          title: 'My group work experience',
-          text: 'Solo project with mentoring, focused on OOP and animations.'
-        }
-      ]
-    },
-    {
-      label: '4. Ongoing Project',
-      screenshot: '',
-      technologies: [],
-      points: []
-    }
-  ];
+      ];
+    });
+  }
 
   selectTab(index: number) {
     this.selectedTab = index;
   }
 }
-

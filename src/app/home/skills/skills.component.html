@@ -1,29 +1,25 @@
 <section class="skills">
-    <h2 class="section-title">My Skills</h2>
-  
-    <div class="skills-wrapper">
-      <div class="skills-icons">
-        <div class="skill" *ngFor="let skill of mainSkills">
-          <img [src]="skill.icon" [alt]="skill.name" />
-          <!-- <span>{{ skill.name }}</span> -->
-        </div>
-      </div>
-  
-      <div class="currently-learning">
-        <p>I am currently learning</p>
-  
-        <div class="learning-icons">
-          <div class="skill" *ngFor="let tech of learning">
-            <img [src]="tech.icon" [alt]="tech.name" />
-            <!-- <span>{{ tech.name }}</span> -->
-          </div>
-        </div>
-  
-        <p class="learning-text">
-          Show that you are motivated to continually improve your skills, implement innovative solutions
-          and stay abreast of new technologies.
-        </p>
+  <h2 class="section-title">{{ 'SKILLS.TITLE' | translate }}</h2>
+
+  <div class="skills-wrapper">
+    <div class="skills-icons">
+      <div class="skill" *ngFor="let skill of mainSkills">
+        <img [src]="skill.icon" [alt]="skill.name" />
       </div>
     </div>
-  </section>
-  
+
+    <div class="currently-learning">
+      <p>{{ 'SKILLS.CURRENTLY_LEARNING' | translate }}</p>
+
+      <div class="learning-icons">
+        <div class="skill" *ngFor="let tech of learning">
+          <img [src]="tech.icon" [alt]="tech.name" />
+        </div>
+      </div>
+
+      <p class="learning-text">
+        {{ 'SKILLS.LEARNING_TEXT' | translate }}
+      </p>
+    </div>
+  </div>
+</section>

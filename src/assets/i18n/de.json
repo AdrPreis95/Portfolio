@@ -21,6 +21,70 @@
         "LOCATION": " wohnhaft in Bedesbach, Rheinland-Pfalz.",
         "BUTTON": "Schreib mir"
     },
+    "SKILLS": {
+        "TITLE": "Meine Fähigkeiten",
+        "CURRENTLY_LEARNING": "Ich lerne derzeit",
+        "LEARNING_TEXT": "Ich erweitere ständig meine Skills und entdecke neue Technologien wie React und Vue.js."
+    },
+    "PROJECTS": {
+        "TITLE": "Meine Projekte",
+        "LIVE": "Live-Demo",
+        "TECHNOLOGIES": "Technologien",
+        "EL_POLLO": {
+            "LABEL": "El Pollo Loco",
+            "POINTS": [
+                {
+                    "TITLE": "Über das Projekt",
+                    "DURATION": "Dauer: 2 Wochen",
+                    "TEXT": "Ein spaßiges Jump-&-Run-Spiel, entwickelt mit Vanilla JavaScript."
+                },
+                {
+                    "TITLE": "Wie ich meinen Arbeitsprozess organisiert habe",
+                    "TEXT": "Die Spiellogik wurde modular in Klassen aufgebaut und sauber strukturiert."
+                },
+                {
+                    "TITLE": "Meine Gruppenerfahrung",
+                    "TEXT": "Ein Solo-Projekt mit Mentor, Fokus auf OOP und Animationen."
+                }
+            ]
+        },
+        "JOIN": {
+            "LABEL": "Join",
+            "POINTS": [
+                {
+                    "TITLE": "Über das Projekt",
+                    "DURATION": "Dauer: 2 Wochen",
+                    "TEXT": "Join ist ein Aufgabenmanagement-Tool inspiriert von Trello und ermöglicht die Zusammenarbeit im Team."
+                },
+                {
+                    "TITLE": "Wie ich meinen Arbeitsprozess organisiert habe",
+                    "TEXT": "Ich habe sauberen Code und wiederverwendbare Komponenten mit Vanilla JavaScript umgesetzt."
+                },
+                {
+                    "TITLE": "Meine Gruppenerfahrung",
+                    "TEXT": "Ich arbeitete in einem kleinen Team, koordinierte Aufgaben über Git und wendete agile Methoden an."
+                }
+            ]
+        },
+        "DA_BUBBLE": {
+            "LABEL": "Laufendes Projekt",
+            "POINTS": [
+                {
+                    "TITLE": "Über das Projekt",
+                    "DURATION": "Dauer: 3 Wochen",
+                    "TEXT": "Da Bubble ist eine Slack-inspirierte Kommunikations-App, entwickelt mit Angular und Firebase."
+                },
+                {
+                    "TITLE": "Wie ich meinen Arbeitsprozess organisiert habe",
+                    "TEXT": "Die App ist modular aufgebaut mit Angular-Routing, Services und wiederverwendbaren Komponenten."
+                },
+                {
+                    "TITLE": "Meine Gruppenerfahrung",
+                    "TEXT": "Wir arbeiteten kollaborativ mit GitHub Projects und täglichen Abstimmungen."
+                }
+            ]
+        }
+    },
     "CONTACT": {
         "TITLE": "Kontaktiere mich",
         "INFO": "Ich freue mich über Jobangebote oder Projektanfragen wie:",
