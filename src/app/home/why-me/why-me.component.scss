@@ -1,60 +1,59 @@
 .why-me {
-    text-align: center;
-    padding: 80px 20px;
-    color: #ffffff;
-  
-    .section-title {
-      font-size: 2.5rem;
-      color: #75c1e2;
-      margin-bottom: 2rem;
-    }
-  
-    .why-me-content {
+  text-align: center;
+  padding: 80px 20px;
+  color: #ffffff;
+
+  .section-title {
+    font-size: 2.5rem;
+    color: #75c1e2;
+    margin-bottom: 2rem;
+  }
+
+  .why-me-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+
+    .location {
       display: flex;
-      justify-content: center;
       align-items: center;
-      gap: 3rem;
-      flex-wrap: wrap;
-  
-      .location {
-        display: flex;
-        align-items: center;
-        font-size: 1.25rem;
-  
-        img {
-          margin-right: 0.5rem;
-          width: 32px;
-          height: 32px;
-        }
-  
-        strong {
-          font-weight: 700;
-          color: #9cc9de;
-        }
+      font-size: 1.25rem;
+
+      img {
+        margin-right: 0.5rem;
+        width: 32px;
+        height: 32px;
       }
-  
-      .text {
-        max-width: 400px;
-        text-align: left;
-        line-height: 1.6;
-        font-size: 0.95rem;
-  
-        .talk-btn {
-          margin-top: 1.5rem;
-          background: transparent;
-          border: 1px solid #75c1e2;
-          padding: 0.5rem 1.2rem;
-          border-radius: 999px;
-          color: #75c1e2;
-          cursor: pointer;
-          transition: 0.2s;
-  
-          &:hover {
-            background-color: #75c1e2;
-            color: #0f1923;
-          }
+
+      .highlight {
+        font-weight: 700;
+        color: #9cc9de;
+      }
+    }
+
+    .text {
+      max-width: 400px;
+      text-align: left;
+      line-height: 1.6;
+      font-size: 0.95rem;
+
+      .talk-btn {
+        margin-top: 1.5rem;
+        background: transparent;
+        border: 1px solid #75c1e2;
+        padding: 0.5rem 1.2rem;
+        border-radius: 999px;
+        color: #75c1e2;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover {
+          background-color: #75c1e2;
+          color: #0f1923;
         }
       }
     }
   }
-  
+}

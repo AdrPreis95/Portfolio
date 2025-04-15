@@ -1,0 +1,33 @@
+{
+    "HERO": {
+        "ROLE": "FRONTEND-ENTWICKLER",
+        "LOGO_NAME": "A.Preis",
+        "LOGO_ROLE": "Entwickler",
+        "ALT_MAIL": "E-Mail",
+        "ALT_GITHUB": "GitHub",
+        "ALT_LINKEDIN": "LinkedIn",
+        "ALT_SCROLL": "Runterscrollen"
+    },
+    "NAV": {
+        "WHYME": "Über mich",
+        "SKILLS": "Fähigkeiten",
+        "PROJECTS": "Projekte",
+        "CONTACT": "Kontakt"
+    },
+    "WHYME": {
+        "TITLE": "Über mich",
+        "TEXT": "Ich bin ein zielstrebiger Quereinsteiger mit klarem Fokus auf Frontend-Entwicklung. Mein Portfolio zeigt nicht nur Projekte, sondern meinen echten Lernweg – ich baue strukturiert, sauber und mit Leidenschaft. Ich verstehe Design, denke in Komponenten und bin technisch neugierig. Wenn ich etwas noch nicht kann, bringe ich es mir bei – schnell, gründlich und mit Begeisterung.",
+        "IAM": "Ich bin",
+        "LOCATION": " wohnhaft in Bedesbach, Rheinland-Pfalz.",
+        "BUTTON": "Schreib mir"
+    },
+    "CONTACT": {
+        "TITLE": "Kontaktiere mich",
+        "INFO": "Ich freue mich über Jobangebote oder Projektanfragen wie:",
+        "NAME": "Dein Name",
+        "EMAIL": "Deine E-Mail",
+        "MESSAGE": "Deine Nachricht",
+        "SEND": "Senden",
+        "POLICY": "Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten zu."
+    }
+}

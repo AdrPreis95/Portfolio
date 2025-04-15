@@ -1,0 +1,33 @@
+{
+    "HERO": {
+        "ROLE": "FRONTEND DEVELOPER",
+        "LOGO_NAME": "A.Preis",
+        "LOGO_ROLE": "Developer",
+        "ALT_MAIL": "Mail",
+        "ALT_GITHUB": "GitHub",
+        "ALT_LINKEDIN": "LinkedIn",
+        "ALT_SCROLL": "Scroll Down"
+    },
+    "NAV": {
+        "WHYME": "Why me",
+        "SKILLS": "Skills",
+        "PROJECTS": "Projects",
+        "CONTACT": "Contact"
+    },
+    "WHYME": {
+        "TITLE": "Why me",
+        "TEXT": "I’m a focused career-changer with a clear passion for frontend development. My portfolio doesn't just show projects – it reflects my learning journey. I build with structure, clarity and passion. I understand design, think in components and love solving problems. If I don’t know something yet, I’ll learn it – quickly, thoroughly, and with excitement.",
+        "IAM": "I am",
+        "LOCATION": " located in Bedesbach, Rhineland-Palatinate.",
+        "BUTTON": "Let’s talk"
+    },
+    "CONTACT": {
+        "TITLE": "Contact me",
+        "INFO": "Feel free to get in touch with job offers or opportunities such as:",
+        "NAME": "Your name",
+        "EMAIL": "Your Email",
+        "MESSAGE": "Your Message",
+        "SEND": "Send",
+        "POLICY": "I've read the privacy policy and agree to the processing of my data."
+    }
+}
