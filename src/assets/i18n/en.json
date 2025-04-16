@@ -85,6 +85,15 @@
             ]
         }
     },
+    "TESTIMONIALS": {
+        "TITLE": "Need a teamplayer? Here’s what my colleagues said about me",
+        "PROJECT": "Project",
+        "LIST": [
+            "Claudia had to develop, format and deliver content in collaboration with the team members. She is a reliable and friendly person.",
+            "Claudia is a reliable and friendly person. Works in a structured way and writes clear code. I recommend her as a colleague.",
+            "She is a trustworthy teamplayer and can cope with the stress of deadlines. Structured work and clear code."
+        ]
+    },
     "CONTACT": {
         "TITLE": "Contact me",
         "INFO": "Feel free to get in touch with job offers or opportunities such as:",
@@ -92,6 +101,24 @@
         "EMAIL": "Your Email",
         "MESSAGE": "Your Message",
         "SEND": "Send",
-        "POLICY": "I've read the privacy policy and agree to the processing of my data."
+        "POLICY": "I've read the privacy policy and agree to the processing of my data as outlined.",
+        "ERROR_NAME": "Please enter your name",
+        "ERROR_EMAIL_REQUIRED": "Please enter your email",
+        "ERROR_EMAIL_INVALID": "Please enter a valid email address",
+        "ERROR_MESSAGE": "Please write a message",
+        "ERROR_POLICY": "Please accept the privacy policy",
+        "CONFIRMATION": "Thank you! Your message has been sent. ✅",
+        "CLOSE": "Close"
+    },
+    "FOOTER": {
+        "LEGAL_NOTICE": "Legal notice"
+    },
+    "LEGAL": {
+        "TITLE": "Legal Notice",
+        "NAME": "Name",
+        "ADDRESS": "Address",
+        "CONTACT": "E-mail",
+        "DISCLAIMER": "Disclaimer",
+        "TEXT": "This portfolio website was created for private, non-commercial presentation purposes. Despite careful content control, no liability is assumed for the content of external links."
     }
 }

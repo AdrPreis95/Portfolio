@@ -1,66 +1,62 @@
 <section class="contact">
-  <h2 class="section-title">Contact me</h2>
-<div class="container">
-  <div class="contact-top">
-    <div class="contact-info">
-    <p class="intro">
-      Encourage people to contact you and describe what role you are interested in. Show that you will add value to their projects through your work.  
-      Example: Feel free to get in touch with job offers or opportunities such as: ...
-    </p>
+  <h2 class="section-title">{{ 'CONTACT.TITLE' | translate }}</h2>
+  <div class="container">
+    <div class="contact-top">
+      <div class="contact-info">
+        <p class="intro">{{ 'CONTACT.INFO' | translate }}</p>
+      </div>
+      <div class="contact-info">
+        <p><img src="/assets/contact/icons/Mail.svg" alt="mail icon" /> E-mail: <strong>adrianpreis86&#64;gmail.com</strong></p>
+        <p><img src="/assets/contact/icons/Phone.svg" alt="phone icon" /> Tel: 0179 239 5976 </p>
+      </div>
     </div>
-    <div class="contact-info">
-      <p><img src="/assets/contact/icons/Mail.svg" alt="mail icon" /> E-mail: <strong>adrianpreis86&#64;gmail.com</strong></p>
-      <p><img src="/assets/contact/icons/Phone.svg" alt="phone icon" /> Tel: 0179 239 5976 </p>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="field-top">
+          <input type="text" formControlName="name" [placeholder]="'CONTACT.NAME' | translate" />
+          <div class="error" *ngIf="(submitted || contactForm.get('name')?.touched) && contactForm.get('name')?.invalid">
+            {{ 'CONTACT.ERROR_NAME' | translate }}
+          </div>
+        </div>
+
+        <div class="field-top">
+          <input type="email" formControlName="email" [placeholder]="'CONTACT.EMAIL' | translate" />
+          <div class="error" *ngIf="(submitted || contactForm.get('email')?.touched) && contactForm.get('email')?.errors?.['required']">
+            {{ 'CONTACT.ERROR_EMAIL_REQUIRED' | translate }}
+          </div>
+          <div class="error" *ngIf="(submitted || contactForm.get('email')?.touched) && contactForm.get('email')?.errors?.['email']">
+            {{ 'CONTACT.ERROR_EMAIL_INVALID' | translate }}
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <textarea formControlName="message" rows="5" [placeholder]="'CONTACT.MESSAGE' | translate"></textarea>
+        <div class="error" *ngIf="(submitted || contactForm.get('message')?.touched) && contactForm.get('message')?.invalid">
+          {{ 'CONTACT.ERROR_MESSAGE' | translate }}
+        </div>
+      </div>
+
+      <label class="custom-checkbox">
+        <input type="checkbox" formControlName="privacy" />
+        <span class="checkbox-icon"></span>
+        {{ 'CONTACT.POLICY' | translate }}
+      </label>
+
+      <div class="error" *ngIf="(submitted || contactForm.get('privacy')?.touched) && contactForm.get('privacy')?.invalid">
+        {{ 'CONTACT.ERROR_POLICY' | translate }}
+      </div>
+
+      <button type="submit" [disabled]="!contactForm.valid">{{ 'CONTACT.SEND' | translate }}</button>
+    </form>
+
+    <!-- Confirmation Overlay -->
+    <div class="confirmation-overlay" *ngIf="showConfirmation">
+      <div class="confirmation-box">
+        <p>{{ 'CONTACT.CONFIRMATION' | translate }}</p>
+        <button (click)="closeConfirmation()">{{ 'CONTACT.CLOSE' | translate }}</button>
+      </div>
     </div>
   </div>
-
-  <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-    <div class="row">
-      <div class="field-top">
-        <input type="text" formControlName="name" placeholder="Your name" />
-        <div class="error" *ngIf="(submitted || contactForm.get('name')?.touched) && contactForm.get('name')?.invalid">
-          Please enter your name
-        </div>
-      </div>
-
-      <div class="field-top">
-        <input type="email" formControlName="email" placeholder="Your Email" />
-        <div class="error" *ngIf="(submitted || contactForm.get('email')?.touched) && contactForm.get('email')?.errors?.['required']">
-          Please enter your email
-        </div>
-        <div class="error" *ngIf="(submitted || contactForm.get('email')?.touched) && contactForm.get('email')?.errors?.['email']">
-          Please enter a valid email address
-        </div>
-      </div>
-    </div>
-
-    <div class="field">
-      <textarea formControlName="message" rows="5" placeholder="Your Message"></textarea>
-      <div class="error" *ngIf="(submitted || contactForm.get('message')?.touched) && contactForm.get('message')?.invalid">
-        Please write a message
-      </div>
-    </div>
-
-    <label class="custom-checkbox">
-      <input type="checkbox" formControlName="privacy" />
-      <span class="checkbox-icon"></span>
-      I've read the <a href="#">privacy policy</a> and agree to the processing of my data as outlined.
-    </label>
-
-   
-    <div class="error" *ngIf="(submitted || contactForm.get('privacy')?.touched) && contactForm.get('privacy')?.invalid">
-      Please accept the privacy policy
-    </div>
-
-    <button type="submit" [disabled]="!contactForm.valid">Send</button>
-  </form>
-
-  <!-- Confirmation Overlay -->
-  <div class="confirmation-overlay" *ngIf="showConfirmation">
-    <div class="confirmation-box">
-      <p>Thank you! Your message has been sent. ✅</p>
-      <button (click)="closeConfirmation()">Close</button>
-    </div>
-  </div>
-</div>
 </section>

@@ -85,6 +85,15 @@
             ]
         }
     },
+    "TESTIMONIALS": {
+        "TITLE": "Du suchst ein Teamplayer? Das sagen Kollegen über mich",
+        "PROJECT": "Projekt",
+        "LIST": [
+            "Claudia erarbeitete Inhalte im Team, strukturierte und lieferte sie zuverlässig ab. Sie ist freundlich und engagiert.",
+            "Claudia ist zuverlässig, freundlich und arbeitet strukturiert mit sauberem Code. Ich empfehle sie als Kollegin.",
+            "Sie ist eine verlässliche Teamplayerin, kommt gut mit Deadlines klar und arbeitet strukturiert."
+        ]
+    },
     "CONTACT": {
         "TITLE": "Kontaktiere mich",
         "INFO": "Ich freue mich über Jobangebote oder Projektanfragen wie:",
@@ -92,6 +101,24 @@
         "EMAIL": "Deine E-Mail",
         "MESSAGE": "Deine Nachricht",
         "SEND": "Senden",
-        "POLICY": "Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten zu."
+        "POLICY": "Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten zu.",
+        "ERROR_NAME": "Bitte gib deinen Namen ein",
+        "ERROR_EMAIL_REQUIRED": "Bitte gib deine E-Mail-Adresse ein",
+        "ERROR_EMAIL_INVALID": "Bitte gib eine gültige E-Mail-Adresse ein",
+        "ERROR_MESSAGE": "Bitte schreibe eine Nachricht",
+        "ERROR_POLICY": "Bitte akzeptiere die Datenschutzerklärung",
+        "CONFIRMATION": "Vielen Dank! Deine Nachricht wurde gesendet. ✅",
+        "CLOSE": "Schließen"
+    },
+    "FOOTER": {
+        "LEGAL_NOTICE": "Impressum"
+    },
+    "LEGAL": {
+        "TITLE": "Impressum",
+        "NAME": "Name",
+        "ADDRESS": "Adresse",
+        "CONTACT": "E-Mail",
+        "DISCLAIMER": "Haftungsausschluss",
+        "TEXT": "Diese Portfolio-Website wurde zu privaten, nicht kommerziellen Präsentationszwecken erstellt. Trotz sorgfältiger inhaltlicher Kontrolle wird keine Haftung für externe Links übernommen."
     }
 }

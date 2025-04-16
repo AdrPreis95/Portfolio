@@ -1,0 +1,25 @@
+:host {
+    display: block;
+    height: 100vh;
+    padding: 80px 40px;
+    background-color: #1f1f1f;
+    color: white;
+    text-align: left;
+  }
+  
+  .close-btn {
+    margin-top: 30px;
+    display: inline-block;
+    background: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  
+    &:hover {
+      background-color: #ffffff20;
+    }
+  }
+  

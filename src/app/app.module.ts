@@ -17,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { LegalNoticeComponent } from './core/legal-notice/legal-notice.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -34,6 +35,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TestimonialsComponent,
     ContactComponent,
     FooterComponent,
+    LegalNoticeComponent,
   ],
   imports: [
     BrowserModule,
