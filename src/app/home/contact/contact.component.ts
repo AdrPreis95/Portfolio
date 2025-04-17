@@ -23,7 +23,7 @@ export class ContactComponent {
   onSubmit() {
     this.submitted = true;
   
-    // 💡 Alle Felder "als berührt" markieren
+   
     Object.values(this.contactForm.controls).forEach(control => {
       control.markAsTouched();
       control.updateValueAndValidity();
