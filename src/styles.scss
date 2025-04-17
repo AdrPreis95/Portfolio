@@ -1,3 +1,33 @@
+
+
+
+/* === Font-Josefine Sans (400) === */
+
+@font-face {
+  font-family: 'Josefin Sans';
+  src: url('/assets/fonts/Josefine_Sans/JosefinSans-Regular.woff2') format('woff2'),
+    url('/assets/fonts/Josefine_Sans/JosefinSans-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+
+}
+
+
+/* === Anta (400) === */
+
+@font-face {
+  font-family: 'Anta';
+  src: url('/assets/fonts/Anta/Anta-Regular.woff2') format('woff2'),
+    url('/assets/fonts/Anta/Anta-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+/* === Figtree (300-800) === */
+
 @font-face {
   font-family: 'Figtree';
   font-style: normal;
@@ -47,18 +77,21 @@
 }
 
 
+/* === Base-Styles === */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
   
-  html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Figtree', sans-serif;
-    background-color: #0f1923;
-    color: white;
-    scroll-behavior: smooth;
-  }
-  
+  margin: 0;
+  padding: 0;
+  font-family: 'Josefine_Sans', sans-serif;
+  background-color: #0f1923;
+  color: white;
+  scroll-behavior: smooth;
+}
