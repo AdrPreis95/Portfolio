@@ -10,7 +10,7 @@
 
   .section-title {
     font-family: 'Anta', sans-serif;
-    font-size: 2.5rem;
+    font-size: 3.75rem;
     color: #75c1e2;
     margin-bottom: 2rem;
   }
@@ -24,8 +24,8 @@
     text-align: center;
 
     .intro {
-      // max-width: 350px;
-      // width: 100%;
+      font-family: Josefine_Sans,sans-serif;
+      font-size: 1.25rem;
       text-align: left;
       color: #ccc;
     }
@@ -38,12 +38,15 @@
 
       p {
         display: flex;
+        font-family: Josefine_Sans,sans-serif;
+        font-size: 1.25rem;
         align-items: center;
         gap: 0.5rem;
         margin: 0.5rem 0;
 
         img {
-          height: 20px;
+          height: 30px;
+          width: auto;
         }
       }
     }
@@ -80,19 +83,18 @@
       padding: 1rem;
       background: transparent;
       border: 2px solid #89bcd9;
-      ;
       border-radius: 999px;
       color: white;
-      font-family: inherit;
-      font-size: 1rem;
+      font-family: Josefine_Sans, sans-serif;
+      font-size: 1.125rem;
 
       &::placeholder {
         color: #aaa;
       }
 
-      &:focus-visible{
+      &:focus-visible {
         text-decoration: none;
-  
+
       }
     }
 
@@ -124,16 +126,16 @@
       max-height: 48px;
       height: 100%;
       color: #F8F5EC;
-      border: 2px solid #F8F5EC ;
+      border: 2px solid #F8F5EC;
       padding: 0.5rem 2rem;
       border-radius: 999px;
       cursor: pointer;
-      font-size: 1rem;
+      font-size: 1.125rem;
       transition: 0.3s;
 
       &:hover {
         background: #75c1e2;
-        border: 2px solid #75c1e2 ;
+        border: 2px solid #75c1e2;
         color: #000;
       }
 
