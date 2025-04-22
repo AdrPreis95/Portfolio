@@ -14,4 +14,12 @@ export class NavbarComponent {
   switchLanguage(lang: string) {
     this.translate.use(lang);
   }
+
+  isMenuOpen = false;
+
+  toggleMobileMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+
 }

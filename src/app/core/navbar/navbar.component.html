@@ -11,7 +11,29 @@
   </ul>
 
   <div class="language-switch">
-    <a (click)="switchLanguage('de')">DE</a> | 
+    <a (click)="switchLanguage('de')">DE</a> |
     <a (click)="switchLanguage('en')">EN</a>
   </div>
 </nav>
+
+
+
+<button class="hamburger" [class.open]="isMenuOpen" (click)="toggleMobileMenu()" aria-label="Toggle menu">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+<div class="mobile-menu" [class.hidden]="!isMenuOpen">
+  <div class="blob">
+    <ul>
+      <li><a href="#whyme">{{ 'NAV.WHYME' | translate }}</a></li>
+      <li><a href="#skills">{{ 'NAV.SKILLS' | translate }}</a></li>
+      <li><a href="#projects">{{ 'NAV.PROJECTS' | translate }}</a></li>
+      <li><a href="#contact">{{ 'NAV.CONTACT' | translate }}</a></li>
+      <li class="language-switch">
+        <a (click)="switchLanguage('de')">DE</a>
+        <a (click)="switchLanguage('en')">EN</a>
+      </li>
+    </ul>
+  </div>
+</div>

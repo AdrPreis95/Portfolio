@@ -106,7 +106,7 @@
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
-                "src/global-styles"
+                "src/styles"
               ]
             },
             "scripts": []

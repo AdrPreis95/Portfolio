@@ -10,7 +10,7 @@
 
   .section-title {
     font-family: 'Anta', sans-serif;
-    font-size: 3.75rem;
+    font-size: clamp(2rem, 4vw, 3.75rem);
     color: #75c1e2;
     margin-bottom: 2rem;
   }
@@ -130,7 +130,7 @@
       padding: 0.5rem 2rem;
       border-radius: 999px;
       cursor: pointer;
-      font-size: 1.125rem;
+      font-size: clamp(0.875rem, 2vw, 1.125rem);
       transition: 0.3s;
 
       &:hover {

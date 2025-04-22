@@ -1,0 +1,7 @@
+@use 'font-sizes' as *;
+
+@each $name, $size in $font-map {
+  .fs-#{$name} {
+    font-size: $size;
+  }
+}
