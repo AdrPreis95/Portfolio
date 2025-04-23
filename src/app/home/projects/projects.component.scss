@@ -3,11 +3,11 @@ p {
   // padding: 80px 20px;
   color: white;
   font-family: Josefine_Sans, sans-serif;
-  font-size: clamp(1rem, 1.8vw, 1.125rem); 
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
 
   .section-title {
     font-family: 'Anta', sans-serif;
-    font-size:  clamp(2rem, 4vw, 3.75rem);
+    font-size: clamp(2rem, 4vw, 3.75rem);
     color: #75c1e2;
     text-align: center;
     margin-bottom: 3rem;
@@ -78,13 +78,14 @@ p {
           h4 {
             font-weight: bold;
             font-family: Josefine_Sans, sans-serif;
-            font-size: clamp(1.125rem, 2.3vw, 1.75rem);;
+            font-size: clamp(1.125rem, 2.3vw, 1.75rem);
+            ;
             margin-bottom: 0.3rem;
           }
 
           span {
             font-weight: normal;
-            font-size:  clamp(1rem, 1.8vw, 1.125rem); 
+            font-size: clamp(1rem, 1.8vw, 1.125rem);
             color: #aaa;
           }
         }
@@ -149,10 +150,9 @@ p {
       }
 
       .screenshot {
-        height: 312px;
-        width: 450px;
+        width: clamp(269px, 60vw, 453px);
+        height: clamp(167px, 40vh, 312px);
         border-radius: 30px;
-        box-shadow: 0 0 12px rgba(0, 0, 0, 0.2);
       }
     }
   }

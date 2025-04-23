@@ -58,6 +58,7 @@
   flex-direction: column;
   position: absolute;
   top: 0;
+  right: 0;
   justify-content: space-between;
   background: none;
   border: none;
@@ -159,6 +160,9 @@
 
 /* Media Query – Mobile */
 @media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
 
   .nav-links,
   .language-switch {

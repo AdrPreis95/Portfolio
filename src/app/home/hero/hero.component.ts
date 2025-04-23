@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.scss'
+  styleUrls: ['./hero.component.scss']
 })
-export class HeroComponent {
+export class HeroComponent implements OnInit {
+  isMobile = false;
 
+  ngOnInit() {
+    this.checkViewport();
+  }
+
+  @HostListener('window:resize')
+  onResize() {
+    this.checkViewport();
+  }
+
+  checkViewport() {
+    this.isMobile = window.innerWidth <= 768;
+  }
 }

@@ -1,32 +1,59 @@
-<div class="hero-section">
-  <div class="left-section">
-
-    <div class="shape">
-
-    </div>
-
-  </div>
-
-  <div class="right-section">
-    <div class="content-box">
-      <div class="top-logo">
-        <img src="/assets/hero/icons/Logo icon.svg" alt="Logo">
-        <p>{{ 'HERO.LOGO_NAME' | translate }}<br><span>{{ 'HERO.LOGO_ROLE' | translate }}</span></p>
-      </div>
-
-      <h1>Adrian Preis</h1>
-
-      <h2>{{ 'HERO.ROLE' | translate }}</h2>
-
-      <div class="social-icons">
-        <a href="#"><img src="/assets/hero/icons/Email button.svg" alt="Mail"></a>
-        <a href="#"><img src="/assets/hero/icons/Github button.svg" alt="GitHub"></a>
-        <a href="#"><img src="/assets/hero/icons/Linkedin button.svg" alt="LinkedIn"></a>
-      </div>
-
-      <div class="scroll-icon">
-        <img src="/assets/hero/icons/Arrow down.svg" alt="Scroll Down">
+<!-- Desktop Template (wird nur gerendert, wenn NICHT mobile) -->
+<ng-container *ngIf="!isMobile">
+  <div class="hero-section">
+    <div class="left-section">
+      <div class="shape-wrapper">
+        <div class="shape">
+          <img src="/assets/hero/img/Profile-Picture.svg" alt="ProfileImage">
+        </div>
       </div>
     </div>
+
+    <div class="right-section">
+      <div class="content-box">
+        <div class="top-logo">
+          <img src="/assets/hero/icons/Logo icon.svg" alt="Logo">
+          <p>{{ 'HERO.LOGO_NAME' |translate }}<br><span>{{ 'HERO.LOGO_ROLE' |translate }}</span></p>
+        </div>
+        <h1>Adrian Preis</h1>
+        <h2>{{ 'HERO.ROLE' | translate }}</h2>
+        <div class="social-icons">
+          <a href="#"><img src="/assets/hero/icons/Email button.svg" alt="Mail"></a>
+          <a href="#"><img src="/assets/hero/icons/Github button.svg" alt="GitHub"></a>
+          <a href="#"><img src="/assets/hero/icons/Linkedin button.svg" alt="LinkedIn"></a>
+        </div>
+        <div class="scroll-icon">
+          <img src="/assets/hero/icons/Arrow down.svg" alt="Scroll Down">
+        </div>
+      </div>
+    </div>
   </div>
-</div>
+</ng-container>
+
+
+
+<!-- Mobile Template (wird nur gerndert wenn gebraucht) -->
+<ng-template #mobileTemplate>
+  <div class="hero-mobile">
+    <div class="top-logo">
+      <img src="/assets/hero/icons/Logo icon.svg" alt="Logo">
+      <p>{{ 'HERO.LOGO_NAME' | translate }}<br><span>{{ 'HERO.LOGO_ROLE' | translate }}</span></p>
+    </div>
+    <div class="shape-wrapper">
+      <div class="shape">
+        <img src="/assets/hero/img/Profile-Picture.svg" alt="ProfileImage">
+      </div>
+    </div>
+    <h1>Adrian Preis</h1>
+    <h2>{{ 'HERO.ROLE' | translate }}</h2>
+
+    <div class="scroll-icon">
+      <img src="/assets/hero/icons/Arrow down.svg" alt="Scroll Down">
+    </div>
+  </div>
+</ng-template>
+
+<!-- Template Selector -->
+<ng-container *ngIf="isMobile">
+  <ng-container *ngTemplateOutlet="mobileTemplate"></ng-container>
+</ng-container>
