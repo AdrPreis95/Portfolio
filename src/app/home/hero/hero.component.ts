@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
@@ -7,6 +7,7 @@ import { Component, HostListener, OnInit } from '@angular/core';
 })
 export class HeroComponent implements OnInit {
   isMobile = false;
+  @Input() menuOpen: boolean = false;
 
   ngOnInit() {
     this.checkViewport();
@@ -20,4 +21,6 @@ export class HeroComponent implements OnInit {
   checkViewport() {
     this.isMobile = window.innerWidth <= 768;
   }
+
+
 }

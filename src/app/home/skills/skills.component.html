@@ -1,25 +1,67 @@
-<section class="skills">
-  <h2 class="section-title">{{ 'SKILLS.TITLE' | translate }}</h2>
+<!-- 📱 Mobile Template -->
+<ng-container *ngIf="isMobile">
+  <ng-container *ngTemplateOutlet="mobileTemplate"></ng-container>
+</ng-container>
 
-  <div class="skills-wrapper">
-    <div class="skills-icons">
-      <div class="skill" *ngFor="let skill of mainSkills">
-        <img [src]="skill.icon" [alt]="skill.name" />
-      </div>
-    </div>
+<!-- 💻 Desktop Template -->
+<ng-container *ngIf="!isMobile">
+  <section class="skills">
+    <h2 class="section-title">{{ 'SKILLS.TITLE' | translate }}</h2>
 
-    <div class="currently-learning">
-      <p>{{ 'SKILLS.CURRENTLY_LEARNING' | translate }}</p>
-
-      <div class="learning-icons">
-        <div class="skill" *ngFor="let tech of learning">
-          <img [src]="tech.icon" [alt]="tech.name" />
+    <div class="skills-wrapper">
+      <div class="skills-icons">
+        <div class="skill" *ngFor="let skill of mainSkills">
+          <img [src]="skill.icon" [alt]="skill.name" />
         </div>
       </div>
 
-      <p class="learning-text">
-        {{ 'SKILLS.LEARNING_TEXT' | translate }}
-      </p>
+      <!-- Desktop Layout für "currently learning" -->
+      <div class="currently-learning">
+        <p>{{ 'SKILLS.CURRENTLY_LEARNING' | translate }}</p>
+
+        <div class="learning-icons">
+          <div class="skill" *ngFor="let tech of learning">
+            <img [src]="tech.icon" [alt]="tech.name" />
+          </div>
+        </div>
+
+        <p class="learning-text">
+          {{ 'SKILLS.LEARNING_TEXT' | translate }}
+        </p>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</ng-container>
+
+<!-- 📦 Mobile Template Definition -->
+<ng-template #mobileTemplate>
+  <section class="skills mobile">
+    <h2 class="section-title">{{ 'SKILLS.TITLE' | translate }}</h2>
+
+    <div class="skills-wrapper">
+      <div class="skills-icons">
+        <div class="skill" *ngFor="let skill of mainSkills">
+          <img [src]="skill.icon" [alt]="skill.name" />
+        </div>
+      </div>
+      <p>{{ 'SKILLS.CURRENTLY_LEARNING' | translate }}</p>
+      <div class="p-icon-container">
+        <p class="learning-text">
+          {{ 'SKILLS.LEARNING_TEXT' | translate }}
+        </p>
+        <div class="currently-learning-mobile">
+          <!-- Hier kannst du dein eigenes Mobile-HTML laut Figma einfügen -->
+
+
+          <div class="learning-icons">
+            <div class="skill" *ngFor="let tech of learning">
+              <img [src]="tech.icon" [alt]="tech.name" />
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+</ng-template>

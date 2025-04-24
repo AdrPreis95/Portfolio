@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.scss'
+  styleUrls: ['./skills.component.scss'] // <-- kleiner Fix: 'styleUrl' => 'styleUrls'
 })
-export class SkillsComponent {
+export class SkillsComponent implements OnInit {
+  isMobile = false;
+
   mainSkills = [
     { name: 'Angular', icon: '/assets/skills/icons/Angular.svg' },
     { name: 'TypeScript', icon: '/assets/skills/icons/TypeScript.svg' },
@@ -23,4 +25,17 @@ export class SkillsComponent {
     { name: 'React', icon: '/assets/skills/icons/React.svg' },
     { name: 'Vue Js', icon: '/assets/skills/icons/VueJs.svg' }
   ];
+
+  ngOnInit(): void {
+    this.checkViewport();
+  }
+
+  @HostListener('window:resize')
+  onResize(): void {
+    this.checkViewport();
+  }
+
+  checkViewport(): void {
+    this.isMobile = window.innerWidth <= 768;
+  }
 }

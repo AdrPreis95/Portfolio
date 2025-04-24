@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'portfolio-classic';
-  isLegalNotice = false; // 💡 HIER fehlte es
+  isLegalNotice = false; 
 
   constructor(private router: Router) {
     this.router.events.subscribe(event => {

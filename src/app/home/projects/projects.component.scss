@@ -7,7 +7,7 @@ p {
 
   .section-title {
     font-family: 'Anta', sans-serif;
-    font-size: clamp(2rem, 4vw, 3.75rem);
+    font-size: clamp(2.6rem, 4vw, 3.75rem);
     color: #75c1e2;
     text-align: center;
     margin-bottom: 3rem;
@@ -21,6 +21,7 @@ p {
 
     span {
       cursor: pointer;
+      text-align: center;
       font-family: Josefine_Sans, sans-serif;
       font-size: clamp(1.125rem, 2.5vw, 1.875rem);
       position: relative;

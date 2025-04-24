@@ -5,7 +5,7 @@
 
   .section-title {
     font-family: 'Anta', sans-serif;
-    font-size:  clamp(2rem, 4vw, 3.75rem);
+    font-size: clamp(2.6rem, 4vw, 3.75rem);
     color: #75c1e2;
     margin-bottom: 2rem;
   }
@@ -20,7 +20,7 @@
     .location {
       display: flex;
       align-items: center;
-      font-size: clamp(1.125rem, 2.5vw, 1.875rem);
+      font-size: clamp(1.0rem, 2.5vw, 1.875rem);
 
       img {
         margin-right: 0.5rem;
@@ -38,7 +38,7 @@
       max-width: 400px;
       text-align: left;
       line-height: 1.6;
-      font-size:  clamp(1rem, 1.8vw, 1.125rem); 
+      font-size: clamp(1rem, 1.8vw, 1.125rem);
       font-family: Josefine_Sans, sans-serif;
 
       .talk-btn {
@@ -62,4 +62,15 @@
       }
     }
   }
+
+
+  @media (max-width: 768px) {
+    .text {
+      text-align: center !important;
+    }
+    .talk-btn{
+      display: none !important;
+    }
+  }
 }
+

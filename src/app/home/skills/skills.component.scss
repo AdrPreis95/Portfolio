@@ -4,7 +4,7 @@
 
   .section-title {
     font-family: 'Anta', sans-serif;
-    font-size: clamp(2rem, 4vw, 3.75rem);
+    font-size: clamp(2.6rem, 4vw, 3.75rem);
     color: #75c1e2;
     margin-bottom: 3rem;
   }
@@ -83,4 +83,54 @@
       }
     }
   }
+
+}
+
+.currently-learning-mobile {
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 1.5rem;
+  border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
+  width: max-content;
+  text-align: center;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #89BCD9 ;
+}
+
+.learning-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+
+  .skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+      height: 48px;
+      margin-bottom: 0.2rem;
+    }
+
+    span {
+      font-size: 0.95rem;
+      color: #75c1e2;
+    }
+  }
+}
+
+.learning-text {
+  font-size: 0.95rem;
+  margin-top: 1rem;
+  color: #ccc;
+}
+
+.p-icon-container {
+  display: flex !important;
+  align-items: center !important;
+
 }
