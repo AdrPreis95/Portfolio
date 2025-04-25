@@ -1,21 +1,86 @@
-<section class="projects">
-  <h2 class="section-title">{{ 'PROJECTS.TITLE' | translate }}</h2>
+<!-- 💻 Desktop-Version -->
+<ng-container *ngIf="!isMobile">
+  <section class="projects">
+    <h2 class="section-title">{{ 'PROJECTS.TITLE' | translate }}</h2>
 
-  <nav class="tabs">
-    <span *ngFor="let tab of tabs; let i = index"
-          (click)="selectTab(i)"
-          [class.active]="i === selectedTab">{{ tab.label }}</span>
-  </nav>
+    <nav class="tabs">
+      <span *ngFor="let tab of tabs; let i = index" (click)="selectTab(i)" [class.active]="i === selectedTab">{{
+        tab.label }}</span>
+    </nav>
 
-  <div class="project-details">
-    <div class="text">
-      <div *ngFor="let point of tabs[selectedTab].points">
-        <div class="bullet">
-          <span class="dot"></span>
-          <div class="content">
-            <h4>{{ point.title }} <span *ngIf="point.duration"> – {{ point.duration }}</span></h4>
-            <p>{{ point.text }}</p>
+    <div class="project-details">
+      <div class="text">
+        <div *ngFor="let point of tabs[selectedTab].points">
+          <div class="bullet">
+            <span class="dot"></span>
+            <div class="content">
+              <h4>{{ point.title }} <span *ngIf="point.duration"> – {{ point.duration }}</span></h4>
+              <p>{{ point.text }}</p>
+            </div>
           </div>
+        </div>
+
+        <div class="buttons">
+          <a class="btn" *ngIf="tabs[selectedTab].live" [href]="tabs[selectedTab].live" target="_blank">
+            {{ 'PROJECTS.LIVE' | translate }}
+          </a>
+          <a class="btn secondary" *ngIf="tabs[selectedTab].github" [href]="tabs[selectedTab].github"
+            target="_blank">GitHub</a>
+        </div>
+      </div>
+
+      <div class="preview">
+        <h5>{{ 'PROJECTS.TECHNOLOGIES' | translate }}</h5>
+        <div class="techs">
+          <img *ngFor="let tech of tabs[selectedTab].technologies" [src]="tech" />
+        </div>
+
+        <img class="screenshot" [src]="tabs[selectedTab].screenshot" alt="Project Screenshot" />
+      </div>
+    </div>
+  </section>
+
+</ng-container>
+
+<!-- 📱 Mobile-Version als Template -->
+<ng-container *ngIf="isMobile">
+  <ng-container *ngTemplateOutlet="mobileTemplate"></ng-container>
+</ng-container>
+
+<!-- 📦 mobiles Template -->
+<ng-template #mobileTemplate>
+  <section class="projects mobile">
+    <h2 class="section-title">{{ 'PROJECTS.TITLE' | translate }}</h2>
+
+    <nav class="tabs mobile-tabs">
+      <span *ngFor="let tab of tabs; let i = index" (click)="selectTab(i)" [class.active]="i === selectedTab">{{
+        tab.label }}</span>
+    </nav>
+
+    <div class="project-details-mobile">
+      <h3 class="mobile-title">{{ tabs[selectedTab].label.split('. ')[1] }}</h3>
+
+      <p class="technologies">
+        <strong>{{ 'PROJECTS.TECHNOLOGIES' | translate }}:</strong>
+
+        <span *ngFor="let tech of tabs[selectedTab].technologies; let isLast = last">
+          {{ tech.split('/').pop()?.replace('.svg', '') }}<span *ngIf="!isLast">, </span>
+        </span>
+      </p>
+
+      <p class="duration" *ngIf="tabs[selectedTab].points[0]?.duration">
+        <!-- <strong>{{ 'PROJECTS.DURATION' | translate }}:</strong> -->
+        {{ tabs[selectedTab].points[0].duration }}
+      </p>
+      
+
+      <img class="screenshot" [src]="tabs[selectedTab].screenshot" alt="Project Screenshot" />
+
+      <div *ngFor="let point of tabs[selectedTab].points" class="bullet-mobile">
+        <div class="dot"></div>
+        <div class="content">
+          <h4>{{ point.title }}</h4>
+          <p>{{ point.text }}</p>
         </div>
       </div>
 
@@ -23,17 +88,9 @@
         <a class="btn" *ngIf="tabs[selectedTab].live" [href]="tabs[selectedTab].live" target="_blank">
           {{ 'PROJECTS.LIVE' | translate }}
         </a>
-        <a class="btn secondary" *ngIf="tabs[selectedTab].github" [href]="tabs[selectedTab].github" target="_blank">GitHub</a>
+        <a class="btn secondary" *ngIf="tabs[selectedTab].github" [href]="tabs[selectedTab].github"
+          target="_blank">GitHub</a>
       </div>
     </div>
-
-    <div class="preview">
-      <h5>{{ 'PROJECTS.TECHNOLOGIES' | translate }}</h5>
-      <div class="techs">
-        <img *ngFor="let tech of tabs[selectedTab].technologies" [src]="tech" />
-      </div>
-
-      <img class="screenshot" [src]="tabs[selectedTab].screenshot" alt="Project Screenshot" />
-    </div>
-  </div>
-</section>
+  </section>
+</ng-template>

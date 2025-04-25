@@ -44,22 +44,24 @@
           <img [src]="skill.icon" [alt]="skill.name" />
         </div>
       </div>
-      <p>{{ 'SKILLS.CURRENTLY_LEARNING' | translate }}</p>
-      <div class="p-icon-container">
-        <p class="learning-text">
-          {{ 'SKILLS.LEARNING_TEXT' | translate }}
-        </p>
-        <div class="currently-learning-mobile">
-          <!-- Hier kannst du dein eigenes Mobile-HTML laut Figma einfügen -->
+      <div class="container">
+        <p>{{ 'SKILLS.CURRENTLY_LEARNING' | translate }}</p>
+        <div class="p-icon-container">
+          <p class="learning-text">
+            {{ 'SKILLS.LEARNING_TEXT' | translate }}
+          </p>
+          <div class="currently-learning-mobile">
+            <!-- Hier kannst du dein eigenes Mobile-HTML laut Figma einfügen -->
 
 
-          <div class="learning-icons">
-            <div class="skill" *ngFor="let tech of learning">
-              <img [src]="tech.icon" [alt]="tech.name" />
+            <div class="learning-icons">
+              <div class="skill" *ngFor="let tech of learning">
+                <img [src]="tech.icon" [alt]="tech.name" />
+              </div>
             </div>
+
+
           </div>
-
-
         </div>
       </div>
     </div>

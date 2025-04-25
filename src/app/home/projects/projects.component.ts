@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Component({
@@ -6,13 +6,28 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent {
+export class ProjectsComponent implements OnInit {
   selectedTab = 0;
   tabs: any[] = [];
+  isMobile = false;
 
   constructor(private translate: TranslateService) {
     this.loadTabs();
     this.translate.onLangChange.subscribe(() => this.loadTabs());
+  }
+
+  ngOnInit(): void {
+    this.checkViewport();
+  }
+
+  @HostListener('window:resize')
+  onResize(): void {
+    this.checkViewport();
+  }
+
+  checkViewport(): void {
+    this.isMobile = window.innerWidth <= 768;
+    console.log('isMobile:', this.isMobile);
   }
 
   loadTabs() {
