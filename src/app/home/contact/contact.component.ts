@@ -22,42 +22,45 @@ export class ContactComponent {
 
   onSubmit() {
     this.submitted = true;
-  
-   
+
     Object.values(this.contactForm.controls).forEach(control => {
       control.markAsTouched();
       control.updateValueAndValidity();
     });
-  
+
     if (this.contactForm.valid && !this.showConfirmation) {
       const data = this.contactForm.value;
-  
-      fetch('https://formspree.io/f/xvgkdaon', {
+
+      const formData = new FormData();
+      formData.append('name', data.name);
+      formData.append('email', data.email);
+      formData.append('message', data.message);
+
+      fetch('send.php', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: data.name,
-          email: data.email,
-          message: data.message
-        })
+        body: formData
       }).then(() => {
         this.showConfirmation = true;
         this.contactForm.reset();
         this.submitted = false;
-  
+
         setTimeout(() => {
           this.closeConfirmation();
         }, 5000);
+      }).catch(error => {
+        console.error('Fehler beim Senden der Nachricht:', error);
       });
     }
+
+
   }
-  
-  
-  
+
+
+
   closeConfirmation() {
     this.showConfirmation = false;
     this.submitted = false;
   }
-  
+
 }
 

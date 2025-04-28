@@ -53,27 +53,35 @@
     <h2 class="section-title">{{ 'PROJECTS.TITLE' | translate }}</h2>
 
     <nav class="tabs mobile-tabs">
-      <span *ngFor="let tab of tabs; let i = index" (click)="selectTab(i)" [class.active]="i === selectedTab">{{
-        tab.label }}</span>
+      <span *ngFor="let tab of tabs; let i = index" (click)="selectTab(i)" [class.active]="i === selectedTab">
+        <ng-container *ngIf="!isMobile; else mobileTab">
+          {{ tab.label }}
+        </ng-container>
+        <ng-template #mobileTab>
+          {{ i + 1 }}. {{ 'PROJECTS.PROJECT' | translate }}
+        </ng-template>
+      </span>
     </nav>
+    
 
     <div class="project-details-mobile">
-      <h3 class="mobile-title">{{ tabs[selectedTab].label.split('. ')[1] }}</h3>
+      <div class="hl-cont">
+        <h3 class="mobile-title">{{ tabs[selectedTab].label.split('. ')[1] }}</h3>
 
-      <p class="technologies">
-        <strong>{{ 'PROJECTS.TECHNOLOGIES' | translate }}:</strong>
+        <p class="technologies">
+          <strong>{{ 'PROJECTS.TECHNOLOGIES' | translate }}:</strong>
 
-        <span *ngFor="let tech of tabs[selectedTab].technologies; let isLast = last">
-          {{ tech.split('/').pop()?.replace('.svg', '') }}<span *ngIf="!isLast">, </span>
-        </span>
-      </p>
+          <span *ngFor="let tech of tabs[selectedTab].technologies; let isLast = last">
+            {{ tech.split('/').pop()?.replace('.svg', '') }}<span *ngIf="!isLast">, </span>
+          </span>
+        </p>
 
-      <p class="duration" *ngIf="tabs[selectedTab].points[0]?.duration">
-        <!-- <strong>{{ 'PROJECTS.DURATION' | translate }}:</strong> -->
-        {{ tabs[selectedTab].points[0].duration }}
-      </p>
-      
+        <p class="duration" *ngIf="tabs[selectedTab].points[0]?.duration">
+          <!-- <strong>{{ 'PROJECTS.DURATION' | translate }}:</strong> -->
+          {{ tabs[selectedTab].points[0].duration }}
+        </p>
 
+      </div>
       <img class="screenshot" [src]="tabs[selectedTab].screenshot" alt="Project Screenshot" />
 
       <div *ngFor="let point of tabs[selectedTab].points" class="bullet-mobile">

@@ -27,6 +27,7 @@
         "LEARNING_TEXT": "Ich erweitere ständig meine Skills und entdecke neue Technologien wie React und Vue.js."
     },
     "PROJECTS": {
+        "PROJECT": "Projekt",
         "TITLE": "Meine Projekte",
         "LIVE": "Live-Demo",
         "TECHNOLOGIES": "Technologien",

@@ -1,0 +1,29 @@
+<?php
+
+$name = $_POST['name'] ?? '';
+$email = $_POST['email'] ?? '';
+$message = $_POST['message'] ?? '';
+
+
+$to = 'adrianpreis86@gmail.com';
+$subject = 'Neue Nachricht von deiner Portfolio-Website';
+
+
+$body = "Name: $name\n";
+$body .= "E-Mail: $email\n\n";
+$body .= "Nachricht:\n$message";
+
+
+$headers = "From: $email\r\n";
+$headers .= "Reply-To: $email\r\n";
+$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+
+
+if (mail($to, $subject, $body, $headers)) {
+    http_response_code(200);
+    echo "Nachricht erfolgreich gesendet.";
+} else {
+    http_response_code(500);
+    echo "Fehler beim Senden der Nachricht.";
+}
+?>
