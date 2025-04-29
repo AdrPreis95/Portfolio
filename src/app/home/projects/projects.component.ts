@@ -30,6 +30,12 @@ export class ProjectsComponent implements OnInit {
     console.log('isMobile:', this.isMobile);
   }
 
+  openLiveDemo(url: string): void {
+    if (url && url !== '#') {
+      window.open(url, '_blank');
+    }
+  }
+
   loadTabs() {
     this.translate.get([
       'PROJECTS.EL_POLLO',
@@ -46,7 +52,7 @@ export class ProjectsComponent implements OnInit {
             'assets/skills/icons/HTML.svg',
             'assets/skills/icons/GIT.svg'
           ],
-          live: 'https://deine-el-pollo-live-url.com',
+          live: 'https://adrian-preis.de/ElPolloLoco',
           github: 'https://github.com/dein-projekt/el-pollo-loco',
           points: translations['PROJECTS.EL_POLLO'].POINTS.map((p: any) => ({
             title: p.TITLE,
@@ -64,7 +70,7 @@ export class ProjectsComponent implements OnInit {
             'assets/skills/icons/GIT.svg',
             'assets/projects/icons/Firebase.svg'
           ],
-          live: 'https://dein-join-live-url.com',
+          live: 'https://adrian-preis.de/join',
           github: 'https://github.com/dein-projekt/join',
           points: translations['PROJECTS.JOIN'].POINTS.map((p: any) => ({
             title: p.TITLE,

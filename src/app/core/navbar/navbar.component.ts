@@ -7,19 +7,19 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+  isMenuOpen = false;
+  currentLanguage = 'en'; // <-- HINZUGEFÜGT
+
   constructor(private translate: TranslateService) {
     translate.setDefaultLang('en');
   }
 
   switchLanguage(lang: string) {
     this.translate.use(lang);
+    this.currentLanguage = lang; // <-- HINZUGEFÜGT
   }
-
-  isMenuOpen = false;
 
   toggleMobileMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
-
-
 }

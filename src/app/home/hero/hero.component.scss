@@ -47,6 +47,21 @@
     }
   }
 
+  @media (max-width: 1450px) {
+    .shape {
+      width: clamp(266px, 50vw, 535px);
+      height: auto;
+      border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
+      background-color: #00fefc;
+      position: static !important;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      overflow: hidden;
+
+    }
+  }
+
   @media (max-width: 768px) {
     .social-icons {
       display: none !important;
@@ -74,39 +89,136 @@
 
   .scroll-icon img {
     height: 89px;
-    
+
   }
 
 
 }
 
+// .right-section {
+//   flex: 1;
+//   background-color: #1f2630;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+//   .content-box {
+//     @include flex-column-center;
+//     // width: 80%;
+//     // height: 90%;
+//     width: auto;
+//     height: auto;
+//     padding: 2rem;
+//     position: relative;
+//     color: white;
+//     text-align: center;
+
+//     .top-logo {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       gap: 10px;
+
+//       p {
+//         font-size: 0.9rem;
+
+//         span {
+//           font-size: 0.7rem;
+//           color: #ccc;
+//         }
+//       }
+//     }
+
+//     h1 {
+//       font-family: 'Anta', sans-serif;
+//       font-size: clamp(3rem, 5vw, 5.5rem);
+//       ;
+//       margin: 1rem 0 0.5rem;
+//     }
+
+//     h2 {
+//       font-family: 'Josefine_Sans', sans-serif;
+//       font-size: clamp(1.5rem, 3vw, 2.5rem);
+//       color: #ccc;
+//     }
+
+//     .social-icons {
+//       // position: absolute;
+//       // top: 2rem;
+//       // right: 2rem;
+//       display: flex;
+//       flex-direction: column;
+//       gap: 1rem;
+//       padding: 1rem;
+
+//       a img {
+//         width: 30px;
+//         height: 30px;
+//       }
+//     }
+
+//     .scroll-icon {
+//       position: absolute;
+//       bottom: 1rem;
+//       left: 50%;
+//       transform: translateX(-50%);
+
+//       img {
+//         width: 38px;
+
+//       }
+//     }
+//   }
+
+// }
+
+
 .right-section {
   flex: 1;
-  background-color: #1f2630;
+  background-color: #1f2630; // Farbe erstmal egal
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  .social-icons {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    a img {
+      width: 30px;
+      height: 30px;
+    }
+  }
 
   .content-box {
-    @include flex-column-center;
-    width: 80%;
-    height: 90%;
-    padding: 2rem;
+    @include flex-column-center; // falls du einen Mixin hast, sonst ersetzen
     position: relative;
+    text-align: center;
     color: white;
-    text-align: left;
 
     .top-logo {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 10px;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+
+      img {
+        width: 60px; // Logo-Größe anpassen
+      }
 
       p {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        margin: 0;
 
         span {
-          font-size: 0.7rem;
+          font-size: 0.8rem;
           color: #ccc;
         }
       }
@@ -114,46 +226,27 @@
 
     h1 {
       font-family: 'Anta', sans-serif;
-      font-size: clamp(3rem, 5vw, 5.5rem);
-      ;
-      margin: 1rem 0 0.5rem;
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      margin: 0.5rem 0;
     }
 
     h2 {
       font-family: 'Josefine_Sans', sans-serif;
       font-size: clamp(1.5rem, 3vw, 2.5rem);
       color: #ccc;
-    }
-
-    .social-icons {
-      position: absolute;
-      top: 2rem;
-      right: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      padding: 1rem;
-
-      a img {
-        width: 30px;
-        height: 30px;
-      }
+      margin: 0;
     }
 
     .scroll-icon {
-      position: absolute;
-      bottom: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
+      margin-top: 3rem;
 
       img {
         width: 38px;
-
       }
     }
   }
-
 }
+
 
 .hero-mobile {
   // height: 100vh;
