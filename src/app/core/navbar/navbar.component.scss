@@ -1,6 +1,26 @@
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin gray-bg {
+  background-color: #262E34;
+}
+
+@mixin cyan-main {
+  color: #89BCD9;
+
+}
+
+@mixin cyan-main-bg {
+  background-color: #89BCD9;
+
+}
+
 .navbar {
   height: 104px;
-  background-color: #5da8b6;
+  @include cyan-main-bg;
   color: white;
   display: flex;
   justify-content: space-between;
@@ -43,7 +63,7 @@
     overflow: hidden;
     font-weight: bold;
     font-size: 1.2rem;
-  
+
     .switch-indicator {
       position: absolute;
       top: 5px;
@@ -56,39 +76,32 @@
       transition: all 0.3s ease;
       z-index: 1;
     }
-  
+
     .language-labels {
       display: flex;
       gap: 1.5rem;
       z-index: 2;
-  
+
       a {
         color: #1c1c1c;
         text-decoration: none;
         cursor: pointer;
         transition: color 0.3s;
-  
+
         &.active {
-          color: #ffffff ; /* Aktive Sprache weiß */
+          color: #ffffff;
+          /* Aktive Sprache weiß */
         }
       }
     }
   }
-  
+
   /* Wenn EN aktiv ist → Switch nach rechts */
   .language-switch.en-active .switch-indicator {
     left: calc(50% + 5px);
   }
-  
-  }
 
-
-
-
-
-
-
-
+}
 
 .hamburger {
   height: 32px;
@@ -110,7 +123,7 @@
     height: 4px;
     width: 100%;
     transition: all 0.3s ease;
-    position: absolute; // Wichtig für das X
+    position: absolute;
 
     &:nth-child(1) {
       top: 0;
@@ -163,7 +176,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #5DA8B6;
+    @include cyan-main-bg;
     padding: 2rem;
     border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
     height: clamp(270px, 48vw, 376px);
@@ -211,6 +224,7 @@
   .hamburger {
     display: flex !important;
   }
+
   .language-switch {
     position: relative;
     display: flex;
@@ -223,7 +237,7 @@
     overflow: hidden;
     font-weight: bold;
     font-size: 1.2rem;
-  
+
     .switch-indicator {
       position: absolute;
       top: 5px;
@@ -236,25 +250,26 @@
       transition: all 0.3s ease;
       z-index: 1;
     }
-  
+
     .language-labels {
       display: flex;
       gap: 1.5rem;
       z-index: 2;
-  
+
       a {
         color: #1c1c1c;
         text-decoration: none;
         cursor: pointer;
         transition: color 0.3s;
-  
+
         &.active {
-          color: #ffffff ; /* Aktive Sprache weiß */
+          color: #ffffff;
+          /* Aktive Sprache weiß */
         }
       }
     }
   }
-  
+
   /* Wenn EN aktiv ist → Switch nach rechts */
   .language-switch.en-active .switch-indicator {
     left: calc(50% + 5px);

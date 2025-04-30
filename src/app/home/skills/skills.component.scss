@@ -86,13 +86,7 @@
 
 }
 
-@media (max-width: 768px) {
-  :host {
-    display: block;
-    height: 100vh;
-    scroll-snap-align: start;
-  }
-}
+
 
 .currently-learning-mobile {
   background-color: rgba(255, 255, 255, 0.03);

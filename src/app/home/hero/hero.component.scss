@@ -4,6 +4,20 @@
   align-items: center;
 }
 
+@mixin gray-bg {
+  background-color: #262E34;
+}
+
+@mixin cyan-main {
+  color: #89BCD9;
+
+}
+
+@mixin cyan-main-bg {
+  background-color: #89BCD9;
+
+}
+
 .hero-section {
   display: flex;
   background-color: #262E34;
@@ -11,7 +25,7 @@
 
   .left-section {
     flex: 1;
-    background-color: #1f2630;
+    background-color: #262e34;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,10 +39,10 @@
     }
 
     .shape {
+      @include cyan-main-bg;
       width: clamp(266px, 50vw, 620px);
       height: auto;
       border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
-      background-color: #00fefc;
       position: absolute;
       bottom: 0;
       display: flex;
@@ -105,87 +119,9 @@
 
 }
 
-// .right-section {
-//   flex: 1;
-//   background-color: #1f2630;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-
-//   .content-box {
-//     @include flex-column-center;
-//     // width: 80%;
-//     // height: 90%;
-//     width: auto;
-//     height: auto;
-//     padding: 2rem;
-//     position: relative;
-//     color: white;
-//     text-align: center;
-
-//     .top-logo {
-//       display: flex;
-//       flex-direction: column;
-//       align-items: center;
-//       gap: 10px;
-
-//       p {
-//         font-size: 0.9rem;
-
-//         span {
-//           font-size: 0.7rem;
-//           color: #ccc;
-//         }
-//       }
-//     }
-
-//     h1 {
-//       font-family: 'Anta', sans-serif;
-//       font-size: clamp(3rem, 5vw, 5.5rem);
-//       ;
-//       margin: 1rem 0 0.5rem;
-//     }
-
-//     h2 {
-//       font-family: 'Josefine_Sans', sans-serif;
-//       font-size: clamp(1.5rem, 3vw, 2.5rem);
-//       color: #ccc;
-//     }
-
-//     .social-icons {
-//       // position: absolute;
-//       // top: 2rem;
-//       // right: 2rem;
-//       display: flex;
-//       flex-direction: column;
-//       gap: 1rem;
-//       padding: 1rem;
-
-//       a img {
-//         width: 30px;
-//         height: 30px;
-//       }
-//     }
-
-//     .scroll-icon {
-//       position: absolute;
-//       bottom: 1rem;
-//       left: 50%;
-//       transform: translateX(-50%);
-
-//       img {
-//         width: 38px;
-
-//       }
-//     }
-//   }
-
-// }
-
-
 .right-section {
   flex: 1;
-  background-color: #1f2630; // Farbe erstmal egal
+  background-color: #262e34;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -200,11 +136,19 @@
     flex-direction: column;
     gap: 1rem;
 
-    a img {
-
+    a svg {
+      @include cyan-main;
       height: 38px;
+      width: auto;
+      transition: color 0.3s ease;
+    }
+
+    a:hover svg {
+      stroke: none;
+      fill: white;
     }
   }
+
 
   .content-box {
     @include flex-column-center;
@@ -250,9 +194,17 @@
     .scroll-icon {
       margin-top: clamp(30px, 10vw, 146px);
 
-      img {
-        width: 48px;
+      .scroll-svg {
+        width: clamp(38px, 5vw, 48px);
+        fill: none;
+        @include cyan-main;
+        cursor: pointer;
 
+
+      }
+
+      .scroll-border:hover {
+        fill: rgba(137, 188, 217, 0.2);
       }
     }
   }
@@ -261,6 +213,7 @@
 
 
 .hero-mobile {
+  @include gray-bg;
   // height: 100vh;
   display: flex;
   flex-direction: column;
@@ -302,7 +255,7 @@
       width: 100%;
       overflow: hidden;
       border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
-      background-color: #00fefc;
+      @include cyan-main-bg;
       display: flex;
       justify-content: center;
       align-items: flex-end;
