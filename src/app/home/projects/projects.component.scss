@@ -162,6 +162,12 @@ p {
 }
 
 @media (max-width: 768px) {
+  :host {
+    display: block;
+    height: 100vh;
+    scroll-snap-align: start;
+  }
+
   .projects.mobile {
     padding: 40px 0px;
     border-radius: 0px;

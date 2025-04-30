@@ -46,7 +46,7 @@
       blockquote,
       p {
         font-family: 'Josefine_Sans', sans-serif;
-        font-size:  clamp(1rem, 1.8vw, 1.125rem);
+        font-size: clamp(1rem, 1.8vw, 1.125rem);
         margin-bottom: 1rem;
         line-height: 1.6;
       }
@@ -59,4 +59,13 @@
       }
     }
   }
+
+  @media (max-width: 768px) {
+    :host {
+      display: block;
+      height: 100vh;
+      scroll-snap-align: start;
+    }
+  }
+
 }

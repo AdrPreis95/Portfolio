@@ -65,12 +65,18 @@
 
 
   @media (max-width: 768px) {
+    :host {
+      display: block;
+      height: 100vh;
+      scroll-snap-align: start;
+    }
+
     .text {
       text-align: center !important;
     }
-    .talk-btn{
+
+    .talk-btn {
       display: none !important;
     }
   }
 }
-
