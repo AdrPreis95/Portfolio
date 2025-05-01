@@ -88,8 +88,8 @@ export class ProjectsComponent implements OnInit {
             'assets/skills/icons/GIT.svg',
             'assets/projects/icons/Firebase.svg'
           ],
-          live: '#',
-          github: '#',
+          // live: '#',
+          // github: '#',
           points: translations['PROJECTS.DA_BUBBLE'].POINTS.map((p: any) => ({
             title: p.TITLE,
             duration: p.DURATION,

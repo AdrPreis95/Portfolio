@@ -1,3 +1,27 @@
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin gray-bg {
+  background-color: #262E34;
+}
+
+@mixin cyan-main {
+  color: #89BCD9;
+
+}
+
+@mixin cyan-main-bg {
+  background-color: #89BCD9;
+
+}
+
+@mixin font-color-gray {
+  color: #262E34;
+}
+
 .container {
   max-width: 900px;
   width: 100%;
@@ -5,13 +29,14 @@
 }
 
 .contact {
+  @include gray-bg;
   padding: 80px 20px;
   text-align: center;
 
   .section-title {
     font-family: 'Anta', sans-serif;
     font-size: clamp(2.6rem, 4vw, 3.75rem);
-    color: #75c1e2;
+    @include cyan-main;
     margin-bottom: 2rem;
   }
 
@@ -24,7 +49,7 @@
     text-align: center;
 
     .intro {
-      font-family: Josefine_Sans,sans-serif;
+      font-family: Josefine_Sans, sans-serif;
       font-size: 1.25rem;
       text-align: left;
       color: #ccc;
@@ -38,7 +63,7 @@
 
       p {
         display: flex;
-        font-family: Josefine_Sans,sans-serif;
+        font-family: Josefine_Sans, sans-serif;
         font-size: 1.25rem;
         align-items: center;
         gap: 0.5rem;
@@ -116,7 +141,7 @@
       }
 
       a {
-        color: #75c1e2;
+        @include cyan-main;
         text-decoration: underline;
       }
     }
@@ -134,7 +159,7 @@
       transition: 0.3s;
 
       &:hover {
-        background: #75c1e2;
+        @include cyan-main-bg;
         border: 2px solid #75c1e2;
         color: #000;
       }
@@ -164,18 +189,18 @@
       transition: background-image 0.2s ease, transform 0.2s ease;
     }
 
-    /* Hover (auch wenn nicht gecheckt) */
+
     .checkbox-icon:hover {
-      transform: scale(1.1); // leichtes Vergrößern beim Hover
+      transform: scale(1.1);
       opacity: 0.8;
     }
 
-    /* Checked */
+
     input[type="checkbox"]:checked+.checkbox-icon {
       background-image: url('/assets/contact/icons/Checked-icon.svg');
     }
 
-    /* Optional: Hover im Checked-Zustand */
+
     input[type="checkbox"]:checked+.checkbox-icon:hover {
       opacity: 0.95;
       transform: scale(1.05);
@@ -205,7 +230,7 @@
       }
 
       button {
-        background: #0a84ff;
+        @include cyan-main-bg;
         color: white;
         border: none;
         padding: 0.5rem 1.5rem;

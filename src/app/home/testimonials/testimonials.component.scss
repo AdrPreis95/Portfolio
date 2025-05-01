@@ -25,11 +25,12 @@
 .testimonials {
   padding: 80px 20px;
   text-align: center;
+  @include gray-bg;
 
   .section-title {
     font-family: 'Anta', sans-serif;
     font-size: clamp(1.125rem, 2.5vw, 1.875rem);
-    color: #75c1e2;
+    @include cyan-main;
     margin-bottom: 3rem;
   }
 
@@ -46,7 +47,7 @@
       justify-content: center;
       height: 400px;
       width: 400px;
-      background: rgba(255, 255, 255, 0.03);
+      background-color: #2d383f;
       padding: 2rem;
       border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
       color: white;
@@ -63,7 +64,7 @@
         margin-bottom: 1rem;
 
         span {
-          color: #75c1e2;
+          @include cyan-main;
         }
       }
 
@@ -77,7 +78,7 @@
 
 
       a {
-        color: #75c1e2;
+        @include cyan-main;
         text-decoration: underline;
         font-size: 0.9rem;
       }
