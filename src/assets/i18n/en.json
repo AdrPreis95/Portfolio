@@ -12,7 +12,9 @@
         "WHYME": "Why me",
         "SKILLS": "Skills",
         "PROJECTS": "Projects",
-        "CONTACT": "Contact"
+        "CONTACT": "Contact",
+        "LOGO_NAME": "A.Preis",
+        "LOGO_ROLE": "Developer"
     },
     "WHYME": {
         "TITLE": "Why me",

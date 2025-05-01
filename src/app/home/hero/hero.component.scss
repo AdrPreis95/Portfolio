@@ -18,6 +18,10 @@
 
 }
 
+@mixin font-color-gray {
+  color: #262E34;
+}
+
 .hero-section {
   display: flex;
   background-color: #262E34;

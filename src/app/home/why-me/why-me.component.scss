@@ -1,4 +1,29 @@
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin gray-bg {
+  background-color: #262E34;
+}
+
+@mixin cyan-main {
+  color: #89BCD9;
+
+}
+
+@mixin cyan-main-bg {
+  background-color: #89BCD9;
+
+}
+
+@mixin font-color-gray {
+  color: #262E34;
+}
+
 .why-me {
+  @include gray-bg;
   text-align: center;
   padding: 80px 20px;
   color: #ffffff;
@@ -6,7 +31,7 @@
   .section-title {
     font-family: 'Anta', sans-serif;
     font-size: clamp(2.6rem, 4vw, 3.75rem);
-    color: #75c1e2;
+    @include cyan-main;
     margin-bottom: 2rem;
   }
 
@@ -30,7 +55,7 @@
 
       .highlight {
         font-weight: 700;
-        color: #9cc9de;
+        @include cyan-main;
       }
     }
 

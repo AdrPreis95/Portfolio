@@ -1,3 +1,27 @@
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin gray-bg {
+  background-color: #262E34;
+}
+
+@mixin cyan-main {
+  color: #89BCD9;
+
+}
+
+@mixin cyan-main-bg {
+  background-color: #89BCD9;
+
+}
+
+@mixin font-color-gray {
+  color: #262E34;
+}
+
 .testimonials {
   padding: 80px 20px;
   text-align: center;

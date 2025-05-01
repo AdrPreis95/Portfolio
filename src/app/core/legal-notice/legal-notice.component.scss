@@ -1,25 +1,48 @@
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin gray-bg {
+  background-color: #262E34;
+}
+
+@mixin cyan-main {
+  color: #89BCD9;
+
+}
+
+@mixin cyan-main-bg {
+  background-color: #89BCD9;
+
+}
+
+@mixin font-color-gray {
+  color: #262E34;
+}
+
 :host {
-    display: block;
-    height: 100vh;
-    padding: 80px 40px;
-    background-color: #1f1f1f;
-    color: white;
-    text-align: left;
+  display: block;
+  height: 100vh;
+  padding: 80px 40px;
+  background-color: #1f1f1f;
+  color: white;
+  text-align: left;
+}
+
+.close-btn {
+  margin-top: 30px;
+  display: inline-block;
+  background: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+
+  &:hover {
+    background-color: #ffffff20;
   }
-  
-  .close-btn {
-    margin-top: 30px;
-    display: inline-block;
-    background: transparent;
-    color: #fff;
-    border: 1px solid #fff;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.3s ease;
-  
-    &:hover {
-      background-color: #ffffff20;
-    }
-  }
-  
+}

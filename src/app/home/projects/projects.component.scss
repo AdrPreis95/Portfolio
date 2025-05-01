@@ -1,14 +1,39 @@
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin gray-bg {
+  background-color: #262E34;
+}
+
+@mixin cyan-main {
+  color: #89BCD9;
+
+}
+
+@mixin cyan-main-bg {
+  background-color: #89BCD9;
+
+}
+
+@mixin font-color-gray {
+  color: #262E34;
+}
+
 .projects,
 p {
   // padding: 80px 20px;
   color: white;
   font-family: Josefine_Sans, sans-serif;
   font-size: clamp(1rem, 1.8vw, 1.125rem);
+  
 
   .section-title {
     font-family: 'Anta', sans-serif;
     font-size: clamp(2.6rem, 4vw, 3.75rem);
-    color: #75c1e2;
+    @include cyan-main;
     text-align: center;
     margin-bottom: 3rem;
   }
@@ -25,7 +50,7 @@ p {
       font-family: Josefine_Sans, sans-serif;
       font-size: clamp(1.125rem, 2.5vw, 1.875rem);
       position: relative;
-      color: #75c1e2;
+      @include cyan-main;
       z-index: 2;
 
       &.active {
@@ -41,7 +66,7 @@ p {
           width: calc(100% + 10px);
           left: -5px;
           right: -5px;
-          background-color: #17202A;
+          background-color:#2d383f;
           border-top-left-radius: 12px;
           border-top-right-radius: 12px;
           z-index: -1;
@@ -71,7 +96,7 @@ p {
           width: 12px;
           height: 12px;
           border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
-          background: #75c1e2;
+          @include cyan-main-bg;
           margin-top: 6px;
         }
 
@@ -101,7 +126,7 @@ p {
           background: transparent;
           max-height: 48px;
           height: 100%;
-          color: #75c1e2;
+          @include cyan-main;
           text-decoration: none;
           border: 2px solid #75c1e2;
           padding: 0.5rem 2rem;
@@ -186,20 +211,21 @@ p {
 
       span {
         font-size: 1.1rem;
-        color: #75c1e2;
+        @include cyan-main;
         padding: 0.3rem 0.8rem;
         cursor: pointer;
         border-radius: 8px;
 
         &.active {
           font-weight: bold;
-          background-color: #17202A;
+          background-color:#2d383f;
+          
         }
       }
     }
 
     .project-details-mobile {
-      background-color: #17202A;
+      background-color:#2d383f;
       border-radius: 20px;
       padding: 1.5rem;
       display: flex;
@@ -209,7 +235,7 @@ p {
 
       .mobile-title {
         font-size: 1.6rem;
-        color: #75c1e2;
+        @include cyan-main;
         text-align: center;
       }
 
@@ -280,7 +306,7 @@ p {
           background: transparent;
           max-height: 48px;
           height: 100%;
-          color: #75c1e2;
+          @include cyan-main;
           text-decoration: none;
           border: 2px solid #75c1e2;
           padding: 0.5rem 2rem;
