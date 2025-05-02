@@ -57,7 +57,26 @@
         font-weight: 700;
         @include cyan-main;
       }
+
     }
+
+    .remote {
+      display: flex;
+      align-items: center;
+      font-size: clamp(1.0rem, 2.5vw, 1.875rem);
+
+      img {
+        margin-right: 0.5rem;
+        width: 32px;
+        height: 32px;
+      }
+
+      .highlight {
+        font-weight: 700;
+        @include cyan-main;
+      }
+    }
+
 
     .text {
       max-width: 400px;
