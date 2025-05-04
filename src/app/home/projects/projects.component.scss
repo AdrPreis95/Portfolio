@@ -83,7 +83,7 @@ p {
     height: 548px;
     display: flex;
     align-items: center;
-    flex-wrap: wrap;
+    // flex-wrap: wrap;
     background-color: #2d383f;
     gap: 3rem;
     justify-content: center;
@@ -119,6 +119,32 @@ p {
             color: #aaa;
           }
         }
+      }
+
+
+    }
+
+    .preview {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      .techs {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 1rem;
+
+        img {
+          height: 30px !important;
+        }
+      }
+
+      .screenshot {
+        width: clamp(269px, 60vw, 453px);
+        height: clamp(167px, 40vh, 312px);
+        border-radius: 30px;
       }
 
       .buttons {
@@ -164,38 +190,13 @@ p {
         }
       }
     }
-
-    .preview {
-      text-align: center;
-
-      .techs {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin-bottom: 1rem;
-
-        img {
-          height: 30px !important;
-        }
-      }
-
-      .screenshot {
-        width: clamp(269px, 60vw, 453px);
-        height: clamp(167px, 40vh, 312px);
-        border-radius: 30px;
-      }
-    }
   }
 
 
 }
 
 @media (max-width: 768px) {
-  :host {
-    display: block;
-    height: 100vh;
-    scroll-snap-align: start;
-  }
+
 
   .projects.mobile {
     padding: 40px 0px;
@@ -209,7 +210,6 @@ p {
     .mobile-tabs {
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 1rem;
       margin-bottom: 0px;
 
@@ -230,7 +230,7 @@ p {
 
     .project-details-mobile {
       background-color: #2d383f;
-      border-radius: 20px;
+      border-radius: 0px 0px 20px 20px !important;
       padding: 1.5rem;
       display: flex;
       flex-direction: column;
@@ -305,6 +305,8 @@ p {
         flex-wrap: wrap;
         gap: 1rem;
         margin-top: 1rem;
+        margin-left: auto;
+        margin-right: auto;
 
         .btn {
           background: transparent;

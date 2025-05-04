@@ -19,14 +19,6 @@
             </div>
           </div>
         </div>
-
-        <div class="buttons">
-          <a class="btn" *ngIf="tabs[selectedTab].live" [href]="tabs[selectedTab].live" target="_blank">
-            {{ 'PROJECTS.LIVE' | translate }}
-          </a>
-          <a class="btn secondary" *ngIf="tabs[selectedTab].github" [href]="tabs[selectedTab].github"
-            target="_blank">GitHub</a>
-        </div>
       </div>
 
       <div class="preview">
@@ -36,6 +28,13 @@
         </div>
 
         <img class="screenshot" [src]="tabs[selectedTab].screenshot" alt="Project Screenshot" />
+        <div class="buttons">
+          <a class="btn" *ngIf="tabs[selectedTab].live" [href]="tabs[selectedTab].live" target="_blank">
+            {{ 'PROJECTS.LIVE' | translate }}
+          </a>
+          <a class="btn secondary" *ngIf="tabs[selectedTab].github" [href]="tabs[selectedTab].github"
+            target="_blank">GitHub</a>
+        </div>
       </div>
     </div>
   </section>
