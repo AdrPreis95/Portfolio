@@ -5,7 +5,7 @@
 
 <!-- 💻 Desktop Template -->
 <ng-container *ngIf="!isMobile">
-  <section class="skills">
+  <section id="skills" class="skills">
     <h2 class="section-title">{{ 'SKILLS.TITLE' | translate }}</h2>
 
     <div class="skills-wrapper">
@@ -35,7 +35,7 @@
 
 <!-- 📦 Mobile Template Definition -->
 <ng-template #mobileTemplate>
-  <section class="skills mobile">
+  <section id="skills" class="skills mobile">
     <h2 class="section-title">{{ 'SKILLS.TITLE' | translate }}</h2>
 
     <div class="skills-wrapper">
