@@ -24,7 +24,10 @@
 
     <div class="text">
       <p [innerHTML]="'WHYME.TEXT' | translate"></p>
-      <button class="talk-btn">{{ 'WHYME.BUTTON' | translate }}</button>
+      <button (click)="scrollToContact()" class="talk-btn">
+        {{ 'WHYME.BUTTON' | translate }}
+      </button>
+
     </div>
   </div>
 </section>

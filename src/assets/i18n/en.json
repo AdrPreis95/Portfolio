@@ -115,7 +115,9 @@
         "CLOSE": "Close"
     },
     "FOOTER": {
-        "LEGAL_NOTICE": "Legal notice"
+        "LEGAL_NOTICE": "Legal notice",
+        "LOGO_NAME": "A.Preis",
+        "LOGO_ROLE": "Developer"
     },
     "LEGAL": {
         "TITLE": "Legal Notice",

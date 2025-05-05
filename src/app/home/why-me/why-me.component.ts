@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class WhyMeComponent {
 
+  scrollToContact(): void {
+    const element = document.getElementById('contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
 }

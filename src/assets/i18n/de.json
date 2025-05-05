@@ -115,7 +115,9 @@
         "CLOSE": "Schließen"
     },
     "FOOTER": {
-        "LEGAL_NOTICE": "Impressum"
+        "LEGAL_NOTICE": "Impressum",
+        "LOGO_NAME": "A.Preis",
+        "LOGO_ROLE": "Entwickler"
     },
     "LEGAL": {
         "TITLE": "Impressum",

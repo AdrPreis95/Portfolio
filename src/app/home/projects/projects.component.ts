@@ -53,7 +53,7 @@ export class ProjectsComponent implements OnInit {
             'assets/skills/icons/GIT.svg'
           ],
           live: 'https://adrian-preis.de/ElPolloLoco',
-          github: 'https://github.com/dein-projekt/el-pollo-loco',
+          github: 'https://github.com/AdrPreis95/2d-Game-Pollo-Loco',
           points: translations['PROJECTS.EL_POLLO'].POINTS.map((p: any) => ({
             title: p.TITLE,
             duration: p.DURATION,
@@ -71,7 +71,7 @@ export class ProjectsComponent implements OnInit {
             'assets/projects/icons/Firebase.svg'
           ],
           live: 'https://adrian-preis.de/join',
-          github: 'https://github.com/dein-projekt/join',
+          github: 'https://github.com/AdrPreis95/Join-376',
           points: translations['PROJECTS.JOIN'].POINTS.map((p: any) => ({
             title: p.TITLE,
             duration: p.DURATION,

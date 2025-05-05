@@ -22,5 +22,11 @@ export class HeroComponent implements OnInit {
     this.isMobile = window.innerWidth <= 768;
   }
 
+  scrollToWhyMe(): void {
+    const element = document.getElementById('whyme');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 
 }
