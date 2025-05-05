@@ -26,8 +26,9 @@
         <div class="techs">
           <img *ngFor="let tech of tabs[selectedTab].technologies" [src]="tech" />
         </div>
-
-        <img class="screenshot" [src]="tabs[selectedTab].screenshot" alt="Project Screenshot" />
+        <div class="image-container">
+          <img class="screenshot" [src]="tabs[selectedTab].screenshot" alt="Project Screenshot" />
+        </div>
         <div class="buttons">
           <a class="btn" *ngIf="tabs[selectedTab].live" [href]="tabs[selectedTab].live" target="_blank">
             {{ 'PROJECTS.LIVE' | translate }}
@@ -61,7 +62,7 @@
         </ng-template>
       </span>
     </nav>
-    
+
 
     <div class="project-details-mobile">
       <div class="hl-cont">

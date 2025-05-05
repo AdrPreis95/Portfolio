@@ -90,6 +90,22 @@
     }
   }
 
+  @media (max-width: 1000px) {
+
+    .top-logo {
+      display: none !important;
+    }
+
+    .social-icons {
+      position: unset !important;
+    }
+
+    .right-section {
+      flex-direction: column !important;
+    }
+  }
+
+
   @media (max-width: 768px) {
     .social-icons {
       display: none !important;

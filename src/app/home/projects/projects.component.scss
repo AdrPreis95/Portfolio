@@ -33,6 +33,10 @@ p {
   font-family: Josefine_Sans, sans-serif;
   font-size: clamp(1rem, 1.8vw, 1.125rem);
 
+  h5 {
+    margin-bottom: 1rem;
+    font-size: 1.125rem;
+  }
 
   .section-title {
     font-family: 'Anta', sans-serif;
@@ -97,8 +101,8 @@ p {
         margin-bottom: 1.5rem;
 
         .dot {
-          width: 12px;
-          height: 12px;
+          width: 18px;
+          height: 18px;
           border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
           @include cyan-main-bg;
           margin-top: 6px;
@@ -137,15 +141,30 @@ p {
         margin-bottom: 1rem;
 
         img {
-          height: 30px !important;
+          height: 40px !important;
         }
       }
 
-      .screenshot {
-        width: clamp(269px, 60vw, 453px);
-        height: clamp(167px, 40vh, 312px);
-        border-radius: 30px;
+      .image-container {
+        max-width: 365px;
+        height: auto; 
+        overflow: hidden;
+        border-radius: 30px; 
       }
+
+      .image-container .screenshot {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; 
+        display: block;
+      }
+
+      // .screenshot {
+      //   width: clamp(45%, 50vw, 80%);
+      //   // width: clamp(269px, 60vw, 453px);
+      //   // height: clamp(167px, 40vh, 312px);
+      //   border-radius: 30px;
+      // }
 
       .buttons {
         margin-top: 2rem;
@@ -245,7 +264,7 @@ p {
 
       .technologies,
       .duration {
-        text-align: center;
+        // text-align: center;
         font-size: 1rem;
         color: #ccc;
 
@@ -276,8 +295,8 @@ p {
         align-items: flex-start;
 
         .dot {
-          width: 12px;
-          height: 12px;
+          width: 16px;
+          height: 16px;
           border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
           background: #75c1e2;
           margin-top: 6px;

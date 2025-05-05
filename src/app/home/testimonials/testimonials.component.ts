@@ -22,20 +22,20 @@ export class TestimonialsComponent {
     this.translate.get('TESTIMONIALS').subscribe((t: any) => {
       this.testimonials = [
         {
-          name: 'Sahra Mueller',
-          project: 'DA Bubble',
+          name: 'Henrik ',
+          project: 'Join',
           quote: t.LIST[0],
           link: '#'
         },
         {
-          name: 'James Rugman',
+          name: 'Jonas',
           project: 'Join',
           quote: t.LIST[1],
           link: '#'
         },
         {
-          name: 'Evelyn Marx',
-          project: 'Sharkie',
+          name: 'Nico',
+          project: 'Join',
           quote: t.LIST[2],
           link: '#'
         }

@@ -35,10 +35,14 @@
     height: 30px;
   }
 
+  p {
+    padding-top: 4px;
+  }
+
   .nav-links {
     list-style: none;
     display: flex;
-    gap: clamp(2rem, 7vw, 10rem);
+    gap: clamp(2rem, 4vw, 10rem);
 
     margin: 0;
     padding: 0;
