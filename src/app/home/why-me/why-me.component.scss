@@ -106,7 +106,87 @@
       }
     }
   }
-
+  .hover-container {
+    position: relative;
+    width: fit-content;
+    height: auto;
+  
+    .info-box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease-in-out;
+    }
+  
+    .location {
+      animation: showLocation 8s infinite;
+    }
+  
+    .remote {
+      animation: showRemote 8s infinite;
+    }
+  
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      border-right: 2px solid #000;
+      width: 0;
+      animation: typingLoop 4s steps(30, end) infinite, blink 0.75s step-end infinite;
+    }
+  }
+  
+  /* Abwechselnd einblenden */
+  @keyframes showLocation {
+    0%, 45% {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    50%, 100% {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  
+  @keyframes showRemote {
+    0%, 45% {
+      opacity: 0;
+      pointer-events: none;
+    }
+    50%, 95% {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    100% {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  
+  /* Schreibmaschinen-Effekt + Rücklauf */
+  @keyframes typingLoop {
+    0% {
+      width: 0;
+    }
+    40% {
+      width: 100%;
+    }
+    60% {
+      width: 100%;
+    }
+    100% {
+      width: 0;
+    }
+  }
+  
+  @keyframes blink {
+    50% {
+      border-color: transparent;
+    }
+  }
+  
 
   @media (max-width: 768px) {
     :host {

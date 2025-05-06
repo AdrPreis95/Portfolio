@@ -6,7 +6,9 @@
         <p class="intro">{{ 'CONTACT.INFO' | translate }}</p>
       </div>
       <div class="contact-info-personal">
-        <p><img src="/assets/contact/icons/Mail.svg" alt="mail icon" /> E-mail: <strong>adrianpreis86&#64;gmail.com</strong></p>
+        <p><img src="/assets/contact/icons/Mail.svg" alt="mail icon" /> E-mail:
+          <strong>adrianpreis86&#64;gmail.com</strong>
+        </p>
         <p><img src="/assets/contact/icons/Phone.svg" alt="phone icon" /> Tel: 0179 239 5976 </p>
       </div>
     </div>
@@ -15,43 +17,52 @@
       <div class="row">
         <div class="field-top">
           <input type="text" formControlName="name" [placeholder]="'CONTACT.NAME' | translate" />
-          <div class="error" *ngIf="(submitted || contactForm.get('name')?.touched) && contactForm.get('name')?.invalid">
+          <div class="error"
+            *ngIf="(submitted || contactForm.get('name')?.touched) && contactForm.get('name')?.invalid">
             {{ 'CONTACT.ERROR_NAME' | translate }}
           </div>
         </div>
 
         <div class="field-top">
           <input type="email" formControlName="email" [placeholder]="'CONTACT.EMAIL' | translate" />
-          <div class="error" *ngIf="(submitted || contactForm.get('email')?.touched) && contactForm.get('email')?.errors?.['required']">
+          <div class="error"
+            *ngIf="(submitted || contactForm.get('email')?.touched) && contactForm.get('email')?.errors?.['required']">
             {{ 'CONTACT.ERROR_EMAIL_REQUIRED' | translate }}
           </div>
-          <div class="error" *ngIf="(submitted || contactForm.get('email')?.touched) && contactForm.get('email')?.errors?.['email']">
+          <div class="error"
+            *ngIf="(submitted || contactForm.get('email')?.touched) && contactForm.get('email')?.errors?.['email']">
             {{ 'CONTACT.ERROR_EMAIL_INVALID' | translate }}
           </div>
         </div>
       </div>
 
       <div class="field">
-        <textarea formControlName="message" rows="5" [placeholder]="'CONTACT.MESSAGE' | translate"></textarea>
-        <div class="error" *ngIf="(submitted || contactForm.get('message')?.touched) && contactForm.get('message')?.invalid">
+        <textarea formControlName="message" rows="5" maxlength="500" (input)="updateRemainingChars()"
+          [placeholder]="'CONTACT.MESSAGE' | translate"></textarea>
+        <div class="char-counter">{{ remainingChars }} / 500</div>
+        <div class="error"
+          *ngIf="(submitted || contactForm.get('message')?.touched) && contactForm.get('message')?.invalid">
           {{ 'CONTACT.ERROR_MESSAGE' | translate }}
         </div>
       </div>
 
-      <label class="custom-checkbox">
+      <label class="custom-checkbox" [ngClass]="{
+        'invalid-checkbox': contactForm.get('privacy')?.invalid && submitted
+      }">
         <input type="checkbox" formControlName="privacy" />
         <span class="checkbox-icon"></span>
         {{ 'CONTACT.POLICY' | translate }}
       </label>
 
-      <div class="error" *ngIf="(submitted || contactForm.get('privacy')?.touched) && contactForm.get('privacy')?.invalid">
+      <div class="error"
+        *ngIf="(submitted || contactForm.get('privacy')?.touched) && contactForm.get('privacy')?.invalid">
         {{ 'CONTACT.ERROR_POLICY' | translate }}
       </div>
+      <button type="button" (click)="handleSubmitClick()">
+        {{ 'CONTACT.SEND' | translate }}
+      </button>
 
-      <button type="submit" [disabled]="!contactForm.valid">{{ 'CONTACT.SEND' | translate }}</button>
     </form>
-
-    <!-- Confirmation Overlay -->
     <div class="confirmation-overlay" *ngIf="showConfirmation">
       <div class="confirmation-box">
         <p>{{ 'CONTACT.CONFIRMATION' | translate }}</p>

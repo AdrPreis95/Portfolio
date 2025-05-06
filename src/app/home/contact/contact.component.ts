@@ -19,6 +19,21 @@ export class ContactComponent {
       privacy: [false, Validators.requiredTrue]
     });
   }
+  remainingChars = 500;
+
+ngOnInit(): void {
+  this.contactForm.get('message')?.valueChanges.subscribe(() => {
+    this.updateRemainingChars();
+  });
+
+  this.updateRemainingChars(); // Initial setzen
+}
+
+updateRemainingChars() {
+  const currentLength = this.contactForm.get('message')?.value?.length || 0;
+  this.remainingChars = 500 - currentLength;
+}
+
 
   onSubmit() {
     this.submitted = true;
@@ -55,7 +70,20 @@ export class ContactComponent {
 
   }
 
-
+  handleSubmitClick() {
+    this.submitted = true;
+  
+    Object.values(this.contactForm.controls).forEach(control => {
+      control.markAsTouched();
+      control.updateValueAndValidity();
+    });
+  
+    // Wenn das Formular valide ist, führe die eigentliche Logik aus
+    if (this.contactForm.valid) {
+      this.onSubmit();
+    }
+  }
+  
 
   closeConfirmation() {
     this.showConfirmation = false;

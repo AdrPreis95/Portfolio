@@ -55,7 +55,8 @@
       color: #ccc;
     }
 
-    .contact-info {
+    .contact-info,
+    .contact-info-personal {
       max-width: 440px;
       width: 100%;
       text-align: left;
@@ -176,11 +177,11 @@
     align-items: center;
     gap: 10px;
     cursor: pointer;
-
+  
     input[type="checkbox"] {
       display: none;
     }
-
+  
     .checkbox-icon {
       width: 24px;
       height: 24px;
@@ -188,24 +189,27 @@
       background-size: cover;
       transition: background-image 0.2s ease, transform 0.2s ease;
     }
-
-
+  
     .checkbox-icon:hover {
       transform: scale(1.1);
       opacity: 0.8;
     }
-
-
-    input[type="checkbox"]:checked+.checkbox-icon {
+  
+    input[type="checkbox"]:checked + .checkbox-icon {
       background-image: url('/assets/contact/icons/Checked-icon.svg');
     }
-
-
-    input[type="checkbox"]:checked+.checkbox-icon:hover {
+  
+    input[type="checkbox"]:checked + .checkbox-icon:hover {
       opacity: 0.95;
       transform: scale(1.05);
     }
+  
+    &.invalid-checkbox input[type="checkbox"]:not(:checked) + .checkbox-icon {
+      background-image: url('/assets/contact/icons/Check-box-error.svg') !important;
+    }
+  
   }
+  
 
   .confirmation-overlay {
     position: fixed;
