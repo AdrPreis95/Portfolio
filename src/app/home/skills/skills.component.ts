@@ -1,12 +1,14 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.scss'] // <-- kleiner Fix: 'styleUrl' => 'styleUrls'
+  styleUrls: ['./skills.component.scss']
 })
 export class SkillsComponent implements OnInit {
   isMobile = false;
+  isBrowser: boolean;
 
   mainSkills = [
     { name: 'Angular', icon: '/assets/skills/icons/Angular.svg' },
@@ -26,16 +28,26 @@ export class SkillsComponent implements OnInit {
     { name: 'Vue Js', icon: '/assets/skills/icons/VueJs.svg' }
   ];
 
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(platformId);
+  }
+
   ngOnInit(): void {
-    this.checkViewport();
+    if (this.isBrowser) {
+      this.checkViewport();
+    }
   }
 
   @HostListener('window:resize')
   onResize(): void {
-    this.checkViewport();
+    if (this.isBrowser) {
+      this.checkViewport();
+    }
   }
 
   checkViewport(): void {
-    this.isMobile = window.innerWidth <= 768;
+    if (this.isBrowser) {
+      this.isMobile = window.innerWidth <= 768;
+    }
   }
 }

@@ -1,5 +1,6 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
@@ -9,24 +10,33 @@ import { TranslateService } from '@ngx-translate/core';
 export class NavbarComponent implements OnInit {
   isMenuOpen = false;
   currentLanguage = 'en';
+  private isBrowser: boolean;
 
-  constructor(private translate: TranslateService) {
+  constructor(
+    private translate: TranslateService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
     translate.setDefaultLang('en');
+    this.isBrowser = isPlatformBrowser(this.platformId);
   }
 
   ngOnInit(): void {
-    this.checkViewport(); // Falls jemand auf Desktop lädt
+    if (this.isBrowser) {
+      this.checkViewport(); // Falls jemand auf Desktop lädt
+    }
   }
 
   @HostListener('window:resize')
   onResize(): void {
-    this.checkViewport(); // Bei jeder Größenänderung prüfen
+    if (this.isBrowser) {
+      this.checkViewport(); // Bei jeder Größenänderung prüfen
+    }
   }
 
   private checkViewport(): void {
     const isDesktop = window.innerWidth >= 768;
     if (isDesktop && this.isMenuOpen) {
-      this.closeMenu(); // Menü schließen bei Desktop
+      this.closeMenu();
     }
   }
 

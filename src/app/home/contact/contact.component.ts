@@ -78,7 +78,7 @@ updateRemainingChars() {
       control.updateValueAndValidity();
     });
   
-    // Wenn das Formular valide ist, führe die eigentliche Logik aus
+    
     if (this.contactForm.valid) {
       this.onSubmit();
     }

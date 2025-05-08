@@ -1,5 +1,6 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-projects',
@@ -10,33 +11,44 @@ export class ProjectsComponent implements OnInit {
   selectedTab = 0;
   tabs: any[] = [];
   isMobile = false;
+  isBrowser: boolean;
 
-  constructor(private translate: TranslateService) {
+  constructor(
+    private translate: TranslateService,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
     this.loadTabs();
     this.translate.onLangChange.subscribe(() => this.loadTabs());
   }
 
   ngOnInit(): void {
-    this.checkViewport();
+    if (this.isBrowser) {
+      this.checkViewport();
+    }
   }
 
   @HostListener('window:resize')
   onResize(): void {
-    this.checkViewport();
+    if (this.isBrowser) {
+      this.checkViewport();
+    }
   }
 
   checkViewport(): void {
-    this.isMobile = window.innerWidth <= 768;
-    console.log('isMobile:', this.isMobile);
+    if (this.isBrowser) {
+      this.isMobile = window.innerWidth <= 768;
+      console.log('isMobile:', this.isMobile);
+    }
   }
 
   openLiveDemo(url: string): void {
-    if (url && url !== '#') {
+    if (this.isBrowser && url && url !== '#') {
       window.open(url, '_blank');
     }
   }
 
-  loadTabs() {
+  loadTabs(): void {
     this.translate.get([
       'PROJECTS.EL_POLLO',
       'PROJECTS.JOIN',
@@ -54,11 +66,11 @@ export class ProjectsComponent implements OnInit {
           ],
           live: 'https://adrian-preis.de/ElPolloLoco',
           github: 'https://github.com/AdrPreis95/2d-Game-Pollo-Loco',
-          points: translations['PROJECTS.EL_POLLO'].POINTS.map((p: any) => ({
+          points: translations['PROJECTS.EL_POLLO'].POINTS?.map((p: any) => ({
             title: p.TITLE,
             duration: p.DURATION,
             text: p.TEXT
-          }))
+          })) || []
         },
         {
           label: '2. ' + translations['PROJECTS.JOIN'].LABEL,
@@ -72,11 +84,11 @@ export class ProjectsComponent implements OnInit {
           ],
           live: 'https://adrian-preis.de/join',
           github: 'https://github.com/AdrPreis95/Join-376',
-          points: translations['PROJECTS.JOIN'].POINTS.map((p: any) => ({
+          points: translations['PROJECTS.JOIN'].POINTS?.map((p: any) => ({
             title: p.TITLE,
             duration: p.DURATION,
             text: p.TEXT
-          }))
+          })) || []
         },
         {
           label: '3. ' + translations['PROJECTS.DA_BUBBLE'].LABEL,
@@ -88,19 +100,17 @@ export class ProjectsComponent implements OnInit {
             'assets/skills/icons/GIT.svg',
             'assets/projects/icons/Firebase.svg'
           ],
-          // live: '#',
-          // github: '#',
-          points: translations['PROJECTS.DA_BUBBLE'].POINTS.map((p: any) => ({
+          points: translations['PROJECTS.DA_BUBBLE'].POINTS?.map((p: any) => ({
             title: p.TITLE,
             duration: p.DURATION,
             text: p.TEXT
-          }))
+          })) || []
         }
       ];
     });
   }
 
-  selectTab(index: number) {
+  selectTab(index: number): void {
     this.selectedTab = index;
   }
 }

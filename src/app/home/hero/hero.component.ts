@@ -1,4 +1,5 @@
-import { Component, HostListener, OnInit, Input } from '@angular/core';
+import { Component, HostListener, OnInit, Input, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-hero',
@@ -8,25 +9,37 @@ import { Component, HostListener, OnInit, Input } from '@angular/core';
 export class HeroComponent implements OnInit {
   isMobile = false;
   @Input() menuOpen: boolean = false;
+  isBrowser: boolean;
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+    this.isBrowser = isPlatformBrowser(this.platformId);
+  }
 
   ngOnInit() {
-    this.checkViewport();
+    if (this.isBrowser) {
+      this.checkViewport();
+    }
   }
 
   @HostListener('window:resize')
   onResize() {
-    this.checkViewport();
-  }
-
-  checkViewport() {
-    this.isMobile = window.innerWidth <= 768;
-  }
-
-  scrollToWhyMe(): void {
-    const element = document.getElementById('whyme');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (this.isBrowser) {
+      this.checkViewport();
     }
   }
 
+  checkViewport() {
+    if (this.isBrowser) {
+      this.isMobile = window.innerWidth <= 768;
+    }
+  }
+
+  scrollToWhyMe(): void {
+    if (this.isBrowser) {
+      const element = document.getElementById('whyme');
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }
 }
