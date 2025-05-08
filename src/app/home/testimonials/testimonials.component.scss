@@ -86,28 +86,33 @@
   }
 }
 
-@media (max-width: 999px) {
+@media (max-width: 768px) {
+
+  .testimonials {
+    padding: 80px 0px !important;
+  }
+
   .testimonial-cards {
-    flex-wrap: unset !important;
-    display: flex;
-    overflow-x: auto;
+    overflow-x: auto !important;
+    justify-content: unset !important;
+    flex-wrap: nowrap !important;
     scroll-snap-type: x mandatory;
     scroll-padding-inline: 50%;
     -webkit-overflow-scrolling: touch;
     padding-block: 2rem;
-    gap: 2rem;
+
   }
 
   .card {
-    // flex: 0 0 80%; // oder exakt z. B. 300px
     scroll-snap-align: center;
     flex-shrink: 0;
-    margin-inline: auto;
-    background: #2d383f;
-    padding: 2rem;
-    border-radius: 2rem;
-    color: white;
-    min-width: 280px;
+    height: 260px !important;
+    width: 300px !important;
   }
 
+
+  .testimonial-cards::-webkit-scrollbar {
+    display: none !important;
+
+  }
 }
