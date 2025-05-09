@@ -1,5 +1,5 @@
 <ng-container *ngIf="!isMobile">
-  <div class="hero-section">
+  <div id="hero" class="hero-section">
     <div class="left-section">
       <div class="shape-wrapper">
         <div class="shape">
@@ -74,7 +74,7 @@
 
 
 <ng-template #mobileTemplate>
-  <div class="hero-mobile">
+  <div id="hero" class="hero-mobile">
     <div class="top-logo">
       <img src="/assets/hero/icons/Logo icon.svg" alt="Logo">
       <p>{{ 'HERO.LOGO_NAME' | translate }}<br><span>{{ 'HERO.LOGO_ROLE' | translate }}</span></p>
@@ -88,7 +88,8 @@
     <h2>{{ 'HERO.ROLE' | translate }}</h2>
 
     <div class="scroll-icon">
-      <img src="/assets/hero/icons/Arrow down.svg" alt="Scroll Down">
+      <a href="#whyme">
+        <img src="/assets/hero/icons/Arrow down.svg" alt="Scroll Down"></a>
     </div>
   </div>
 </ng-template>

@@ -22,6 +22,10 @@
   color: #262E34;
 }
 
+section {
+  position: relative;
+}
+
 .container {
   max-width: 900px;
   width: 100%;
@@ -142,7 +146,7 @@
       position: relative;
 
 
-.char-counter-inside {
+      .char-counter-inside {
         position: absolute;
         bottom: 8px;
         right: 10px;
@@ -274,5 +278,21 @@
     margin-top: 0.25rem;
   }
 
+  svg {
+    position: absolute;
+    right: 0px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(38px, 5vw, 48px);
+    fill: none;
+    color: #89BCD9;
+    cursor: pointer;
+  }
+
+  svg:hover {
+    width: clamp(38px, 5vw, 48px);
+    fill: rgba(137, 188, 217, 0.2);
+    cursor: pointer;
+  }
 
 }
