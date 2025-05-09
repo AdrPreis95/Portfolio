@@ -280,9 +280,8 @@ section {
 
   svg {
     position: absolute;
-    right: 0px; 
-    top: 50%;
-    transform: translateY(-50%);
+    top: 16%;
+    transform: translateX(-50%);
     width: clamp(38px, 5vw, 48px);
     fill: none;
     color: #89BCD9;
@@ -294,5 +293,15 @@ section {
     fill: rgba(137, 188, 217, 0.2);
     cursor: pointer;
   }
+
+
+
+@media screen and (max-width: 768px) {
+   svg {
+    position: unset !important;
+    transform: none !important;
+   
+  }
+}
 
 }
