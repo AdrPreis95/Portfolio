@@ -26,6 +26,10 @@ section {
   position: relative;
 }
 
+.hidden-honeypot {
+  display: none !important;
+}
+
 .container {
   max-width: 900px;
   width: 100%;
@@ -296,12 +300,12 @@ section {
 
 
 
-@media screen and (max-width: 768px) {
-   svg {
-    position: unset !important;
-    transform: none !important;
-   
+  @media screen and (max-width: 768px) {
+    svg {
+      position: unset !important;
+      transform: none !important;
+
+    }
   }
-}
 
 }

@@ -14,28 +14,38 @@ export class ContactComponent {
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['', [
+        Validators.required,
+        Validators.email,
+        Validators.pattern(/^(?!\.)(?!.*\.\.)[a-zA-Z0-9._%+-]+(?<!\.)@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
+      ]],
+
       message: ['', Validators.required],
-      privacy: [false, Validators.requiredTrue]
+      privacy: [false, Validators.requiredTrue],
+      honeypot: ['']
     });
   }
   remainingChars = 500;
 
-ngOnInit(): void {
-  this.contactForm.get('message')?.valueChanges.subscribe(() => {
+  ngOnInit(): void {
+    this.contactForm.get('message')?.valueChanges.subscribe(() => {
+      this.updateRemainingChars();
+    });
+
     this.updateRemainingChars();
-  });
+  }
 
-  this.updateRemainingChars(); // Initial setzen
-}
-
-updateRemainingChars() {
-  const currentLength = this.contactForm.get('message')?.value?.length || 0;
-  this.remainingChars = 500 - currentLength;
-}
+  updateRemainingChars() {
+    const currentLength = this.contactForm.get('message')?.value?.length || 0;
+    this.remainingChars = 500 - currentLength;
+  }
 
 
   onSubmit() {
+    if (this.contactForm.get('honeypot')?.value) {
+      console.warn('Spam erkannt, die Nachricht wird ignoriert!!!');
+      return;
+    }
     this.submitted = true;
 
     Object.values(this.contactForm.controls).forEach(control => {
@@ -72,18 +82,18 @@ updateRemainingChars() {
 
   handleSubmitClick() {
     this.submitted = true;
-  
+
     Object.values(this.contactForm.controls).forEach(control => {
       control.markAsTouched();
       control.updateValueAndValidity();
     });
-  
-    
+
+
     if (this.contactForm.valid) {
       this.onSubmit();
     }
   }
-  
+
 
   closeConfirmation() {
     this.showConfirmation = false;

@@ -1,29 +1,44 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-$name = $_POST['name'] ?? '';
-$email = $_POST['email'] ?? '';
-$message = $_POST['message'] ?? '';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
+require 'mailer/Exception.php';
+require 'mailer/PHPMailer.php';
+require 'mailer/SMTP.php';
 
-$to = 'adrianpreis86@gmail.com';
-$subject = 'Neue Nachricht von deiner Portfolio-Website';
+$mail = new PHPMailer(true);
 
+try {
+    $name = $_POST['name'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $message = $_POST['message'] ?? '';
 
-$body = "Name: $name\n";
-$body .= "E-Mail: $email\n\n";
-$body .= "Nachricht:\n$message";
+    
+    $mail->isSMTP();
+    $mail->Host = 'w0203cb1.kasserver.com';
+    $mail->SMTPAuth = true;
+    $mail->Username = 'kontakt@adrian-preis.de';
+    $mail->Password = 'Developerakademie26111322'; 
+    $mail->SMTPSecure = 'tls';
+    $mail->Port = 587;
 
+    $mail->setFrom('kontakt@adrian-preis.de', 'Portfolio Kontakt');
+    $mail->addAddress('adrianpreis86@gmail.com');
+    $mail->addReplyTo($email);
 
-$headers = "From: $email\r\n";
-$headers .= "Reply-To: $email\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
+    $mail->isHTML(false);
+    $mail->Subject = 'Neue Nachricht von deiner Portfolio-Website';
+    $mail->Body = "Name: $name\nE-Mail: $email\n\nNachricht:\n$message";
 
-
-if (mail($to, $subject, $body, $headers)) {
+    $mail->send();
     http_response_code(200);
     echo "Nachricht erfolgreich gesendet.";
-} else {
+} catch (Exception $e) {
     http_response_code(500);
-    echo "Fehler beim Senden der Nachricht.";
+    echo "Fehler beim Senden: {$mail->ErrorInfo}";
 }
 ?>

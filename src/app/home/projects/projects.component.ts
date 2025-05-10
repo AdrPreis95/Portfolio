@@ -38,7 +38,7 @@ export class ProjectsComponent implements OnInit {
   checkViewport(): void {
     if (this.isBrowser) {
       this.isMobile = window.innerWidth <= 768;
-      console.log('isMobile:', this.isMobile);
+      // console.log('isMobile:', this.isMobile);
     }
   }
 
