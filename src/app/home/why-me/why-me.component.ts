@@ -13,5 +13,6 @@ export class WhyMeComponent {
       element.scrollIntoView({ behavior: 'smooth' });
     }
   }
+  
 
 }

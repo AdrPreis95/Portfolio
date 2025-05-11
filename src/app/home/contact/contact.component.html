@@ -18,7 +18,7 @@
     <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
 
       <input type="text" formControlName="honeypot" class="hidden-honeypot" autocomplete="off" />
-      
+
       <div class="row">
         <div class="field-top">
           <input type="text" formControlName="name" maxlength="120" [placeholder]="'CONTACT.NAME' | translate" />
@@ -59,10 +59,10 @@
       }">
         <input type="checkbox" formControlName="privacy" />
         <span class="checkbox-icon"></span>
-        {{ 'CONTACT.POLICY' | translate }}
+        <span class="checkbox-policy-text"> {{ 'CONTACT.POLICY' | translate }}</span>
       </label>
 
-      <div class="error"
+      <div id="error-policy" class="error"
         *ngIf="(submitted || contactForm.get('privacy')?.touched) && contactForm.get('privacy')?.invalid">
         {{ 'CONTACT.ERROR_POLICY' | translate }}
       </div>

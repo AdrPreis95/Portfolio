@@ -22,8 +22,10 @@
   color: #262E34;
 }
 
+
 .why-me {
   @include gray-bg;
+  position: relative;
   text-align: center;
   padding: 80px 20px;
   color: #ffffff;
@@ -36,8 +38,9 @@
   }
 
   .why-me-content {
+    position: relative;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     gap: 3rem;
     flex-wrap: wrap;
@@ -80,10 +83,9 @@
 
     .text {
       max-width: 400px;
-      display: flex
-;
-    flex-direction: column;
-    align-items: flex-end;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
       text-align: left;
       // line-height: 1.6;
       font-size: clamp(1rem, 1.8vw, 1.125rem);
@@ -112,9 +114,11 @@
   }
 
   .hover-container {
-    position: relative;
+    // position: absolute;
     width: fit-content;
     height: auto;
+
+
 
     .info-box {
       position: absolute;
@@ -131,6 +135,7 @@
 
     .remote {
       animation: showRemote 8s infinite;
+      width: auto;
     }
 
     .typewriter {
@@ -143,7 +148,7 @@
     }
   }
 
- 
+
   @keyframes showLocation {
 
     0%,
@@ -179,7 +184,7 @@
     }
   }
 
- 
+
   @keyframes typingLoop {
     0% {
       width: 0;
@@ -206,7 +211,7 @@
 
 
   @media (max-width: 768px) {
-   
+
 
     .text {
       text-align: center !important;

@@ -51,20 +51,22 @@ section {
   .contact-top {
     display: flex;
     justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
+    gap: 18px;
     margin-bottom: 3rem;
     text-align: center;
+    align-items: center;
 
     .intro {
+      white-space: normal;
       font-family: Josefine_Sans, sans-serif;
-      font-size: 1.25rem;
+      font-size: clamp(1rem, 1.8vw, 1.125rem);
       text-align: left;
       color: #ccc;
     }
 
     .contact-info,
     .contact-info-personal {
+      white-space: nowrap;
       max-width: 440px;
       width: 100%;
       text-align: left;
@@ -73,13 +75,13 @@ section {
       p {
         display: flex;
         font-family: Josefine_Sans, sans-serif;
-        font-size: 1.25rem;
+        font-size: clamp(1rem, 1.8vw, 1.125rem);
         align-items: center;
         gap: 0.5rem;
         margin: 0.5rem 0;
 
         img {
-          height: 30px;
+          height: clamp(20px, 2vw + 14px, 30px);
           width: auto;
         }
       }
@@ -121,6 +123,7 @@ section {
       color: white;
       font-family: Josefine_Sans, sans-serif;
       font-size: 1.125rem;
+      outline: none !important;
 
       &::placeholder {
         color: #aaa;
@@ -128,6 +131,7 @@ section {
 
       &:focus-visible {
         text-decoration: none;
+        outline: none !important;
 
       }
     }
@@ -181,6 +185,7 @@ section {
 
     button {
       background: transparent;
+      margin-top: 20px;
       max-height: 48px;
       height: 100%;
       color: #F8F5EC;
@@ -202,6 +207,15 @@ section {
         cursor: not-allowed;
       }
     }
+
+    @media (max-width: 320px) {
+
+      input,
+      textarea {
+        font-size: 1rem;
+      }
+    }
+
   }
 
   .custom-checkbox {
@@ -209,12 +223,20 @@ section {
     align-items: center;
     gap: 10px;
     cursor: pointer;
+    margin-top: 20px;
 
     input[type="checkbox"] {
       display: none;
     }
 
+    .checkbox-policy-text {
+      text-align: left;
+      color: #ccc; // Standardfarbe
+      transition: color 0.2s ease;
+    }
+
     .checkbox-icon {
+      padding-right: 24px;
       width: 24px;
       height: 24px;
       background-image: url('/assets/contact/icons/Check box.svg');
@@ -236,11 +258,18 @@ section {
       transform: scale(1.05);
     }
 
-    &.invalid-checkbox input[type="checkbox"]:not(:checked)+.checkbox-icon {
-      background-image: url('/assets/contact/icons/Check-box-error.svg') !important;
-    }
 
+    &.invalid-checkbox {
+      input[type="checkbox"]:not(:checked)+.checkbox-icon {
+        background-image: url('/assets/contact/icons/Check-box-error.svg') !important;
+      }
+
+      input[type="checkbox"]:not(:checked)~.checkbox-policy-text {
+        color: #ff6b6b !important;
+      }
+    }
   }
+
 
 
   .confirmation-overlay {
@@ -277,9 +306,14 @@ section {
   }
 
   .error {
-    color: #ff4d4d;
+    text-align: left;
+    color: #ff6b6b;
     font-size: 0.85rem;
     margin-top: 0.25rem;
+  }
+
+  #error-policy {
+    display: none !important;
   }
 
   svg {
@@ -304,7 +338,29 @@ section {
     svg {
       position: unset !important;
       transform: none !important;
+      margin-top: 58px;
 
+    }
+  }
+
+  @media screen and (max-width: 640px) {
+    .contact-top {
+      flex-direction: column;
+    }
+  }
+
+  @media screen and (max-width:460px) {
+    .row {
+      flex-direction: column !important;
+    }
+
+    .contact-info-personal {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .contact-top {
+      flex-direction: column-reverse;
     }
   }
 
