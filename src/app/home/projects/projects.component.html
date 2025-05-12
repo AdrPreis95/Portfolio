@@ -10,7 +10,7 @@
 
     <div class="project-details">
       <div class="text">
-        <div *ngIf="tabs[selectedTab].points?.length > 0">
+        <div class="content-tab" *ngIf="tabs[selectedTab].points?.length > 0">
           <div *ngFor="let point of tabs[selectedTab].points" class="bullet">
             <span class="dot"></span>
             <div class="content">
@@ -79,7 +79,7 @@
 
       <img class="screenshot" [src]="tabs[selectedTab].screenshot" alt="Project Screenshot" />
 
-      <div *ngIf="tabs[selectedTab].points?.length > 0">
+      <div class="content-tab" *ngIf="tabs[selectedTab].points?.length > 0">
         <div *ngFor="let point of tabs[selectedTab].points" class="bullet-mobile">
           <div class="dot"></div>
           <div class="content">

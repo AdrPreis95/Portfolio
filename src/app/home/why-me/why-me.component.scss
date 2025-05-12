@@ -38,7 +38,6 @@
   }
 
   .why-me-content {
-    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -114,7 +113,7 @@
   }
 
   .hover-container {
-    // position: absolute;
+    position: relative;
     width: fit-content;
     height: auto;
 
@@ -122,7 +121,8 @@
 
     .info-box {
       position: absolute;
-      top: 0;
+      top: 50%;
+      bottom: 50%;
       left: 0;
       opacity: 0;
       pointer-events: none;
@@ -209,6 +209,43 @@
     }
   }
 
+
+  @media (max-width: 1456px) {
+
+
+    .why-me-content {
+      gap: 24rem !important;
+
+    }
+
+    .typewriter {
+      font-size: 26px !important;
+    }
+  }
+
+
+  @media (max-width: 1200px) {
+
+
+    .why-me-content {
+      justify-content: space-between !important;
+
+    }
+
+    .typewriter {
+      font-size: 22px !important;
+    }
+  }
+
+  @media (max-width: 930px) {
+
+
+    .why-me-content {
+      flex-direction: column !important;
+      gap: 18px !important;
+
+    }
+  }
 
   @media (max-width: 768px) {
 

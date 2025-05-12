@@ -38,6 +38,10 @@ p {
     font-size: 1.125rem;
   }
 
+  .content-tab {
+    display: contents;
+  }
+
   .section-title {
     font-family: 'Anta', sans-serif;
     font-size: clamp(2.6rem, 4vw, 3.75rem);
@@ -51,6 +55,7 @@ p {
     justify-content: center;
     gap: 2rem;
     z-index: 1;
+
 
     span {
       cursor: pointer;
@@ -147,24 +152,17 @@ p {
 
       .image-container {
         max-width: 365px;
-        height: auto; 
+        height: auto;
         overflow: hidden;
-        border-radius: 30px; 
+        border-radius: 30px;
       }
 
       .image-container .screenshot {
         width: 100%;
         height: 100%;
-        object-fit: cover; 
+        object-fit: cover;
         display: block;
       }
-
-      // .screenshot {
-      //   width: clamp(45%, 50vw, 80%);
-      //   // width: clamp(269px, 60vw, 453px);
-      //   // height: clamp(167px, 40vh, 312px);
-      //   border-radius: 30px;
-      // }
 
       .buttons {
         margin-top: 2rem;
@@ -215,7 +213,6 @@ p {
 }
 
 @media (max-width: 768px) {
-
 
   .projects.mobile {
     padding: 40px 0px;
@@ -287,6 +284,10 @@ p {
         border-radius: 20px;
 
 
+      }
+
+      .content-tab {
+        display: contents;
       }
 
       .bullet-mobile {

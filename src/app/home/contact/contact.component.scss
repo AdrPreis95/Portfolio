@@ -159,6 +159,7 @@ section {
         bottom: 8px;
         right: 10px;
         font-size: 12px;
+        background-color: #262E34 !important;
         color: #888;
         pointer-events: none;
         background: transparent;
@@ -265,7 +266,7 @@ section {
       }
 
       input[type="checkbox"]:not(:checked)~.checkbox-policy-text {
-        color: #ff6b6b !important;
+        color: #E44C36 !important;
       }
     }
   }
@@ -307,7 +308,7 @@ section {
 
   .error {
     text-align: left;
-    color: #ff6b6b;
+    color: #E44C36;
     font-size: 0.85rem;
     margin-top: 0.25rem;
   }
