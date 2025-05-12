@@ -1,6 +1,8 @@
 import { Component, HostListener, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
+import { MenuService } from '../../services/menu.service';
+
 
 @Component({
   selector: 'app-navbar',
@@ -14,7 +16,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(
     private translate: TranslateService,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private menuService: MenuService
   ) {
     translate.setDefaultLang('en');
     this.isBrowser = isPlatformBrowser(this.platformId);
@@ -47,9 +50,11 @@ export class NavbarComponent implements OnInit {
 
   toggleMobileMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+    this.menuService.setMenuOpen(this.isMenuOpen);
   }
 
   closeMenu(): void {
     this.isMenuOpen = false;
+    this.menuService.setMenuOpen(false);
   }
 }

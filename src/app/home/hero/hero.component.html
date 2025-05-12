@@ -79,11 +79,18 @@
       <img src="/assets/hero/icons/Logo icon.svg" alt="Logo">
       <p>{{ 'HERO.LOGO_NAME' | translate }}<br><span>{{ 'HERO.LOGO_ROLE' | translate }}</span></p>
     </div>
-    <div class="shape-wrapper">
+    <div class="shape-wrapper" *ngIf="!menuOpen">
       <div class="shape">
         <img src="/assets/hero/img/Profile-Picture.svg" alt="ProfileImage">
+         <ng-container *ngIf="menuOpen">
+      <app-navbar class="overlay-navbar"></app-navbar>
+    </ng-container>
       </div>
     </div>
+
+    
+
+
     <h1>Adrian Preis</h1>
     <h2>{{ 'HERO.ROLE' | translate }}</h2>
 

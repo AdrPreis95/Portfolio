@@ -1,5 +1,7 @@
-import { Component, HostListener, OnInit, Input, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, HostListener, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import { MenuService } from '../../services/menu.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-hero',
@@ -8,30 +10,48 @@ import { isPlatformBrowser } from '@angular/common';
 })
 export class HeroComponent implements OnInit {
   isMobile = false;
-  @Input() menuOpen: boolean = false;
+  menuOpen = false;
   isBrowser: boolean;
+  currentLanguage = 'en';
 
-  constructor(@Inject(PLATFORM_ID) private platformId: Object) {
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private menuService: MenuService,
+    private translate: TranslateService // ✅ Übersetzungen aktivieren
+  ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
+    this.translate.setDefaultLang('en');
+    this.currentLanguage = this.translate.currentLang || 'en';
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     if (this.isBrowser) {
       this.checkViewport();
+
+      this.menuService.menuOpen$.subscribe((state) => {
+        this.menuOpen = state;
+      });
     }
+  }
+
+  switchLanguage(lang: string): void {
+    this.translate.use(lang);
+    this.currentLanguage = lang;
+  }
+
+  closeMenu(): void {
+    this.menuService.setMenuOpen(false);
   }
 
   @HostListener('window:resize')
-  onResize() {
+  onResize(): void {
     if (this.isBrowser) {
       this.checkViewport();
     }
   }
 
-  checkViewport() {
-    if (this.isBrowser) {
-      this.isMobile = window.innerWidth <= 768;
-    }
+  checkViewport(): void {
+    this.isMobile = window.innerWidth <= 768;
   }
 
   scrollToWhyMe(): void {
