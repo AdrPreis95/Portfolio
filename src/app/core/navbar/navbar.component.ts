@@ -25,14 +25,14 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.isBrowser) {
-      this.checkViewport(); // Falls jemand auf Desktop lädt
+      this.checkViewport(); 
     }
   }
 
   @HostListener('window:resize')
   onResize(): void {
     if (this.isBrowser) {
-      this.checkViewport(); // Bei jeder Größenänderung prüfen
+      this.checkViewport(); 
     }
   }
 

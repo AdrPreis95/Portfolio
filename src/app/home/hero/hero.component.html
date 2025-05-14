@@ -82,13 +82,28 @@
     <div class="shape-wrapper" *ngIf="!menuOpen">
       <div class="shape">
         <img src="/assets/hero/img/Profile-Picture.svg" alt="ProfileImage">
-         <ng-container *ngIf="menuOpen">
-      <app-navbar class="overlay-navbar"></app-navbar>
-    </ng-container>
+
       </div>
     </div>
 
-    
+    <div class="mobile-menu" *ngIf="menuOpen">
+      <div class="blob">
+        <ul>
+          <li><a href="#whyme" (click)="closeMenu()">{{ 'NAV.WHYME' | translate }}</a></li>
+          <li><a href="#skills" (click)="closeMenu()">{{ 'NAV.SKILLS' | translate }}</a></li>
+          <li><a href="#projects" (click)="closeMenu()">{{ 'NAV.PROJECTS' | translate }}</a></li>
+          <li><a href="#contact" (click)="closeMenu()">{{ 'NAV.CONTACT' | translate }}</a></li>
+
+          <div class="language-switch" [ngClass]="{ 'en-active': currentLanguage === 'en' }">
+            <div class="switch-indicator"></div>
+            <div class="language-labels">
+              <a (click)="switchLanguage('de')">DE</a>
+              <a (click)="switchLanguage('en')">EN</a>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
 
 
     <h1>Adrian Preis</h1>

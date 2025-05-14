@@ -334,3 +334,116 @@
     transform: translateY(8px);
   }
 }
+
+
+
+
+.mobile-menu {
+  margin-top: 122px;
+  
+}
+
+.blob {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @include cyan-main-bg;
+  padding: 2rem;
+  border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
+  height: clamp(270px, 48vw, 376px);
+  width: clamp(250px, 45vw, 353px);
+  text-align: center;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .language-switch {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  margin: 0 5px;
+  font-size: 1.375rem;
+
+  &:hover {
+    text-decoration: none !important;
+  }
+}
+
+
+/* Media Query – Mobile */
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+  }
+
+  .nav-links,
+  .language-switch {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex !important;
+  }
+
+  .language-switch {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 110px;
+    height: 40px;
+    background: transparent;
+    border-radius: 30px;
+    overflow: hidden;
+    font-weight: bold;
+    font-size: 1.2rem;
+
+    .switch-indicator {
+      position: absolute;
+      top: 5px;
+      left: 10px;
+      width: 40px;
+      height: 30px;
+      background: url('/assets/navbar/icons/Toggle-Switch.svg') no-repeat center;
+      background-size: cover;
+      border-radius: 30px;
+      transition: all 0.3s ease;
+      z-index: 1;
+    }
+
+    .language-labels {
+      display: flex;
+      gap: 1.5rem;
+      z-index: 2;
+
+      a {
+        color: #1c1c1c;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 0.3s;
+
+        &.active {
+          color: #ffffff;
+       
+        }
+      }
+    }
+  }
+
+ 
+  .language-switch.en-active .switch-indicator {
+    left: calc(50% + 5px);
+  }
+}

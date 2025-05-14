@@ -17,7 +17,7 @@ export class HeroComponent implements OnInit {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private menuService: MenuService,
-    private translate: TranslateService // ✅ Übersetzungen aktivieren
+    private translate: TranslateService 
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.translate.setDefaultLang('en');
