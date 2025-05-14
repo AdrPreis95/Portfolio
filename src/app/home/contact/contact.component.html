@@ -59,7 +59,15 @@
       }">
         <input type="checkbox" formControlName="privacy" />
         <span class="checkbox-icon"></span>
-        <span class="checkbox-policy-text"> {{ 'CONTACT.POLICY' | translate }}</span>
+        <span class="checkbox-policy-text">
+          {{ 'CONTACT.POLICY_PART1' | translate }}
+          <a [routerLink]="['/legal-notice']" class="policy-link">
+            {{ 'CONTACT.POLICY_LINK' | translate }}
+          </a>
+          {{ 'CONTACT.POLICY_PART2' | translate }}
+        </span>
+
+
       </label>
 
       <div id="error-policy" class="error"

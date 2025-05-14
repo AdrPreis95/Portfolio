@@ -1,11 +1,16 @@
 <section class="legal-notice">
-    <h2>{{ 'LEGAL.TITLE' | translate }}</h2>
-    <button class="close-btn" (click)="close()">← Back</button>
-    <div class="notice-content">
-        <p><strong>{{ 'LEGAL.NAME' | translate }}:</strong> Adrian Preis</p>
-        <p><strong>{{ 'LEGAL.ADDRESS' | translate }}:</strong> Gartenstraße 9, 66885 Bedesbach, Rheinland-Pfalz</p>
-        <p><strong>{{ 'LEGAL.CONTACT' | translate }}:</strong> adrianpreis86&#64;gmail.com</p>
-        <p><strong>{{ 'LEGAL.DISCLAIMER' | translate }}</strong></p>
-        <p>{{ 'LEGAL.TEXT' | translate }}</p>
+  <h2>{{ 'LEGAL.TITLE' | translate }}</h2>
+  <button class="close-btn" (click)="close()">← {{ 'LEGAL.BACK' | translate }}</button>
+
+  <div class="notice-accordion">
+    <div *ngFor="let section of legalSections; let i = index" class="accordion-item" [class.open]="isSectionOpen(i)">
+      <button class="accordion-header" (click)="toggleSection(i)">
+        {{ section.title | translate }}
+        <span class="arrow">{{ isSectionOpen(i) ? '−' : '+' }}</span>
+      </button>
+      <div class="accordion-content" *ngIf="isSectionOpen(i)">
+        <p [innerHTML]="section.content | translate"></p>
+      </div>
     </div>
+  </div>
 </section>

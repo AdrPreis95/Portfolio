@@ -105,13 +105,15 @@
         "EMAIL": "Your Email",
         "MESSAGE": "Your Message",
         "SEND": "Send",
-        "POLICY": "I've read the privacy policy and agree to the processing of my data as outlined.",
+        "POLICY_PART1": "I have read the",
+        "POLICY_LINK": "privacy policy",
+        "POLICY_PART2": "and agree to the processing of my data as outlined.",
         "ERROR_NAME": "Please enter your name",
         "ERROR_EMAIL_REQUIRED": "Please enter your email",
         "ERROR_EMAIL_INVALID": "Please enter a valid email address",
         "ERROR_MESSAGE": "Please write a message",
         "ERROR_POLICY": "Please accept the privacy policy",
-        "CONFIRMATION": "Thank you! Your message has been sent. ✅",
+        "CONFIRMATION": "Thank you! Your message has been sent.",
         "CLOSE": "Close"
     },
     "FOOTER": {
@@ -121,10 +123,22 @@
     },
     "LEGAL": {
         "TITLE": "Legal Notice",
+        "BACK": "Back",
         "NAME": "Name",
+        "NAME_TEXT": "Adrian Preis",
         "ADDRESS": "Address",
+        "ADDRESS_TEXT": "Gartenstraße 9, 66885 Bedesbach, Rhineland-Palatinate, Germany",
         "CONTACT": "E-mail",
+        "CONTACT_TEXT": "<a class=\"mail-link\"  href='mailto:adrianpreis86@gmail.com'>adrianpreis86@gmail.com</a>",
+        "PHONE": "Phone",
+        "PHONE_TEXT": "0179 2395976",
+        "RESPONSIBLE": "Responsible according to § 18 para. 2 MStV",
+        "RESPONSIBLE_TEXT": "Adrian Preis, address as above.",
         "DISCLAIMER": "Disclaimer",
-        "TEXT": "This portfolio website was created for private, non-commercial presentation purposes. Despite careful content control, no liability is assumed for the content of external links."
+        "DISCLAIMER_TEXT": "This portfolio website was created for private, non-commercial presentation purposes. Despite careful content checks, no liability is accepted for the content of external links. The operators of the linked pages are solely responsible for their content.",
+        "SOURCE_NOTE": "Sources",
+        "SOURCE_TEXT": "The icons and images used are either self-created or from freely available, royalty-free sources.",
+        "NO_ABMAHNUNG": "No legal warning without prior contact",
+        "NO_ABMAHNUNG_TEXT": "If the content or design of this website violates the rights of third parties or legal regulations, please notify me without a cost note. Justified complaints will result in the immediate removal of the affected content, without the need for legal assistance."
     }
 }

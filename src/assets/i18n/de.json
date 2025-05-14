@@ -105,13 +105,15 @@
         "EMAIL": "Deine E-Mail",
         "MESSAGE": "Deine Nachricht",
         "SEND": "Senden",
-        "POLICY": "Ich habe die Datenschutzerklärung gelesen und stimme der Verarbeitung meiner Daten zu.",
+        "POLICY_PART1": "Ich habe die",
+        "POLICY_LINK": "Datenschutzerklärung",
+        "POLICY_PART2": "gelesen und stimme der Verarbeitung meiner Daten zu.",
         "ERROR_NAME": "Bitte gib deinen Namen ein",
         "ERROR_EMAIL_REQUIRED": "Bitte gib deine E-Mail-Adresse ein",
         "ERROR_EMAIL_INVALID": "Bitte gib eine gültige E-Mail-Adresse ein",
         "ERROR_MESSAGE": "Bitte schreibe eine Nachricht",
         "ERROR_POLICY": "Bitte akzeptiere die Datenschutzerklärung",
-        "CONFIRMATION": "Vielen Dank! Deine Nachricht wurde gesendet. ✅",
+        "CONFIRMATION": "Vielen Dank! Deine Nachricht wurde gesendet.",
         "CLOSE": "Schließen"
     },
     "FOOTER": {
@@ -121,10 +123,22 @@
     },
     "LEGAL": {
         "TITLE": "Impressum",
+        "BACK": "Zurück",
         "NAME": "Name",
+        "NAME_TEXT": "Adrian Preis",
         "ADDRESS": "Adresse",
+        "ADDRESS_TEXT": "Gartenstraße 9, 66885 Bedesbach, Rheinland-Pfalz, Deutschland",
         "CONTACT": "E-Mail",
+        "CONTACT_TEXT": "<a class=\"mail-link\" href='mailto:adrianpreis86@gmail.com'>adrianpreis86@gmail.com</a>",
+        "PHONE": "Telefon",
+        "PHONE_TEXT": "0179 2395976",
+        "RESPONSIBLE": "Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV",
+        "RESPONSIBLE_TEXT": "Adrian Preis, Adresse wie oben.",
         "DISCLAIMER": "Haftungsausschluss",
-        "TEXT": "Diese Portfolio-Website wurde zu privaten, nicht kommerziellen Präsentationszwecken erstellt. Trotz sorgfältiger inhaltlicher Kontrolle wird keine Haftung für externe Links übernommen."
+        "DISCLAIMER_TEXT": "Diese Portfolio-Website wurde zu privaten, nicht-kommerziellen Präsentationszwecken erstellt. Trotz sorgfältiger inhaltlicher Kontrolle übernehme ich keine Haftung für die Inhalte externer Links. Für den Inhalt verlinkter Seiten sind ausschließlich deren Betreiber verantwortlich.",
+        "SOURCE_NOTE": "Quellenangaben",
+        "SOURCE_TEXT": "Die verwendeten Icons und Bilder stammen entweder aus eigenen Arbeiten oder aus frei verfügbaren, lizenzfreien Quellen.",
+        "NO_ABMAHNUNG": "Keine Abmahnung ohne vorherigen Kontakt",
+        "NO_ABMAHNUNG_TEXT": "Sollte der Inhalt oder die Aufmachung dieser Seite Rechte Dritter oder gesetzliche Bestimmungen verletzen, bitte ich um eine entsprechende Nachricht ohne Kostennote. Die zu Recht beanstandeten Passagen werden unverzüglich entfernt, ohne dass von Ihrer Seite die Einschaltung eines Rechtsbeistandes erforderlich ist."
     }
 }

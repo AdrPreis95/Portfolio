@@ -22,27 +22,131 @@
   color: #262E34;
 }
 
-:host {
-  display: block;
+section {
   height: 100vh;
-  padding: 80px 40px;
-  background-color: #1f1f1f;
-  color: white;
-  text-align: left;
+  width: 100%;
+  @include gray-bg;
+  position: relative;
+  text-align: center;
+  padding: 80px 20px;
+  color: #ffffff;
+  overflow: scroll;
 }
 
-.close-btn {
-  margin-top: 30px;
-  display: inline-block;
-  background: transparent;
-  color: #fff;
-  border: 1px solid #fff;
-  padding: 10px 20px;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: 0.3s ease;
+h2 {
+  font-family: "Anta", sans-serif;
+  font-size: clamp(2.6rem, 4vw, 3.75rem);
+  color: #89BCD9;
+}
 
-  &:hover {
-    background-color: #ffffff20;
+
+.legal-notice {
+  .close-btn {
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border: 2px solid #89BCD9;
+    background: none;
+    color: #89BCD9;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
   }
+
+  .close-btn:hover {
+    background-color: #89BCD9;
+    color: #0f1923;
+  }
+
+  .notice-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .accordion-item {
+      border: 2px solid #89BCD9;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      transition: all 0.3s ease;
+
+      &:hover {
+        animation: subtle-shake 0.3s ease;
+        background-color: rgba(126, 182, 212, 0.1);
+        color: #a4dcff;
+      }
+
+      @keyframes subtle-shake {
+        0% {
+          transform: translateX(0);
+        }
+
+        25% {
+          transform: translateX(-2px);
+        }
+
+        50% {
+          transform: translateX(2px);
+        }
+
+        75% {
+          transform: translateX(-1px);
+        }
+
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      .accordion-header {
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        padding: 1rem;
+        font-weight: bold;
+        color: #89BCD9;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        font-size: 1rem;
+
+        .arrow {
+          font-size: 1.5rem;
+        }
+      }
+
+      .accordion-content {
+        padding: 1rem;
+        color: white;
+        background-color: #2d383f;
+        font-size: 0.95rem;
+      }
+
+
+      &.open {
+        border-color: #89BCD9;
+      }
+
+    }
+  }
+
+  .notice-accordion {
+    @media screen and (min-width: 1024px) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+  }
+
+  .accordion-content a {
+    color: #89BCD9;
+    text-decoration: underline dotted;
+    transition: all 0.2s ease;
+
+    &:hover {
+      color: #a4dcff;
+      text-decoration: underline solid;
+      text-underline-offset: 3px;
+    }
+  }
+
 }
