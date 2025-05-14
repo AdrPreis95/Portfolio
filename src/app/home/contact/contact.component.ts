@@ -1,16 +1,41 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+/**
+ * Represents the contact form component.
+ * Handles user input, validation, spam protection,
+ * and form submission via PHP backend.
+ */
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent {
+  /**
+   * Reactive form group for the contact form.
+   */
   contactForm: FormGroup;
+
+  /**
+   * Indicates whether the confirmation message is shown.
+   */
   showConfirmation = false;
+
+  /**
+   * Indicates whether the form has been submitted.
+   */
   submitted = false;
 
+  /**
+   * Remaining characters allowed in the message field.
+   */
+  remainingChars = 500;
+
+  /**
+   * Constructs the contact form component and initializes the form controls.
+   * @param fb Angular FormBuilder used to create the form.
+   */
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
@@ -19,14 +44,16 @@ export class ContactComponent {
         Validators.email,
         Validators.pattern(/^(?!\.)(?!.*\.\.)[a-zA-Z0-9._%+-]+(?<!\.)@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)
       ]],
-
       message: ['', Validators.required],
       privacy: [false, Validators.requiredTrue],
       honeypot: ['']
     });
   }
-  remainingChars = 500;
 
+  /**
+   * Lifecycle hook for component initialization.
+   * Subscribes to message input changes to update character count.
+   */
   ngOnInit(): void {
     this.contactForm.get('message')?.valueChanges.subscribe(() => {
       this.updateRemainingChars();
@@ -35,17 +62,24 @@ export class ContactComponent {
     this.updateRemainingChars();
   }
 
-  updateRemainingChars() {
+  /**
+   * Updates the number of remaining characters in the message field.
+   */
+  updateRemainingChars(): void {
     const currentLength = this.contactForm.get('message')?.value?.length || 0;
     this.remainingChars = 500 - currentLength;
   }
 
-
-  onSubmit() {
+  /**
+   * Handles the actual form submission if valid and not marked as spam.
+   * Sends data to a PHP backend and shows confirmation on success.
+   */
+  onSubmit(): void {
     if (this.contactForm.get('honeypot')?.value) {
-      console.warn('Spam erkannt, die Nachricht wird ignoriert!!!');
+      console.warn('Spam detected, message ignored!');
       return;
     }
+
     this.submitted = true;
 
     Object.values(this.contactForm.controls).forEach(control => {
@@ -73,14 +107,15 @@ export class ContactComponent {
           this.closeConfirmation();
         }, 5000);
       }).catch(error => {
-        console.error('Fehler beim Senden der Nachricht:', error);
+        console.error('Error while sending message:', error);
       });
     }
-
-
   }
 
-  handleSubmitClick() {
+  /**
+   * Triggers form submission logic after validating all fields.
+   */
+  handleSubmitClick(): void {
     this.submitted = true;
 
     Object.values(this.contactForm.controls).forEach(control => {
@@ -88,17 +123,16 @@ export class ContactComponent {
       control.updateValueAndValidity();
     });
 
-
     if (this.contactForm.valid) {
       this.onSubmit();
     }
   }
 
-
-  closeConfirmation() {
+  /**
+   * Closes the confirmation message and resets submission state.
+   */
+  closeConfirmation(): void {
     this.showConfirmation = false;
     this.submitted = false;
   }
-
 }
-

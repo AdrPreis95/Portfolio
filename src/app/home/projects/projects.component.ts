@@ -2,17 +2,42 @@ import { Component, HostListener, OnInit, Inject, PLATFORM_ID } from '@angular/c
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
 
+/**
+ * Displays a set of portfolio projects with dynamic content
+ * based on the selected language. Supports responsive behavior
+ * and external links to live demos and GitHub repositories.
+ */
 @Component({
   selector: 'app-projects',
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
 export class ProjectsComponent implements OnInit {
+  /**
+   * Index of the currently selected project tab.
+   */
   selectedTab = 0;
+
+  /**
+   * Array containing translated tab/project data.
+   */
   tabs: any[] = [];
+
+  /**
+   * Indicates whether the current view is mobile.
+   */
   isMobile = false;
+
+  /**
+   * Indicates whether the code is executing in the browser.
+   */
   isBrowser: boolean;
 
+  /**
+   * Constructs the ProjectsComponent.
+   * @param translate Service for dynamic translation handling.
+   * @param platformId Used to determine the platform (browser/server).
+   */
   constructor(
     private translate: TranslateService,
     @Inject(PLATFORM_ID) private platformId: Object
@@ -22,12 +47,19 @@ export class ProjectsComponent implements OnInit {
     this.translate.onLangChange.subscribe(() => this.loadTabs());
   }
 
+  /**
+   * Angular lifecycle hook that runs after component initialization.
+   * Checks the current viewport.
+   */
   ngOnInit(): void {
     if (this.isBrowser) {
       this.checkViewport();
     }
   }
 
+  /**
+   * Updates mobile state on window resize.
+   */
   @HostListener('window:resize')
   onResize(): void {
     if (this.isBrowser) {
@@ -35,19 +67,29 @@ export class ProjectsComponent implements OnInit {
     }
   }
 
+  /**
+   * Determines whether the current view is considered mobile.
+   */
   checkViewport(): void {
     if (this.isBrowser) {
       this.isMobile = window.innerWidth <= 768;
-      
     }
   }
 
+  /**
+   * Opens a given URL in a new browser tab if it's valid.
+   * @param url The URL to open (live demo).
+   */
   openLiveDemo(url: string): void {
     if (this.isBrowser && url && url !== '#') {
       window.open(url, '_blank');
     }
   }
 
+  /**
+   * Loads the translated project data and prepares the tabs.
+   * Triggered on component load and language change.
+   */
   loadTabs(): void {
     this.translate.get([
       'PROJECTS.EL_POLLO',
@@ -110,6 +152,10 @@ export class ProjectsComponent implements OnInit {
     });
   }
 
+  /**
+   * Selects a specific project tab based on index.
+   * @param index The tab index to activate.
+   */
   selectTab(index: number): void {
     this.selectedTab = index;
   }
