@@ -1,26 +1,31 @@
-@mixin flex-column-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+@use 'mixins' as *;
+@use 'font-sizes' as *;
+@use 'typography' as *;
 
-@mixin gray-bg {
-  background-color: #262E34;
-}
 
-@mixin cyan-main {
-  color: #89BCD9;
+// @mixin flex-column-center {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
 
-}
+// @mixin gray-bg {
+//   background-color: #262E34;
+// }
 
-@mixin cyan-main-bg {
-  background-color: #89BCD9;
+// @mixin cyan-main {
+//   color: #89BCD9;
 
-}
+// }
 
-@mixin font-color-gray {
-  color: #262E34;
-}
+// @mixin cyan-main-bg {
+//   background-color: #89BCD9;
+
+// }
+
+// @mixin font-color-gray {
+//   color: #262E34;
+// }
 
 section {
   position: relative;
@@ -28,10 +33,10 @@ section {
 
 .policy-link {
   @include cyan-main;
-  text-decoration: none ;
+  text-decoration: none;
 
   &:hover {
-    text-decoration: none ;
+    text-decoration: none;
     color: blueviolet !important;
   }
 }
