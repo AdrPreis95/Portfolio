@@ -22,6 +22,21 @@
   color: #262E34;
 }
 
+@media (min-width: 1920px) {
+  #hero {
+    height: 900px;
+    position: relative;
+
+  }
+}
+
+@media (min-height: 1081px) {
+  #hero {
+    height: 900px;
+    overflow: hidden;
+  }
+}
+
 .hero-section {
   display: flex;
   background-color: #262E34;
@@ -33,6 +48,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 
     .shape-wrapper {
       display: flex;
@@ -65,10 +81,45 @@
 
     }
 
-
-
-
   }
+
+  // @media (min-width: 1921px) {
+  //   .shape {
+  //     width: clamp(266px, 50vw, 535px);
+  //     height: auto;
+  //     border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
+  //     background-color: #00fefc;
+  //     position: static !important;
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: flex-end;
+  //     overflow: hidden;
+  //   }
+
+  //   .left-section {
+  //     position: relative;
+  //   }
+  // }
+
+  // @media (max-width: 1451px) {
+  //   .shape {
+  //     width: clamp(266px, 50vw, 535px);
+  //     height: auto;
+  //     border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
+  //     background-color: #00fefc;
+  //     position: absolute !important;
+  //     display: flex;
+  //     justify-content: center;
+  //     align-items: flex-end;
+  //     overflow: unset;
+
+  //   }
+
+  //   .shape img {
+  //     padding-inline: clamp(16px, 5vw, 45px);
+
+  //   }
+  // }
 
   @media (max-width: 1450px) {
     .shape {
