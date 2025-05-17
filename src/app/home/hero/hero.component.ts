@@ -77,7 +77,7 @@ export class HeroComponent implements OnInit {
    * Closes the mobile menu via the MenuService.
    */
   closeMenu(): void {
-    this.menuService.setMenuOpen(false);
+    this.menuService.setMenuOpen(true);
   }
 
   /**
