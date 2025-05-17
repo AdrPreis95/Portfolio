@@ -3,30 +3,6 @@
 @use 'typography' as *;
 
 
-// @mixin flex-column-center {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-// @mixin gray-bg {
-//   background-color: #262E34;
-// }
-
-// @mixin cyan-main {
-//   color: #89BCD9;
-
-// }
-
-// @mixin cyan-main-bg {
-//   background-color: #89BCD9;
-
-// }
-
-// @mixin font-color-gray {
-//   color: #262E34;
-// }
-
 @media (min-width: 1920px) {
   #hero {
     height: 900px;
@@ -211,17 +187,21 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    z-index: 2;
 
     a svg {
       @include cyan-main;
       height: 38px;
       width: auto;
       transition: color 0.3s ease;
+      cursor: pointer !important;
     }
 
     a:hover svg {
       stroke: none;
-      fill: white;
+      color: white;
+
+
     }
   }
 
@@ -269,12 +249,14 @@
 
     .scroll-icon {
       margin-top: clamp(30px, 10vw, 146px);
+      z-index: 2;
 
       .scroll-svg {
         width: clamp(38px, 5vw, 48px);
         fill: none;
         @include cyan-main;
         cursor: pointer;
+        z-index: 2;
 
 
       }
