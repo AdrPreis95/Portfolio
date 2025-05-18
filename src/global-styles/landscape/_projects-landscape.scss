@@ -1,3 +1,26 @@
-@use '../mixins' as *;              
-@use '../../styles/font-sizes' as *;  
-@use '../../styles/typography' as *;  
+@use '../mixins' as *;
+@use '../../styles/font-sizes' as *;
+@use '../../styles/typography' as *;
+
+
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) {
+
+    .project-details {
+        padding: 24px;
+        height: auto !important;
+        border-radius: 20px;
+    }
+
+    .section-title {
+        transform: scale(0.9);
+    }
+
+    #projects .text,
+    #projects .preview {
+        transform: scale(0.9);
+    }
+
+    #projects .dot {
+        padding: 11px;
+    }
+}

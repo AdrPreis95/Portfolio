@@ -271,7 +271,7 @@
     }
   }
 
-  
+
 
 
 }
@@ -311,7 +311,7 @@
   }
 
   .shape-wrapper {
-    width: clamp(240px, 85vw, 360px);
+    width: clamp(240px, 80vw, 360px);
     display: flex;
     margin-top: 120px;
     justify-content: center;
@@ -396,10 +396,8 @@
   @include cyan-main-bg;
   padding: 2rem;
   border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
-  // height: clamp(270px, 48vw, 376px);
-  // width: clamp(250px, 45vw, 353px);
   height: clamp(350px, 70vw, 376px);
-  width: clamp(290px, 65vw, 353px);
+  width: clamp(290px, 80vw, 353px);
   text-align: center;
 
   ul {

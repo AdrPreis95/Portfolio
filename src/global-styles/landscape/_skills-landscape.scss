@@ -1,3 +1,12 @@
-@use '../mixins' as *;              
-@use '../../styles/font-sizes' as *;  
-@use '../../styles/typography' as *;  
+@use '../mixins' as *;
+@use '../../styles/font-sizes' as *;
+@use '../../styles/typography' as *;
+
+
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) {
+
+    #skills .skills-wrapper {
+        transform: scale(0.8);
+        flex-wrap: unset;
+    }
+}

@@ -188,6 +188,8 @@ p {
           cursor: pointer;
           font-size: clamp(0.875rem, 2vw, 1.125rem);
           transition: 0.3s;
+          white-space: nowrap !important;
+
 
           &:hover,
           &.secondary:hover {
@@ -208,6 +210,7 @@ p {
             cursor: pointer;
             font-size: clamp(0.875rem, 2vw, 1.125rem);
             transition: 0.3s;
+            white-space: nowrap !important
           }
 
 

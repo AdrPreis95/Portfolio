@@ -1,3 +1,16 @@
-@use '../mixins' as *;              
-@use '../../styles/font-sizes' as *;  
-@use '../../styles/typography' as *;  
+@use '../mixins' as *;
+@use '../../styles/font-sizes' as *;
+@use '../../styles/typography' as *;
+
+
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) {
+
+    #contact {
+        transform: scale(0.9);
+        padding: 0px 20px;
+    }
+
+    #contact svg {
+        top: 2%;
+    }
+}

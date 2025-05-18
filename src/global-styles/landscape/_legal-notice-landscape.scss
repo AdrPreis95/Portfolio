@@ -1,4 +1,11 @@
-@use '../mixins' as *;              
-@use '../../styles/font-sizes' as *;  
-@use '../../styles/typography' as *;  
+@use '../mixins' as *;
+@use '../../styles/font-sizes' as *;
+@use '../../styles/typography' as *;
 
+
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) {
+
+    .legal-notice {
+        padding: 20px 20px;
+    }
+}
