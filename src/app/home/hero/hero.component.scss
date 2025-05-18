@@ -1,6 +1,9 @@
 @use 'mixins' as *;
 @use 'font-sizes' as *;
 @use 'typography' as *;
+@use 'landscape/landscape';
+
+
 
 
 @media (min-width: 1920px) {
@@ -101,6 +104,7 @@
 
   //   }
   // }
+
 
   @media (max-width: 1450px) {
     .shape {
@@ -267,14 +271,17 @@
     }
   }
 
+  
+
+
 }
 
 
 .hero-mobile {
   @include gray-bg;
-  // height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   padding: 1.5rem;
@@ -306,7 +313,7 @@
   .shape-wrapper {
     width: clamp(240px, 85vw, 360px);
     display: flex;
-    margin-top: 122px;
+    margin-top: 120px;
     justify-content: center;
 
     .shape {
