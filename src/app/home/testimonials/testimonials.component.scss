@@ -22,22 +22,29 @@
 
   .testimonial-cards {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: unset;
     gap: 2rem;
     justify-content: center;
     padding-inline: 10%;
 
     .card {
+      aspect-ratio: 1 / 1; 
+      min-width: 280px; 
+      max-width: 400px;
+      width: 100%;
+
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 400px;
-      width: 400px;
+
       background-color: #2d383f;
       padding: 2rem;
       border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
       color: white;
+      text-align: center;
+
+
 
       h3 {
         font-family: Josefine_Sans, sans-serif;
@@ -58,9 +65,9 @@
       blockquote,
       p {
         font-family: 'Josefine_Sans', sans-serif;
-        font-size: clamp(1rem, 1.8vw, 1.125rem);
+        font-size: clamp(1rem, 1.2vw, 1.125rem);
         margin-bottom: 1rem;
-        line-height: 1.6;
+        line-height: 1.4;
       }
 
 
