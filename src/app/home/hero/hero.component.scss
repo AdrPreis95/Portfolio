@@ -316,13 +316,25 @@
     }
   }
 
-  .scroll-icon {
+  .scroll-icon svg {
     margin-top: 2rem;
+    width: clamp(38px, 5vw, 48px);
+    fill: none;
+    color: #89BCD9;
+    cursor: pointer;
 
-    img {
+    .scroll-icon svg {
       width: auto;
       animation: bounceDown 1.8s infinite ease-in-out;
+
     }
+
+  }
+
+  .scroll-icon :hover {
+    fill: rgba(137, 188, 217, 0.2);
+
+
   }
 }
 
