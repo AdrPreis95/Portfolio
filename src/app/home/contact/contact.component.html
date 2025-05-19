@@ -74,9 +74,11 @@
         *ngIf="(submitted || contactForm.get('privacy')?.touched) && contactForm.get('privacy')?.invalid">
         {{ 'CONTACT.ERROR_POLICY' | translate }}
       </div>
-      <button type="button" (click)="handleSubmitClick()">
+      <button (click)="handleSubmitClick()" [class.valid]="contactForm.valid"
+        [attr.title]="!contactForm.valid ? 'Bitte alle Pflichtfelder ausfüllen' : null">
         {{ 'CONTACT.SEND' | translate }}
       </button>
+
 
     </form>
     <div class="confirmation-overlay" *ngIf="showConfirmation">

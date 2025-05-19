@@ -4,38 +4,12 @@
 @use 'landscape/landscape';
 
 
-
-// @mixin flex-column-center {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-// @mixin gray-bg {
-//   background-color: #262E34;
-// }
-
-// @mixin cyan-main {
-//   color: #89BCD9;
-
-// }
-
-// @mixin cyan-main-bg {
-//   background-color: #89BCD9;
-
-// }
-
-// @mixin font-color-gray {
-//   color: #262E34;
-// }
-
 section {
   @include gray-bg;
 }
 
 .projects,
 p {
-  // padding: 80px 20px;
   color: white;
   font-family: Josefine_Sans, sans-serif;
   font-size: clamp(1rem, 1.8vw, 1.125rem);
@@ -54,7 +28,7 @@ p {
     font-size: clamp(2.6rem, 4vw, 3.75rem);
     @include cyan-main;
     text-align: center;
-    margin-bottom: 3rem;
+   margin-bottom: 80px;
   }
 
   .tabs {
@@ -99,7 +73,6 @@ p {
     height: 548px;
     display: flex;
     align-items: center;
-    // flex-wrap: wrap;
     background-color: #2d383f;
     gap: 3rem;
     justify-content: center;
@@ -125,7 +98,6 @@ p {
             font-weight: bold;
             font-family: Josefine_Sans, sans-serif;
             font-size: clamp(1.125rem, 2.3vw, 1.75rem);
-            ;
             margin-bottom: 0.3rem;
           }
 

@@ -4,32 +4,6 @@
 @use 'landscape/landscape';
 
 
-
-
-// @mixin flex-column-center {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-// @mixin gray-bg {
-//   background-color: #262E34;
-// }
-
-// @mixin cyan-main {
-//   color: #89BCD9;
-
-// }
-
-// @mixin cyan-main-bg {
-//   background-color: #89BCD9;
-
-// }
-
-// @mixin font-color-gray {
-//   color: #262E34;
-// }
-
 .navbar {
   height: 104px;
   @include cyan-main-bg;
@@ -297,13 +271,12 @@
 
         &.active {
           color: #ffffff;
-          /* Aktive Sprache weiß */
+       
         }
       }
     }
   }
 
-  /* Wenn EN aktiv ist → Switch nach rechts */
   .language-switch.en-active .switch-indicator {
     left: calc(50% + 5px);
   }

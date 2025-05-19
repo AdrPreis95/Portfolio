@@ -4,31 +4,6 @@
 @use 'landscape/landscape';
 
 
-
-// @mixin flex-column-center {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-// @mixin gray-bg {
-//   background-color: #262E34;
-// }
-
-// @mixin cyan-main {
-//   color: #89BCD9;
-
-// }
-
-// @mixin cyan-main-bg {
-//   background-color: #89BCD9;
-
-// }
-
-// @mixin font-color-gray {
-//   color: #262E34;
-// }
-
 section {
   position: relative;
 }
@@ -62,7 +37,7 @@ section {
     font-family: 'Anta', sans-serif;
     font-size: clamp(2.6rem, 4vw, 3.75rem);
     @include cyan-main;
-    margin-bottom: 2rem;
+    margin-bottom: 80px;
   }
 
   .contact-top {
@@ -153,6 +128,17 @@ section {
       }
     }
 
+    input.ng-invalid.ng-touched,
+    textarea.ng-invalid.ng-touched {
+      border-color: #E44C36;
+    }
+
+    input.ng-valid.ng-touched,
+    textarea.ng-valid.ng-touched {
+      border-color: #89bcd9;
+    }
+
+
     textarea {
       border-radius: 1rem;
       resize: none;
@@ -209,9 +195,15 @@ section {
       border: 2px solid #F8F5EC;
       padding: 0.5rem 2rem;
       border-radius: 999px;
-      cursor: pointer;
       font-size: clamp(0.875rem, 2vw, 1.125rem);
       transition: 0.3s;
+      cursor: not-allowed;
+      opacity: 0.5;
+
+      &.valid {
+        cursor: pointer;
+        opacity: 1;
+      }
 
       &:hover {
         @include cyan-main-bg;
@@ -224,6 +216,7 @@ section {
         cursor: not-allowed;
       }
     }
+
 
     @media (max-width: 320px) {
 
@@ -297,8 +290,6 @@ section {
     }
   }
 
-
-
   .confirmation-overlay {
     position: fixed;
     inset: 0;
@@ -328,6 +319,7 @@ section {
         padding: 0.5rem 1.5rem;
         border-radius: 0.5rem;
         cursor: pointer;
+
       }
     }
   }

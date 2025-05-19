@@ -4,32 +4,6 @@
 @use 'landscape/landscape';
 
 
-
-// @mixin flex-column-center {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-// @mixin gray-bg {
-//   background-color: #262E34;
-// }
-
-// @mixin cyan-main {
-//   color: #89BCD9;
-
-// }
-
-// @mixin cyan-main-bg {
-//   background-color: #89BCD9;
-
-// }
-
-// @mixin font-color-gray {
-//   color: #262E34;
-// }
-
-
 .why-me {
   @include gray-bg;
   position: relative;
@@ -41,7 +15,7 @@
     font-family: 'Anta', sans-serif;
     font-size: clamp(2.6rem, 4vw, 3.75rem);
     @include cyan-main;
-    margin-bottom: 2rem;
+    margin-bottom: 80px;
   }
 
   .why-me-content {
@@ -93,7 +67,6 @@
       flex-direction: column;
       align-items: flex-end;
       text-align: left;
-      // line-height: 1.6;
       font-size: clamp(1rem, 1.8vw, 1.125rem);
       font-family: Josefine_Sans, sans-serif;
 
@@ -120,10 +93,10 @@
   }
 
   .hover-container {
-    display: none;
     position: relative;
-    width: fit-content;
-    height: auto;
+    width: 530px;
+    height: 48px;
+    background-color: black;
 
 
 
@@ -150,7 +123,7 @@
       display: inline-block;
       overflow: hidden;
       white-space: nowrap;
-      border-right: 2px solid #000;
+      border-right: 2px solid white !important;
       width: 0;
       animation: typingLoop 4s steps(30, end) infinite, blink 0.75s step-end infinite;
     }
@@ -217,59 +190,4 @@
     }
   }
 
-
-  @media (max-width: 1456px) {
-
-
-    .why-me-content {
-      gap: 24rem !important;
-
-    }
-
-    .typewriter {
-      font-size: 26px !important;
-    }
-  }
-
-
-  @media (max-width: 1100px) {
-
-
-    .why-me-content {
-      justify-content: space-between !important;
-
-    }
-
-    .typewriter {
-      font-size: 24px !important;
-    }
-  }
-
-  @media (max-width: 930px) {
-
-
-    .why-me-content {
-      flex-direction: column !important;
-      gap: 18px !important;
-      position: relative !important;
-
-    }
-
-    .info-box remote {
-      left: 50% !important;
-      transform: translate(-50%, -50%) !important;
-    }
-  }
-
-  @media (max-width: 768px) {
-
-
-    .text {
-      text-align: center !important;
-    }
-
-    .talk-btn {
-      display: none !important;
-    }
-  }
 }

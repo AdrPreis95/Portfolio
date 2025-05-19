@@ -4,31 +4,6 @@
 @use 'landscape/landscape';
 
 
-
-// @mixin flex-column-center {
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// }
-
-// @mixin gray-bg {
-//   background-color: #262E34;
-// }
-
-// @mixin cyan-main {
-//   color: #89BCD9;
-
-// }
-
-// @mixin cyan-main-bg {
-//   background-color: #89BCD9;
-
-// }
-
-// @mixin font-color-gray {
-//   color: #262E34;
-// }
-
 .skills {
   padding: 80px 20px;
   text-align: center;
@@ -38,7 +13,7 @@
     font-family: 'Anta', sans-serif;
     font-size: clamp(2.6rem, 4vw, 3.75rem);
     @include cyan-main;
-    margin-bottom: 3rem;
+    margin-bottom: 80px;
   }
 
   .skills-wrapper {
@@ -130,9 +105,9 @@
 
 .talk-btn {
   background: transparent;
+  margin-top: 18px;
   font-family: Josefine_Sans, sans-serif;
   max-height: 48px;
-  // height: 100%;
   color: #75c1e2;
   text-decoration: none;
   border: 2px solid #75c1e2;
