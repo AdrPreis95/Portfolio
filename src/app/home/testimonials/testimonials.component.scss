@@ -28,8 +28,8 @@
     padding-inline: 10%;
 
     .card {
-      aspect-ratio: 1 / 1; 
-      min-width: 280px; 
+      aspect-ratio: 1 / 1;
+      min-width: 280px;
       max-width: 400px;
       width: 100%;
 
@@ -108,5 +108,10 @@
   .testimonial-cards::-webkit-scrollbar {
     display: none !important;
 
+  }
+
+  .section-title {
+    margin-top: 80px !important;
+    margin-bottom: 40px !important;
   }
 }
