@@ -82,4 +82,12 @@ export class SkillsComponent implements OnInit {
       this.isMobile = window.innerWidth <= 768;
     }
   }
+  
+  scrollToContact() {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+
 }

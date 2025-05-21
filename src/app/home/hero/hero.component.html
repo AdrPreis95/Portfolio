@@ -46,7 +46,7 @@
 
 
 
-        <a href="#contact" class="icon" aria-label="Email">
+        <a class="icon" aria-label="Email" (click)="scrollToContact()">
           <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
             <circle cx="15" cy="15" r="14.25" stroke="currentColor" stroke-width="1.5" fill="none" />
             <mask id="path-2-inside-1_26879_646" fill="white">
@@ -104,11 +104,11 @@
     <div class="mobile-menu" *ngIf="menuOpen">
       <div class="blob">
         <ul>
-          <li><a href="#whyme" (click)="closeMenu()">{{ 'NAV.WHYME' | translate }}</a></li>
-          <li><a href="#skills" (click)="closeMenu()">{{ 'NAV.SKILLS' | translate }}</a></li>
-          <li><a href="#projects" (click)="closeMenu()">{{ 'NAV.PROJECTS' | translate }}</a></li>
-          <li><a href="#contact" (click)="closeMenu()">{{ 'NAV.CONTACT' | translate }}</a></li>
-
+          <li><a (click)="scrollToWhyMe()">{{ 'NAV.WHYME' | translate }}</a></li>
+          <li><a (click)="scrollToSkills()">{{ 'NAV.SKILLS' | translate }}</a></li>
+          <li><a (click)="scrollToProjects()">{{ 'NAV.PROJECTS' | translate }}</a></li>
+          <li><a (click)="scrollToContact()">{{ 'NAV.CONTACT' | translate }}</a></li>
+          
           <div class="language-switch" [ngClass]="{ 'en-active': currentLanguage === 'en' }">
             <div class="switch-indicator"></div>
             <div class="language-labels">
@@ -125,7 +125,7 @@
     <h2>{{ 'HERO.ROLE' | translate }}</h2>
 
     <div class="scroll-icon">
-      <a href="#whyme">
+      <a (click)="scrollToWhyMe()" class="scroll-link" aria-label="Scroll to Why Me">
         <svg class="scroll-svg" viewBox="0 0 38 89" xmlns="http://www.w3.org/2000/svg"
           preserveAspectRatio="xMidYMid meet">
           <path

@@ -43,7 +43,7 @@ export class HeroComponent implements OnInit {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private menuService: MenuService,
-    private translate: TranslateService 
+    private translate: TranslateService
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.translate.setDefaultLang('en');
@@ -108,4 +108,30 @@ export class HeroComponent implements OnInit {
       }
     }
   }
+
+  scrollToContact(): void {
+    this.scrollToSection('contact');
+  }
+
+  scrollToSkills(): void {
+    this.scrollToSection('skills');
+  }
+
+  scrollToProjects(): void {
+    this.scrollToSection('projects');
+  }
+
+  private scrollToSection(id: string): void {
+    if (this.isBrowser) {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }
+
+
+
 }
+
+

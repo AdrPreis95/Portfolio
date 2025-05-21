@@ -1,9 +1,8 @@
-<!-- 📱 Mobile Template -->
 <ng-container *ngIf="isMobile">
   <ng-container *ngTemplateOutlet="mobileTemplate"></ng-container>
 </ng-container>
 
-<!-- 💻 Desktop Template -->
+
 <ng-container *ngIf="!isMobile">
   <section id="skills" class="skills">
     <h2 class="section-title">{{ 'SKILLS.TITLE' | translate }}</h2>
@@ -15,7 +14,6 @@
         </div>
       </div>
 
-      <!-- Desktop Layout für "currently learning" -->
       <div class="currently-learning">
         <p>{{ 'SKILLS.CURRENTLY_LEARNING' | translate }}</p>
 
@@ -33,7 +31,7 @@
   </section>
 </ng-container>
 
-<!-- 📦 Mobile Template Definition -->
+
 <ng-template #mobileTemplate>
   <section id="skills" class="skills mobile">
     <h2 class="section-title">{{ 'SKILLS.TITLE' | translate }}</h2>
@@ -62,9 +60,12 @@
 
 
           </div>
-         
+
         </div>
-        <button class="talk-btn">{{ 'WHYME.BUTTON' | translate }}</button>
+        <button class="talk-btn" (click)="scrollToContact()">
+          {{ 'WHYME.BUTTON' | translate }}
+        </button>
+
       </div>
     </div>
   </section>

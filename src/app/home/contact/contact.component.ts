@@ -135,4 +135,12 @@ export class ContactComponent {
     this.showConfirmation = false;
     this.submitted = false;
   }
+
+  scrollToHero() {
+    const section = document.getElementById('hero');
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+
 }
