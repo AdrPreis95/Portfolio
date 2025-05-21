@@ -21,6 +21,7 @@ import { LegalNoticeComponent } from './core/legal-notice/legal-notice.component
 
 
 
+
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -37,6 +38,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ContactComponent,
     FooterComponent,
     LegalNoticeComponent,
+ 
 
   
   ],

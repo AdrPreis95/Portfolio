@@ -19,7 +19,7 @@ h2 {
   font-family: "Anta", sans-serif;
   font-size: clamp(2.6rem, 4vw, 3.75rem);
   color: #89BCD9;
-  
+
 }
 
 
@@ -115,8 +115,9 @@ h2 {
   .notice-accordion {
     @media screen and (min-width: 1024px) {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: none;
       gap: 1rem;
+      padding: 80px;
     }
   }
 

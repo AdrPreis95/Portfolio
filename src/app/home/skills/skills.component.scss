@@ -27,6 +27,17 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
 
+
+      > :nth-child(9) {
+        grid-column: -3 / 2;
+        justify-self: center;
+      }
+
+      > :nth-child(10) {
+        grid-column: -3 / -2;
+        justify-self: center;
+      }
+
       .skill {
         display: flex;
         flex-direction: column;
