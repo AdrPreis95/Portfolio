@@ -1,75 +1,94 @@
-@use '../mixins' as *;
-@use '../../styles/font-sizes' as *;
-@use '../../styles/typography' as *;
+// @use '../mixins' as *;
+// @use '../../styles/font-sizes' as *;
+// @use '../../styles/typography' as *;
 
 
-@media (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) {
-    #hero .social-icons {
-        flex-direction: row;
-    }
+// @media (orientation: landscape) and (max-height: 500px) and (max-width: 1024px) {
+//     #hero .social-icons {
+//         flex-direction: row;
+//     }
 
-    #hero .left-section,
-    #hero .right-section {
-        transform: scale(0.9);
-    }
+//     #hero .left-section,
+//     #hero .right-section {
+//         transform: scale(0.9);
+//     }
 
-    #hero .scroll-icon {
-        margin-top: clamp(5px, 4vw, 146px);
-    }
+//     #hero .scroll-icon {
+//         margin-top: clamp(5px, 4vw, 146px);
+//     }
 
-    #hero h1 {
-        margin-top: 28px;
-    }
+//     #hero h1 {
+//         margin-top: 28px;
+//     }
 
-    #hero .shape {
-        width: clamp(266px, 41vw, 620px);
-    }
+//     #hero .shape {
+//         width: clamp(266px, 41vw, 620px);
+//     }
 
 
-    @media (orientation: landscape) and (max-width: 667px) and (max-height: 400px) {
-        #hero {
-            padding: 0.5rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-        }
+//     @media (orientation: landscape) and (max-width: 667px) and (max-height: 400px) {
+//         #hero {
+//             padding: 0.5rem;
+//             display: flex;
+//             flex-direction: column;
+//             align-items: center;
+//             justify-content: center;
+//             gap: 1rem;
+//         }
 
-        #hero .left-section,
-        #hero .right-section {
-            transform: scale(0.8);
-            flex: none;
-            width: 100%;
-        }
+//         #hero .left-section,
+//         #hero .right-section {
+//             transform: scale(0.8);
+//             flex: none;
+//             width: 100%;
+//         }
 
-        #hero .social-icons {
-            flex-direction: row;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 0.5rem;
-        }
+//         #hero .social-icons {
+//             flex-direction: row;
+//             justify-content: center;
+//             gap: 1rem;
+//             margin-top: 0.5rem;
+//         }
 
-        #hero .scroll-icon {
-            display: none; // zu wenig Platz, lieber ausblenden
-        }
+//         #hero .scroll-icon {
+//             display: none; // zu wenig Platz, lieber ausblenden
+//         }
 
-        #hero h1 {
-            font-size: clamp(1.4rem, 6vw, 2rem);
-            margin-top: 12px;
-        }
+//         #hero h1 {
+//             font-size: clamp(1.4rem, 6vw, 2rem);
+//             margin-top: 12px;
+//         }
 
-        #hero .shape {
-            width: clamp(200px, 65vw, 360px);
-            transform: scale(0.9);
-            margin-bottom: 0.5rem;
-        }
+//         #hero .shape {
+//             width: clamp(200px, 65vw, 360px);
+//             transform: scale(0.9);
+//             margin-bottom: 0.5rem;
+//         }
 
-        #hero .shape img {
-            object-fit: contain;
-            object-position: center bottom;
-            width: 100%;
-        }
-    }
+//         #hero .shape img {
+//             object-fit: contain;
+//             object-position: center bottom;
+//             width: 100%;
+//         }
+//     }
 
-}
+//     @media screen and (max-width: 667px) and (max-height: 375px) and (orientation: landscape) {
+//         .hero-section {
+//             height: auto;
+//             flex-direction: column;
+//             padding: 200px;
+
+//             .left-section {
+//                 flex-direction: column;
+//                 align-items: center;
+
+//                 .shape {
+//                     width: 90%;
+//                     position: static;
+//                 }
+//             }
+//         }
+//     }
+
+
+// }
