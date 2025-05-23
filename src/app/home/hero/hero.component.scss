@@ -56,10 +56,12 @@
 .hero-section {
   display: flex;
   background-color: #262E34;
-  height: clamp(500px, 60vw, 100vh) !important;
+  //  height: clamp(500px, 60vw,  100vh) !important;
+  height: 100vh;
 
   .left-section {
     flex: 1;
+    height: 100%;
     background-color: #262e34;
     display: flex;
     justify-content: center;
@@ -70,15 +72,19 @@
       display: flex;
       justify-content: center;
       align-items: flex-start;
-      margin-top: 0;
-      padding: 0;
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: 100%;
+      flex-shrink: 1;
+      position: absolute;
+      bottom: 0;
     }
 
     .shape {
       @include cyan-main-bg;
-      // width: clamp(266px, 50vw, 620px);
-      width: clamp(262px, 43vw, 620px);
-      height: auto;
+      aspect-ratio: 1 / 1;
+      height: clamp(262px, 43vw, 620px);
       border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
       position: absolute;
       bottom: 0;
@@ -89,10 +95,9 @@
 
     .shape img {
       width: 100%;
-      height: auto;
-      object-fit: cover;
+      height: 100%;
+      object-fit: contain;
       object-position: bottom;
-      max-height: 100%;
       position: relative;
       z-index: 2;
 
