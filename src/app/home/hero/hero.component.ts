@@ -94,7 +94,7 @@ export class HeroComponent implements OnInit {
    * Checks whether the current viewport is considered mobile.
    */
   checkViewport(): void {
-    this.isMobile = window.innerWidth <= 768;
+    this.isMobile = window.innerWidth <= 660;
   }
 
   /**

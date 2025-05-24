@@ -5,7 +5,7 @@
 
 
 .navbar {
-  height: 104px;
+  height: 120px;
   @include cyan-main-bg;
   color: white;
   display: flex;
@@ -219,7 +219,7 @@
 }
 
 /* Media Query – Mobile */
-@media (max-width: 768px) {
+@media (max-width: 660px) {
   .navbar {
     display: none;
   }
