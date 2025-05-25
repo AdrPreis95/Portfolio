@@ -81,11 +81,17 @@ p {
 
     .text {
       max-width: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 18px;
 
       .bullet {
         display: flex;
         gap: 1rem;
         margin-bottom: 1.5rem;
+
 
         .dot {
           width: 18px;
@@ -93,6 +99,7 @@ p {
           border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
           @include cyan-main-bg;
           margin-top: 6px;
+          padding: 10px !important;
         }
 
         .content {

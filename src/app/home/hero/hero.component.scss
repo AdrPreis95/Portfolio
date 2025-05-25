@@ -20,25 +20,49 @@
   }
 }
 
-@media screen and (max-width: 1179px) and (hover: hover) and (pointer: fine) {
+@media screen and (min-width: 661px) and (max-width: 980px) and (hover: hover) and (pointer: fine) {
+  #hero {
+    height: 920px !important;
+  }
+}
+
+@media screen and (min-width: 661px) and (max-width: 1179px) and (hover: hover) and (pointer: fine) {
   #hero {
     height: calc(100dvh - 120px) !important;
   }
 }
 
 
+
 @media (min-height: 1081px) {
   #hero {
-    height: 900px;
+    height: 920px !important;
     overflow: hidden;
   }
 }
 
+@media screen and (max-width: 380px) and (max-height: 670px) and (orientation: portrait) {
+  .hero-mobile {
+    gap: unset !important;
+  }
+
+  .hero-mobile .shape-wrapper {
+    margin-top: 100px !important;
+  }
+
+  .hero-mobile .shape {
+    width: 248px !important;
+  }
+
+  .hero-mobile .mobile-menu {
+    margin-top: 100px !important;
+  }
+}
 
 .hero-section {
   display: flex;
   background-color: #262E34;
-  height: 100vh !important;
+  height: 100vh;
 
   .left-section {
     flex: 1;
@@ -223,13 +247,14 @@
   }
 
   .shape-wrapper {
-    width: clamp(240px, 80vw, 360px);
+
     display: flex;
     margin-top: 120px;
     justify-content: center;
 
+
     .shape {
-      width: 100%;
+      width: clamp(240px, 80vw, 360px);
       overflow: hidden;
       border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
       @include cyan-main-bg;
@@ -350,24 +375,6 @@ a {
   }
 
 }
-
-// /* Media Query – Mobile */
-// @media (max-width: 768px) {
-//   .navbar {
-//     display: none;
-//   }
-
-//   .nav-links,
-//   .language-switch {
-//     display: none;
-//   }
-
-//   .hamburger {
-//     display: flex !important;
-//   }
-
-
-// }
 
 .language-switch {
   position: relative;

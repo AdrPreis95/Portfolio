@@ -109,6 +109,10 @@ export class HeroComponent implements OnInit {
     }
   }
 
+
+  /**
+  * Smoothly scrolls the view to the Navbar sections.
+  */
   scrollToContact(): void {
     this.scrollToSection('contact');
   }

@@ -25,14 +25,14 @@
         "BUTTON": "Schreib mir"
     },
     "SKILLS": {
-        "TITLE": "Meine Fähigkeiten",
+        "TITLE": "Fähigkeiten",
         "CURRENTLY_LEARNING": "Ich lerne derzeit",
         "LEARNING_TEXT": "Ich erweitere ständig meine Skills und entdecke neue Technologien wie React und Vue.js."
     },
     "PROJECTS": {
         "PROJECT": "Projekt",
         "TITLE": "Meine Projekte",
-        "LIVE": "Live-Demo",
+        "LIVE": "Demo",
         "TECHNOLOGIES": "Technologien",
         "EL_POLLO": {
             "LABEL": "El Pollo Loco",
@@ -90,7 +90,7 @@
         }
     },
     "TESTIMONIALS": {
-        "TITLE": "Du suchst ein Teamplayer? Das sagen Kollegen über mich",
+        "TITLE": "Du suchst einen Teamplayer? Das sagen Kollegen über mich",
         "PROJECT": "Projekt",
         "LIST": [
             "Adrian erarbeitete Inhalte im Team, strukturierte und lieferte sie zuverlässig ab. Er ist freundlich und engagiert.",

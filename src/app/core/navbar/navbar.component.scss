@@ -4,6 +4,15 @@
 @use 'landscape/landscape';
 
 
+@media screen and (max-width: 819px) {
+  .navbar .nav-links a {
+    font-size: 20px !important;
+ }
+  .navbar {
+    padding: 15px 5px !important;
+  }
+}
+
 .navbar {
   height: 120px;
   @include cyan-main-bg;
@@ -12,7 +21,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 40px;
-  margin-bottom: 80px;
+  margin-bottom: 20px;
 
   .logo img {
     height: 30px;
@@ -187,8 +196,8 @@
     @include cyan-main-bg;
     padding: 2rem;
     border-radius: 50% 40% 60% 50% / 60% 50% 40% 50%;
-    height: clamp(270px, 48vw, 376px);
-    width: clamp(250px, 45vw, 353px);
+    width: clamp(240px, 80vw, 360px);
+    height: 440px;
     text-align: center;
 
     ul {

@@ -1,3 +1,16 @@
-@use '../mixins' as *;              
-@use '../../styles/font-sizes' as *;  
-@use '../../styles/typography' as *;  
+@use '../mixins' as *;
+@use '../../styles/font-sizes' as *;
+@use '../../styles/typography' as *;
+
+
+
+
+@media screen and (max-width: 680px) and (orientation: landscape) {
+    .navbar {
+        padding: 10px 12px !important;
+    }
+
+    .nav-links li a {
+        font-size: 16px !important;
+    }
+}

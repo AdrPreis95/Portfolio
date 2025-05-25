@@ -92,6 +92,7 @@
     grid-template-columns: repeat(2, 1fr);
     grid-column: 1 / -1;
     justify-self: center;
+    padding-inline: unset !important;
 
 
   }
@@ -154,6 +155,7 @@
     scroll-padding-inline: 50%;
     -webkit-overflow-scrolling: touch;
     padding-block: 2rem;
+    padding-inline: 10% !important;
 
   }
 

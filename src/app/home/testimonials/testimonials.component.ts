@@ -51,7 +51,7 @@ export class TestimonialsComponent {
           link: '#'
         },
         {
-          name: 'Nico',
+          name: 'Dino',
           project: 'Join',
           quote: t.LIST[2],
           link: '#'

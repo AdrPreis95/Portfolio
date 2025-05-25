@@ -79,14 +79,11 @@ export class ContactComponent {
       console.warn('Spam detected, message ignored!');
       return;
     }
-
     this.submitted = true;
-
     Object.values(this.contactForm.controls).forEach(control => {
       control.markAsTouched();
       control.updateValueAndValidity();
     });
-
     if (this.contactForm.valid && !this.showConfirmation) {
       const data = this.contactForm.value;
 
@@ -136,6 +133,9 @@ export class ContactComponent {
     this.submitted = false;
   }
 
+  /**
+   * Scrolls to the Hero Section
+   */
   scrollToHero() {
     const section = document.getElementById('hero');
     if (section) {
