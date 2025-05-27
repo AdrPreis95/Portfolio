@@ -1,5 +1,5 @@
 <ng-container *ngIf="!isMobile">
-  <div id="hero" class="hero-section">
+  <div id="hero" class="hero-section" data-aos="fade-in">
     <div class="left-section">
       <div class="shape-wrapper">
         <div class="shape">
@@ -89,7 +89,7 @@
 
 
 <ng-template #mobileTemplate>
-  <div id="hero" class="hero-mobile">
+  <div id="hero" class="hero-mobile" data-aos="fade-in">
     <div class="top-logo">
       <img src="/assets/hero/icons/Logo icon.svg" alt="Logo">
       <p>{{ 'HERO.LOGO_NAME' | translate }}<br><span>{{ 'HERO.LOGO_ROLE' | translate }}</span></p>
@@ -101,7 +101,7 @@
       </div>
     </div>
 
-    <div class="mobile-menu" *ngIf="menuOpen">
+    <div class="mobile-menu" *ngIf="menuOpen" data-aos="fade-in">
       <div class="blob">
         <ul>
           <li><a (click)="scrollToWhyMe()">{{ 'NAV.WHYME' | translate }}</a></li>

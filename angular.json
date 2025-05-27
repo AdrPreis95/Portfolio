@@ -37,7 +37,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/aos/dist/aos.css"
             ],
             "stylePreprocessorOptions": {
               "includePaths": [
@@ -45,7 +46,9 @@
                 "src/styles"
               ]
             },
-            "scripts": [],
+            "scripts": [
+              "node_modules/aos/dist/aos.js"
+            ],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -104,7 +107,6 @@
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
