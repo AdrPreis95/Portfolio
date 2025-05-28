@@ -7,13 +7,17 @@
 @media screen and (max-width: 819px) {
   .navbar .nav-links a {
     font-size: 20px !important;
- }
+  }
+
   .navbar {
     padding: 15px 5px !important;
   }
 }
 
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   height: 120px;
   @include cyan-main-bg;
   color: white;
