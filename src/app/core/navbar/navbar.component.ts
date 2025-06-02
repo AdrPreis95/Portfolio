@@ -2,6 +2,8 @@ import { Component, HostListener, OnInit, Inject, PLATFORM_ID } from '@angular/c
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
 import { MenuService } from '../../services/menu.service';
+import { LanguageService } from '../../services/language.service';
+
 
 /**
  * Represents the navigation bar component.
@@ -37,7 +39,8 @@ export class NavbarComponent implements OnInit {
   constructor(
     private translate: TranslateService,
     @Inject(PLATFORM_ID) private platformId: Object,
-    private menuService: MenuService
+    private menuService: MenuService,
+    private languageService: LanguageService
   ) {
     translate.setDefaultLang('en');
     this.isBrowser = isPlatformBrowser(this.platformId);
@@ -49,9 +52,15 @@ export class NavbarComponent implements OnInit {
    */
   ngOnInit(): void {
     if (this.isBrowser) {
+      const lang = this.languageService.getCurrentLanguage();
+      this.translate.use(lang);
+      this.currentLanguage = lang;
+
       this.checkViewport();
     }
   }
+
+
 
   /**
    * Handles window resize events to close the mobile menu on desktop view.
@@ -79,9 +88,12 @@ export class NavbarComponent implements OnInit {
    * @param lang Language code to switch to (e.g., 'en' or 'de').
    */
   switchLanguage(lang: string): void {
+    this.languageService.setLanguage(lang);
     this.translate.use(lang);
     this.currentLanguage = lang;
   }
+
+
 
   /**
    * Toggles the mobile menu open or closed, and updates shared menu state.

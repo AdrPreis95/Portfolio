@@ -2,6 +2,7 @@ import { Component, HostListener, OnInit, Inject, PLATFORM_ID } from '@angular/c
 import { isPlatformBrowser } from '@angular/common';
 import { MenuService } from '../../services/menu.service';
 import { TranslateService } from '@ngx-translate/core';
+import { LanguageService } from '../../services/language.service';
 
 /**
  * Represents the hero section at the top of the homepage.
@@ -43,7 +44,8 @@ export class HeroComponent implements OnInit {
   constructor(
     @Inject(PLATFORM_ID) private platformId: Object,
     private menuService: MenuService,
-    private translate: TranslateService
+    private translate: TranslateService,
+    private languageService: LanguageService
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     this.translate.setDefaultLang('en');
@@ -61,6 +63,13 @@ export class HeroComponent implements OnInit {
       this.menuService.menuOpen$.subscribe((state) => {
         this.menuOpen = state;
       });
+
+      this.currentLanguage = this.languageService.getCurrentLanguage();
+      this.translate.use(this.currentLanguage);
+      this.languageService.lang$.subscribe((lang) => {
+        this.currentLanguage = lang;
+        this.translate.use(lang);
+      });
     }
   }
 
@@ -69,9 +78,11 @@ export class HeroComponent implements OnInit {
    * @param lang The new language code to use.
    */
   switchLanguage(lang: string): void {
+    this.languageService.setLanguage(lang);
     this.translate.use(lang);
     this.currentLanguage = lang;
   }
+
 
   /**
    * Closes the mobile menu via the MenuService.
