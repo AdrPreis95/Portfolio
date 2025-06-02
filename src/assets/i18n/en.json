@@ -140,5 +140,26 @@
         "SOURCE_TEXT": "The icons and images used are either self-created or from freely available, royalty-free sources.",
         "NO_ABMAHNUNG": "No legal warning without prior contact",
         "NO_ABMAHNUNG_TEXT": "If the content or design of this website violates the rights of third parties or legal regulations, please notify me without a cost note. Justified complaints will result in the immediate removal of the affected content, without the need for legal assistance."
+    },
+    "PRIVACY": {
+        "TITLE": "Privacy Policy",
+        "INTRO_TITLE": "Introduction",
+        "INTRO_TEXT": "Protecting your personal data is important to us. This privacy policy explains the nature, scope, and purpose of the collection and use of personal data on this website.",
+        "HOSTING_TITLE": "Hosting",
+        "HOSTING_TEXT": "This website is hosted by an external service provider. Personal data collected on this website is stored on the servers of the hoster. This is necessary to operate the website.",
+        "LOGFILES_TITLE": "Server Log Files",
+        "LOGFILES_TEXT": "When visiting this website, information such as browser type, operating system, referrer URL, hostname, time of request, and IP address is automatically recorded. This data is not merged with other sources.",
+        "CONTACT_FORM_TITLE": "Contact Form",
+        "CONTACT_FORM_TEXT": "If you contact us via form, the data you provide will be stored to process your request and for follow-up questions. We do not share this data without your consent.",
+        "DATA_USAGE_TITLE": "Use of Personal Data",
+        "DATA_USAGE_TEXT": "Personal data is only used to handle your request, improve the service, or fulfill legal obligations.",
+        "COOKIES_TITLE": "Cookies",
+        "COOKIES_TEXT": "This website does not use tracking or analytics cookies. Only technically necessary cookies are used if required.",
+        "ANALYTICS_TITLE": "Web Analytics",
+        "ANALYTICS_TEXT": "This website does not use analytics tools like Google Analytics or Matomo. No statistical user tracking is performed.",
+        "RIGHTS_TITLE": "Your Rights",
+        "RIGHTS_TEXT": "You have the right to request information about your stored personal data, its origin and recipients, and the purpose of processing. You also have the right to request correction, blocking, or deletion of this data.",
+        "CONTACT_TITLE": "Privacy Contact",
+        "CONTACT_TEXT": "If you have questions about data protection or wish to exercise your rights, please contact: kontakt@adrianpreis.de"
     }
 }

@@ -140,5 +140,26 @@
         "SOURCE_TEXT": "Die verwendeten Icons und Bilder stammen entweder aus eigenen Arbeiten oder aus frei verfügbaren, lizenzfreien Quellen.",
         "NO_ABMAHNUNG": "Keine Abmahnung ohne vorherigen Kontakt",
         "NO_ABMAHNUNG_TEXT": "Sollte der Inhalt oder die Aufmachung dieser Seite Rechte Dritter oder gesetzliche Bestimmungen verletzen, bitte ich um eine entsprechende Nachricht ohne Kostennote. Die zu Recht beanstandeten Passagen werden unverzüglich entfernt, ohne dass von Ihrer Seite die Einschaltung eines Rechtsbeistandes erforderlich ist."
+    },
+    "PRIVACY": {
+        "TITLE": "Datenschutzerklärung",
+        "INTRO_TITLE": "Einleitung",
+        "INTRO_TEXT": "Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Diese Datenschutzerklärung informiert Sie über die Art, den Umfang und Zweck der Erhebung und Verwendung personenbezogener Daten auf dieser Website.",
+        "HOSTING_TITLE": "Hosting",
+        "HOSTING_TEXT": "Diese Website wird bei einem externen Dienstleister gehostet. Die im Rahmen der Nutzung dieser Website erfassten personenbezogenen Daten werden auf den Servern des Hosters gespeichert. Dies ist notwendig, um den Betrieb der Website zu gewährleisten.",
+        "LOGFILES_TITLE": "Server-Log-Dateien",
+        "LOGFILES_TEXT": "Beim Besuch dieser Website werden automatisch Informationen wie Browsertyp, verwendetes Betriebssystem, Referrer-URL, Hostname des zugreifenden Rechners, Uhrzeit der Serveranfrage und IP-Adresse gespeichert. Diese Daten werden nicht mit anderen Datenquellen zusammengeführt.",
+        "CONTACT_FORM_TITLE": "Kontaktformular",
+        "CONTACT_FORM_TEXT": "Wenn Sie uns per Formular Anfragen senden, werden Ihre Angaben inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.",
+        "DATA_USAGE_TITLE": "Verarbeitung personenbezogener Daten",
+        "DATA_USAGE_TEXT": "Personenbezogene Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage, zur Verbesserung unserer Dienste oder zur Einhaltung gesetzlicher Verpflichtungen verwendet.",
+        "COOKIES_TITLE": "Cookies",
+        "COOKIES_TEXT": "Diese Website verwendet keine Cookies zu Tracking- oder Analysezwecken. Es werden lediglich technisch notwendige Cookies eingesetzt, sofern erforderlich.",
+        "ANALYTICS_TITLE": "Webanalyse",
+        "ANALYTICS_TEXT": "Diese Website verwendet keine Analyse-Tools wie Google Analytics oder Matomo. Es erfolgt keine statistische Auswertung des Nutzerverhaltens.",
+        "RIGHTS_TITLE": "Ihre Rechte",
+        "RIGHTS_TEXT": "Sie haben jederzeit das Recht auf Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung. Ebenso haben Sie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.",
+        "CONTACT_TITLE": "Datenschutzkontakt",
+        "CONTACT_TEXT": "Bei Fragen zum Datenschutz oder zur Geltendmachung Ihrer Rechte wenden Sie sich bitte an: kontakt@adrianpreis.de"
     }
 }

@@ -18,6 +18,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LegalNoticeComponent } from './core/legal-notice/legal-notice.component';
+import { PrivacyPolicyComponent } from './core/privacy-policy/privacy-policy.component';
 
 
 
@@ -38,6 +39,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     ContactComponent,
     FooterComponent,
     LegalNoticeComponent,
+    PrivacyPolicyComponent,
  
 
   

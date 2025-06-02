@@ -10,7 +10,7 @@ import * as AOS from 'aos';
 })
 export class AppComponent implements OnInit {
   title = 'portfolio-classic';
-  isLegalNotice = false;
+  isLegalPage = false;
 
   constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: Object) {}
 
@@ -24,7 +24,8 @@ export class AppComponent implements OnInit {
 
       this.router.events.subscribe(event => {
         if (event instanceof NavigationEnd) {
-          this.isLegalNotice = event.url === '/legal-notice';
+          const legalRoutes = ['/legal-notice', '/privacy-policy'];
+          this.isLegalPage = legalRoutes.includes(event.urlAfterRedirects);
           setTimeout(() => AOS.refresh(), 300);
         }
       });
