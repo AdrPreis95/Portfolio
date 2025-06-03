@@ -40,3 +40,18 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+
+
+# PHP server files 
+*.php
+
+# Windows-Systemdatas
+desktop.ini
+
+# other temporary Datas
+*.log
+*.tmp
+*.temp
+
+#  .env-Datas
+.env
