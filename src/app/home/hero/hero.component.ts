@@ -34,6 +34,10 @@ export class HeroComponent implements OnInit {
    * Currently active language code (e.g., 'en' or 'de').
    */
   currentLanguage = 'en';
+  /**
+   * handles the close animation for mobile navbar (smooth after clicking on link).
+   */
+  isClosingMenu = false;
 
   /**
    * Constructs the HeroComponent.
@@ -88,8 +92,15 @@ export class HeroComponent implements OnInit {
    * Closes the mobile menu via the MenuService.
    */
   closeMenu(): void {
-    this.menuService.setMenuOpen(true);
+    this.isClosingMenu = true;
+
+    setTimeout(() => {
+      this.menuService.setMenuOpen(false);
+      this.menuOpen = false;
+      this.isClosingMenu = false;
+    }, 500);
   }
+
 
   /**
    * Triggered on window resize; updates the viewport state.
@@ -109,23 +120,14 @@ export class HeroComponent implements OnInit {
   }
 
   /**
-   * Smoothly scrolls the view to the #whyme section.
-   */
-  scrollToWhyMe(): void {
-    if (this.isBrowser) {
-      const element = document.getElementById('whyme');
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-  }
-
-
-  /**
   * Smoothly scrolls the view to the Navbar sections.
   */
   scrollToContact(): void {
     this.scrollToSection('contact');
+  }
+
+  scrollToWhyMe(): void {
+    this.scrollToSection('whyme');
   }
 
   scrollToSkills(): void {
@@ -138,12 +140,18 @@ export class HeroComponent implements OnInit {
 
   private scrollToSection(id: string): void {
     if (this.isBrowser) {
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (this.isMobile) {
+        this.closeMenu();
       }
+      setTimeout(() => {
+        const section = document.getElementById(id);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, this.isMobile ? 300 : 0);
     }
   }
+
 
 
 

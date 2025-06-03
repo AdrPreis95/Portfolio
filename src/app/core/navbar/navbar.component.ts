@@ -56,6 +56,11 @@ export class NavbarComponent implements OnInit {
       this.translate.use(lang);
       this.currentLanguage = lang;
 
+      this.menuService.menuOpen$.subscribe((state) => {
+        this.isMenuOpen = state;
+      });
+
+
       this.checkViewport();
     }
   }
@@ -99,8 +104,16 @@ export class NavbarComponent implements OnInit {
    * Toggles the mobile menu open or closed, and updates shared menu state.
    */
   toggleMobileMenu(): void {
-    this.isMenuOpen = !this.isMenuOpen;
-    this.menuService.setMenuOpen(this.isMenuOpen);
+    if (this.isMenuOpen) {
+      this.menuService.setMenuOpen(false);
+
+      setTimeout(() => {
+        this.isMenuOpen = false;
+      }, 500);
+    } else {
+      this.isMenuOpen = true;
+      this.menuService.setMenuOpen(true);
+    }
   }
 
   /**

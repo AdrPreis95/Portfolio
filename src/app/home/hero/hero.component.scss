@@ -331,6 +331,21 @@
 
 .mobile-menu {
   margin-top: 122px;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+
+  &.fade-out {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+
+  &.open {
+    opacity: 1;
+    transform: scale(1);
+    pointer-events: auto;
+  }
+
 
 }
 

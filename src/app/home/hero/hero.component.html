@@ -101,7 +101,7 @@
       </div>
     </div>
 
-    <div class="mobile-menu" *ngIf="menuOpen" data-aos="fade-in">
+    <div class="mobile-menu" *ngIf="menuOpen" [class.fade-out]="isClosingMenu" data-aos="fade-in">
       <div class="blob">
         <ul>
           <li><a (click)="scrollToWhyMe()">{{ 'NAV.WHYME' | translate }}</a></li>
