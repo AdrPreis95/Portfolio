@@ -1,28 +1,35 @@
-<nav class="navbar" id="navbar">
-  <div class="logo">
-    <img src="/assets/navbar/icons/Logo icon (2).svg" alt="Logo" />
-    <p>
-      {{ 'NAV.LOGO_NAME' | translate }}<br>
-      <span>{{ 'NAV.LOGO_ROLE' | translate }}</span>
-    </p>
+<div class="sticky-wrapper">
+<div class="full-width-section">
+  <div class="navbar-inner sticky-wrapper">
+    <nav class="navbar" id="navbar">
+      <div class="logo">
+        <img src="/assets/navbar/icons/Logo icon (2).svg" alt="Logo" />
+        <p>
+          {{ 'NAV.LOGO_NAME' | translate }}<br>
+          <span>{{ 'NAV.LOGO_ROLE' | translate }}</span>
+        </p>
+      </div>
+
+
+      <ul class="nav-links">
+        <li><a href="#whyme">{{ 'NAV.WHYME' | translate }}</a></li>
+        <li><a href="#skills">{{ 'NAV.SKILLS' | translate }}</a></li>
+        <li><a href="#projects">{{ 'NAV.PROJECTS' | translate }}</a></li>
+        <li><a href="#contact">{{ 'NAV.CONTACT' | translate }}</a></li>
+      </ul>
+
+      <div class="language-switch" [ngClass]="{ 'en-active': currentLanguage === 'en' }">
+        <div class="switch-indicator"></div>
+        <div class="language-labels">
+          <a (click)="switchLanguage('de')">DE</a>
+          <a (click)="switchLanguage('en')">EN</a>
+        </div>
+      </div>
+    </nav>
   </div>
+</div>
+</div>
 
-
-  <ul class="nav-links">
-    <li><a href="#whyme">{{ 'NAV.WHYME' | translate }}</a></li>
-    <li><a href="#skills">{{ 'NAV.SKILLS' | translate }}</a></li>
-    <li><a href="#projects">{{ 'NAV.PROJECTS' | translate }}</a></li>
-    <li><a href="#contact">{{ 'NAV.CONTACT' | translate }}</a></li>
-  </ul>
-
-  <div class="language-switch" [ngClass]="{ 'en-active': currentLanguage === 'en' }">
-    <div class="switch-indicator"></div>
-    <div class="language-labels">
-      <a (click)="switchLanguage('de')">DE</a>
-      <a (click)="switchLanguage('en')">EN</a>
-    </div>
-  </div>
-</nav>
 
 <button class="hamburger" [class.open]="isMenuOpen" (click)="toggleMobileMenu()" aria-label="Toggle menu">
   <span></span>

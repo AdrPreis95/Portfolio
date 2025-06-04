@@ -1,3 +1,5 @@
+@use 'component-layout/layout' as *;
+
 /* === Font-Josefine Sans (400) === */
 
 @font-face {
@@ -106,6 +108,11 @@ body {
   margin-right: auto;
   border-left: 4px solid #2D383F;
   border-right: 4px solid #2D383F;
+
+  @media screen and (min-width: 1920px) {
+    border-left: none;
+    border-right: none;
+  }
 }
 
 /* 

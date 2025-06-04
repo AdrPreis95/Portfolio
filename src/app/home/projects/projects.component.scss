@@ -2,6 +2,23 @@
 @use 'font-sizes' as *;
 @use 'typography' as *;
 @use 'landscape/landscape';
+@use 'component-layout/layout' as *;
+
+.full-width-section {
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  width: 100vw;
+  background-color: #2d383f;
+}
+
+
+.projects-inner {
+  max-width: 1920px;
+  margin: 0 auto;
+}
 
 
 section {

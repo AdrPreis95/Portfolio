@@ -142,7 +142,7 @@
         "NO_ABMAHNUNG_TEXT": "Sollte der Inhalt oder die Aufmachung dieser Seite Rechte Dritter oder gesetzliche Bestimmungen verletzen, bitte ich um eine entsprechende Nachricht ohne Kostennote. Die zu Recht beanstandeten Passagen werden unverzüglich entfernt, ohne dass von Ihrer Seite die Einschaltung eines Rechtsbeistandes erforderlich ist."
     },
     "PRIVACY": {
-        "TITLE": "Datenschutzerklärung",
+        "TITLE": "Datenschutz",
         "INTRO_TITLE": "Einleitung",
         "INTRO_TEXT": "Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Diese Datenschutzerklärung informiert Sie über die Art, den Umfang und Zweck der Erhebung und Verwendung personenbezogener Daten auf dieser Website.",
         "HOSTING_TITLE": "Hosting",
@@ -160,6 +160,6 @@
         "RIGHTS_TITLE": "Ihre Rechte",
         "RIGHTS_TEXT": "Sie haben jederzeit das Recht auf Auskunft über Ihre gespeicherten personenbezogenen Daten, deren Herkunft und Empfänger sowie den Zweck der Datenverarbeitung. Ebenso haben Sie ein Recht auf Berichtigung, Sperrung oder Löschung dieser Daten.",
         "CONTACT_TITLE": "Datenschutzkontakt",
-        "CONTACT_TEXT": "Bei Fragen zum Datenschutz oder zur Geltendmachung Ihrer Rechte wenden Sie sich bitte an: kontakt@adrianpreis.de"
+        "CONTACT_TEXT": "Bei Fragen zum Datenschutz oder zur Geltendmachung Ihrer Rechte wenden Sie sich bitte an: adrianpreis86@gmail.com"
     }
 }

@@ -7,40 +7,45 @@
         {{ tab.label }}
       </span>
     </nav>
-
-    <div class="project-details">
-      <div class="text">
-        <div class="content-tab" *ngIf="tabs[selectedTab].points?.length > 0">
-          <div *ngFor="let point of tabs[selectedTab].points" class="bullet">
-            <span class="dot"></span>
-            <div class="content">
-              <h4>{{ point.title }} <span *ngIf="point.duration"> – {{ point.duration }}</span></h4>
-              <p>{{ point.text }}</p>
+    <div class="full-width-section">
+      <div class="projects-inner">
+        <div class="project-details">
+          <div class="text">
+            <div class="content-tab" *ngIf="tabs[selectedTab].points?.length > 0">
+              <div *ngFor="let point of tabs[selectedTab].points" class="bullet">
+                <span class="dot"></span>
+                <div class="content">
+                  <h4>{{ point.title }} <span *ngIf="point.duration"> – {{ point.duration }}</span></h4>
+                  <p>{{ point.text }}</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
 
-      <div class="preview">
-        <h5>{{ 'PROJECTS.TECHNOLOGIES' | translate }}</h5>
-        <div class="techs">
-          <img *ngFor="let tech of tabs[selectedTab].technologies" [src]="tech" />
-        </div>
-        <div class="image-container">
-          <img class="screenshot" [src]="tabs[selectedTab].screenshot" alt="Project Screenshot" />
-        </div>
-        <div class="buttons">
-          <a class="btn" *ngIf="tabs[selectedTab].live" [href]="tabs[selectedTab].live" target="_blank">
-            {{ 'PROJECTS.LIVE' | translate }}
-          </a>
-          <a class="btn secondary" *ngIf="tabs[selectedTab].github" [href]="tabs[selectedTab].github" target="_blank">
-            GitHub
-          </a>
+          <div class="preview">
+            <h5>{{ 'PROJECTS.TECHNOLOGIES' | translate }}</h5>
+            <div class="techs">
+              <img *ngFor="let tech of tabs[selectedTab].technologies" [src]="tech" />
+            </div>
+            <div class="image-container">
+              <img class="screenshot" [src]="tabs[selectedTab].screenshot" alt="Project Screenshot" />
+            </div>
+            <div class="buttons">
+              <a class="btn" *ngIf="tabs[selectedTab].live" [href]="tabs[selectedTab].live" target="_blank">
+                {{ 'PROJECTS.LIVE' | translate }}
+              </a>
+              <a class="btn secondary" *ngIf="tabs[selectedTab].github" [href]="tabs[selectedTab].github"
+                target="_blank">
+                GitHub
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 </ng-container>
+
 
 <ng-container *ngIf="isMobile && tabs.length > 0 && tabs[selectedTab]">
   <ng-container *ngTemplateOutlet="mobileTemplate"></ng-container>
