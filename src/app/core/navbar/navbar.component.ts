@@ -3,6 +3,8 @@ import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
 import { MenuService } from '../../services/menu.service';
 import { LanguageService } from '../../services/language.service';
+import { Router } from '@angular/router';
+
 
 
 /**
@@ -40,7 +42,8 @@ export class NavbarComponent implements OnInit {
     private translate: TranslateService,
     @Inject(PLATFORM_ID) private platformId: Object,
     private menuService: MenuService,
-    private languageService: LanguageService
+    private languageService: LanguageService,
+    private router: Router
   ) {
     translate.setDefaultLang('en');
     this.isBrowser = isPlatformBrowser(this.platformId);
@@ -123,4 +126,9 @@ export class NavbarComponent implements OnInit {
     this.isMenuOpen = false;
     this.menuService.setMenuOpen(false);
   }
+
+  get isLegalPage(): boolean {
+    return this.router.url.includes('legal-notice') || this.router.url.includes('privacy-policy');
+  }
+
 }
