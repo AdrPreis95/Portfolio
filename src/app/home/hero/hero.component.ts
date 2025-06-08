@@ -139,18 +139,33 @@ export class HeroComponent implements OnInit {
   }
 
   private scrollToSection(id: string): void {
-    if (this.isBrowser) {
-      if (this.isMobile) {
-        this.closeMenu();
-      }
-      setTimeout(() => {
-        const section = document.getElementById(id);
-        if (section) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      }, this.isMobile ? 300 : 0);
+    if (!this.isBrowser) return;
+
+    if (this.isMobile) {
+      this.closeMenu();
     }
+
+    setTimeout(() => {
+      const section = document.getElementById(id);
+
+      if (section) {
+        const offsets: { [key: string]: number } = {
+          contact: -40,
+          whyme: 0,
+          skills: 60,
+          projects: 70,
+         'default': 100
+        };
+
+        const offset = offsets[id] ?? offsets['default'];
+
+        const top = section.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    }, this.isMobile ? 300 : 0);
   }
+
+
 
 
 

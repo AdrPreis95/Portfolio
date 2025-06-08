@@ -77,7 +77,7 @@
 // Standard navbar styles and media querries
 .navbar-inner {
   position: sticky !important;
-  max-width: 1920px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 
@@ -105,7 +105,7 @@
   @include cyan-main-bg;
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 15px 40px;
   margin-bottom: 20px;
