@@ -151,7 +151,7 @@ export class HeroComponent implements OnInit {
       if (section) {
         const offsets: { [key: string]: number } = {
           contact: -40,
-          whyme: 0,
+          whyme: 60,
           skills: 60,
           projects: 70,
          'default': 100

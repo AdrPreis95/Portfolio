@@ -131,4 +131,27 @@ export class NavbarComponent implements OnInit {
     return this.router.url.includes('legal-notice') || this.router.url.includes('privacy-policy');
   }
 
+
+  scrollToSection(id: string): void {
+    const element = document.getElementById(id);
+    if (!element) return;
+
+    const isMobile = window.innerWidth <= 660;
+
+    if (isMobile) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      const offsets: { [key: string]: number } = {
+        contact: 120,
+        whyme: 100,
+        skills: 100,
+        projects: 180,
+        'default': 120
+      };
+      const offset = offsets[id] ?? offsets['default'];
+      const top = element.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
+  }
+
 }

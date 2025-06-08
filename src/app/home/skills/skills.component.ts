@@ -82,11 +82,34 @@ export class SkillsComponent implements OnInit {
       this.isMobile = window.innerWidth <= 768;
     }
   }
-  
-  scrollToContact() {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
+
+  scrollToContact(): void {
+    this.scrollToSection('contact');
+  }
+
+  private scrollToSection(id: string): void {
+    const section = document.getElementById(id);
+    if (!section) return;
+
+    const isMobile = window.innerWidth <= 660;
+
+    const offsets: { [key: string]: number } = {
+      contact: -60,
+      whyme: 60,
+      skills: 60,
+      projects: 70,
+      'default': 100
+    };
+
+    const offset = offsets[id] ?? offsets['default'];
+    const top = section.getBoundingClientRect().top + window.scrollY - offset;
+
+    if (isMobile) {
+      setTimeout(() => {
+        window.scrollTo({ top, behavior: 'smooth' });
+      }, 300); 
+    } else {
+      window.scrollTo({ top, behavior: 'smooth' });
     }
   }
 
