@@ -133,25 +133,44 @@ export class NavbarComponent implements OnInit {
 
 
   scrollToSection(id: string): void {
-    const element = document.getElementById(id);
-    if (!element) return;
+    if (!this.isBrowser) return;
 
     const isMobile = window.innerWidth <= 660;
 
-    if (isMobile) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    const offsets: { [key: string]: number } = {
+      contact: 120,
+      whyme: 100,
+      skills: 100,
+      projects: 180,
+      'default': 120
+    };
+    const offset = offsets[id] ?? offsets['default'];
+
+    const scrollTo = () => {
+      const element = document.getElementById(id);
+      if (!element) return;
+
+      if (isMobile) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        const top = element.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    };
+
+    if (this.router.url !== '/') {
+      // Navigiere zur Startseite, dann scrolle
+      this.router.navigateByUrl('/').then(() => {
+        setTimeout(scrollTo, 100);
+      });
     } else {
-      const offsets: { [key: string]: number } = {
-        contact: 120,
-        whyme: 100,
-        skills: 100,
-        projects: 180,
-        'default': 120
-      };
-      const offset = offsets[id] ?? offsets['default'];
-      const top = element.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
+      scrollTo();
+    }
+
+    if (this.isMenuOpen) {
+      this.closeMenu();
     }
   }
+
 
 }
