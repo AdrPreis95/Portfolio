@@ -132,45 +132,36 @@ export class NavbarComponent implements OnInit {
   }
 
 
-  scrollToSection(id: string): void {
-    if (!this.isBrowser) return;
+ scrollToSection(id: string): void {
+  if (!this.isBrowser) return;
 
-    const isMobile = window.innerWidth <= 660;
+  const isMobile = window.innerWidth <= 660;
+  const targetId = `${id}-heading`; 
 
-    const offsets: { [key: string]: number } = {
-      contact: 120,
-      whyme: 100,
-      skills: 100,
-      projects: 180,
-      'default': 120
-    };
-    const offset = offsets[id] ?? offsets['default'];
+  const scroll = () => {
+    const target = document.getElementById(targetId);
+    if (!target) return;
 
-    const scrollTo = () => {
-      const element = document.getElementById(id);
-      if (!element) return;
+    const navbarOffset = isMobile ? 0 : 120; 
+const absoluteTop = target.getBoundingClientRect().top + window.scrollY;
+    const finalScroll = absoluteTop - navbarOffset;
 
-      if (isMobile) {
-        element.scrollIntoView({ behavior: 'smooth' });
-      } else {
-        const top = element.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    };
+    window.scrollTo({ top: finalScroll, behavior: 'smooth' });
+  };
 
-    if (this.router.url !== '/') {
-      // Navigiere zur Startseite, dann scrolle
-      this.router.navigateByUrl('/').then(() => {
-        setTimeout(scrollTo, 100);
-      });
-    } else {
-      scrollTo();
-    }
-
-    if (this.isMenuOpen) {
-      this.closeMenu();
-    }
+  if (this.router.url !== '/') {
+    this.router.navigateByUrl('/').then(() => {
+      setTimeout(scroll, 150);
+    });
+  } else {
+    scroll();
   }
+
+  if (isMobile && typeof this.closeMenu === 'function') {
+    this.closeMenu();
+  }
+}
+
 
 
 }

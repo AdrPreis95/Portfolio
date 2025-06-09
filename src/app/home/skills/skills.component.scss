@@ -5,6 +5,17 @@
 @use 'component-layout/layout' as *;
 
 
+h2.section-title {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  position: relative;
+  top: 0;
+  scroll-margin-top: 0 !important;
+
+  @media (max-width: 660px) {
+    scroll-margin-top: 0 !important;
+  }
+}
 
 .skills {
   padding: 80px 20px;
@@ -16,6 +27,16 @@
     font-size: clamp(2.6rem, 4vw, 3.75rem);
     @include cyan-main;
     margin-bottom: 80px;
+  }
+
+  h2.section-title {
+    scroll-margin-top: 120px; // exakt die Höhe deiner Desktop-Navbar
+  }
+
+  @media (max-width: 660px) {
+    h2.section-title {
+      scroll-margin-top: 0px; // bei mobiler Navbar ohne sticky
+    }
   }
 
   .skills-wrapper {

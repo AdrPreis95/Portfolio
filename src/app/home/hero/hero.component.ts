@@ -138,38 +138,39 @@ export class HeroComponent implements OnInit {
     this.scrollToSection('projects');
   }
 
+
   private scrollToSection(id: string): void {
     if (!this.isBrowser) return;
 
-    if (this.isMobile) {
-      this.closeMenu();
+    const isMobile = window.innerWidth <= 660;
+
+    const scroll = () => {
+      const heading = document.getElementById(`${id}-heading`);
+      if (!heading) return;
+
+      const top = heading.getBoundingClientRect().top + window.scrollY;
+
+      window.scrollTo({
+        top,
+        behavior: 'smooth'
+      });
+    };
+
+    if (isMobile) {
+      this.isClosingMenu = true;
+
+      setTimeout(() => {
+        this.menuOpen = false;
+        this.menuService.setMenuOpen(false);
+        this.isClosingMenu = false;
+        setTimeout(scroll, 50);
+      }, 600);
+    } else {
+      scroll();
     }
-
-    setTimeout(() => {
-      const section = document.getElementById(id);
-
-      if (section) {
-        const offsets: { [key: string]: number } = {
-          contact: -40,
-          whyme: 60,
-          skills: 60,
-          projects: 70,
-         'default': 100
-        };
-
-        const offset = offsets[id] ?? offsets['default'];
-
-        const top = section.getBoundingClientRect().top + window.scrollY - offset;
-        window.scrollTo({ top, behavior: 'smooth' });
-      }
-    }, this.isMobile ? 300 : 0);
   }
 
 
 
 
-
-
 }
-
-

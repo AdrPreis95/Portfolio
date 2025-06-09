@@ -6,7 +6,6 @@
 
 
 
-
 // Target only pages where the navbar has the class 'legal-navbar' (e.g. legal notice, privacy policy)
 @media screen and (max-width: 768px) {
   .legal-navbar {
@@ -21,6 +20,10 @@
     display: flex !important;
     flex-direction: row;
     gap: 24px;
+  }
+
+  .legal-navbar .nav-links a {
+    cursor: pointer !important;
   }
 
   .legal-hamburger,
@@ -122,7 +125,6 @@
     list-style: none;
     display: flex;
     gap: clamp(2rem, 4vw, 10rem);
-
     margin: 0;
     padding: 0;
 
@@ -132,6 +134,8 @@
       font-weight: 500;
       font-size: clamp(1.375rem, 2.2vw, 1.625rem);
       font-family: Josefine_Sans, sans-serif;
+      cursor: pointer !important;
+
 
       &:hover {
         text-decoration: none;
@@ -204,6 +208,8 @@
   .language-switch:not(.en-active) .language-labels a:first-child {
     color: #ffffff;
   }
+
+
 
 }
 
