@@ -1,6 +1,6 @@
-import { Component, HostListener, Inject } from '@angular/core';
+import { Component, HostListener, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, ViewportScroller } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
 
 /**
@@ -13,7 +13,7 @@ import { PLATFORM_ID } from '@angular/core';
   templateUrl: './legal-notice.component.html',
   styleUrls: ['./legal-notice.component.scss']
 })
-export class LegalNoticeComponent {
+export class LegalNoticeComponent implements OnInit {
   openedSectionIndex: number | null = null;
   isMobile = false;
 
@@ -33,10 +33,17 @@ export class LegalNoticeComponent {
 
   constructor(
     private router: Router,
-    @Inject(PLATFORM_ID) private platformId: Object
+    @Inject(PLATFORM_ID) private platformId: Object,
+    private viewportScroller: ViewportScroller
   ) {
     if (isPlatformBrowser(this.platformId)) {
       this.isMobile = window.innerWidth < 768;
+    }
+  }
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      this.viewportScroller.scrollToPosition([0, 0]);
     }
   }
 

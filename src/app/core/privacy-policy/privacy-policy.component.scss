@@ -40,7 +40,7 @@
 }
 
 .footer-inner {
-    max-width: 1920px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
@@ -172,7 +172,7 @@
 }
 
 section {
-    min-height: 100vh !important;
+    min-height: calc(100vh - 120px) !important;
     width: 100%;
     @include gray-bg;
     position: relative;
