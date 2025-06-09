@@ -126,30 +126,46 @@ export class HeroComponent implements OnInit {
     this.scrollToSection('contact');
   }
 
- scrollToWhyMe(): void {
-  if (typeof window === 'undefined') return;
+  scrollToWhyMe(): void {
+    if (typeof window === 'undefined') return;
 
-  const isMobile = window.innerWidth <= 660;
-  const targetId = 'whyme-heading';
-  const target = document.getElementById(targetId);
-  if (!target) return;
+    const isMobile = window.innerWidth <= 660;
+    const targetId = 'whyme-heading';
+    const target = document.getElementById(targetId);
+    if (!target) return;
 
-  let offset = 120;
+    const scroll = () => {
+      let offset = 120;
 
-  if (isMobile) {
-    offset = 0; 
-  } else {
-    const isAtTop = window.scrollY < 100;
-    offset = isAtTop ? 180 : 120;
+      if (isMobile) {
+        offset = 0;
+      } else {
+        const isAtTop = window.scrollY < 100;
+        offset = isAtTop ? 180 : 120;
+      }
+
+      const top = target.getBoundingClientRect().top + window.scrollY - offset;
+
+      window.scrollTo({
+        top,
+        behavior: 'smooth'
+      });
+    };
+
+    if (isMobile) {
+      this.isClosingMenu = true;
+
+      setTimeout(() => {
+        this.menuOpen = false;
+        this.menuService.setMenuOpen(false);
+        this.isClosingMenu = false;
+        setTimeout(scroll, 50);
+      }, 600);
+    } else {
+      scroll();
+    }
   }
 
-  const top = target.getBoundingClientRect().top + window.scrollY - offset;
-
-  window.scrollTo({
-    top,
-    behavior: 'smooth'
-  });
-}
 
 
   scrollToSkills(): void {

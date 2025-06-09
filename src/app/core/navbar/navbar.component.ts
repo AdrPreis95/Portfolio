@@ -68,11 +68,9 @@ export class NavbarComponent implements OnInit {
     }
   }
 
-
-
   /**
-   * Handles window resize events to close the mobile menu on desktop view.
-   */
+     * Handles window resize events to close the mobile menu on desktop view.
+     */
   @HostListener('window:resize')
   onResize(): void {
     if (this.isBrowser) {
@@ -132,48 +130,48 @@ export class NavbarComponent implements OnInit {
   }
 
 
- scrollToSection(id: string): void {
-  if (!this.isBrowser) return;
+  scrollToSection(id: string): void {
+    if (!this.isBrowser) return;
 
-  const isMobile = window.innerWidth <= 660;
-  const targetId = `${id}-heading`;
+    const isMobile = window.innerWidth <= 660;
+    const targetId = `${id}-heading`;
 
-  const scroll = () => {
-    const target = document.getElementById(targetId);
-    const navbar = document.getElementById('navbar');
-    if (!target) return;
+    const scroll = () => {
+      const target = document.getElementById(targetId);
+      const navbar = document.getElementById('navbar');
+      if (!target) return;
 
-    let navbarOffset = 0;
+      let navbarOffset = 0;
 
-    if (isMobile) {
-      navbarOffset = 0;
-    } else {
-      if (id === 'whyme') {
-        const isAtTop = window.scrollY < 100;
-        navbarOffset = isAtTop ? 180 : 120;
+      if (isMobile) {
+        navbarOffset = 0;
       } else {
-        navbarOffset = 120;
+        if (id === 'whyme') {
+          const isAtTop = window.scrollY < 100;
+          navbarOffset = isAtTop ? 180 : 120;
+        } else {
+          navbarOffset = 120;
+        }
       }
+
+      const absoluteTop = target.getBoundingClientRect().top + window.scrollY;
+      const finalScroll = absoluteTop - navbarOffset;
+
+      window.scrollTo({ top: finalScroll, behavior: 'smooth' });
+    };
+
+    if (this.router.url !== '/') {
+      this.router.navigateByUrl('/').then(() => {
+        setTimeout(scroll, 150);
+      });
+    } else {
+      scroll();
     }
 
-    const absoluteTop = target.getBoundingClientRect().top + window.scrollY;
-    const finalScroll = absoluteTop - navbarOffset;
-
-    window.scrollTo({ top: finalScroll, behavior: 'smooth' });
-  };
-
-  if (this.router.url !== '/') {
-    this.router.navigateByUrl('/').then(() => {
-      setTimeout(scroll, 150);
-    });
-  } else {
-    scroll();
+    if (isMobile && typeof this.closeMenu === 'function') {
+      this.closeMenu();
+    }
   }
-
-  if (isMobile && typeof this.closeMenu === 'function') {
-    this.closeMenu();
-  }
-}
 
 
 
