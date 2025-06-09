@@ -136,14 +136,27 @@ export class NavbarComponent implements OnInit {
   if (!this.isBrowser) return;
 
   const isMobile = window.innerWidth <= 660;
-  const targetId = `${id}-heading`; 
+  const targetId = `${id}-heading`;
 
   const scroll = () => {
     const target = document.getElementById(targetId);
+    const navbar = document.getElementById('navbar');
     if (!target) return;
 
-    const navbarOffset = isMobile ? 0 : 120; 
-const absoluteTop = target.getBoundingClientRect().top + window.scrollY;
+    let navbarOffset = 0;
+
+    if (isMobile) {
+      navbarOffset = 0;
+    } else {
+      if (id === 'whyme') {
+        const isAtTop = window.scrollY < 100;
+        navbarOffset = isAtTop ? 180 : 120;
+      } else {
+        navbarOffset = 120;
+      }
+    }
+
+    const absoluteTop = target.getBoundingClientRect().top + window.scrollY;
     const finalScroll = absoluteTop - navbarOffset;
 
     window.scrollTo({ top: finalScroll, behavior: 'smooth' });
@@ -161,6 +174,7 @@ const absoluteTop = target.getBoundingClientRect().top + window.scrollY;
     this.closeMenu();
   }
 }
+
 
 
 
