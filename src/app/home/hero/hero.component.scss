@@ -22,17 +22,17 @@
   }
 }
 
-@media screen and (min-width: 661px) and (max-width: 980px) and (hover: hover) and (pointer: fine) {
-  #hero {
-    height: 920px !important;
-  }
-}
+// @media screen and (min-width: 661px) and (max-width: 980px) and (hover: hover) and (pointer: fine) {
+//   #hero {
+//     height: 920px !important;
+//   }
+// }
 
-@media screen and (min-width: 661px) and (max-width: 1179px) and (hover: hover) and (pointer: fine) {
-  #hero {
-    height: calc(100dvh - 120px) !important;
-  }
-}
+// @media screen and (min-width: 661px) and (max-width: 1179px) and (hover: hover) and (pointer: fine) {
+//   #hero {
+//     height: calc(100dvh - 120px) !important;
+//   }
+// }
 
 
 
@@ -42,6 +42,21 @@
     overflow: hidden;
   }
 }
+
+/* iPad Air Hochformat */
+@media (min-width: 810px) and (max-width: 830px) and (min-height: 1100px) and (max-height: 1200px) {
+  #hero {
+    height: calc(100vh - 120px) !important;
+  }
+}
+
+/* iPad Pro Hochformat */
+@media (min-width: 1020px) and (max-width: 1030px) and (min-height: 1350px) and (max-height: 1380px) {
+  #hero {
+    height: calc(100vh - 120px) !important;
+  }
+}
+
 
 @media screen and (max-width: 380px) and (max-height: 670px) and (orientation: portrait) {
   .hero-mobile {

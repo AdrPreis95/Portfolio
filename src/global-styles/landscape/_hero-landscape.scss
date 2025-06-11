@@ -48,7 +48,8 @@
 
 @media screen and (min-width: 662px) and (max-width: 1024px) and (orientation: portrait) and (min-height: 1000px) {
     #hero {
-        height: clamp(500px, 65vh, 700px) !important;
+        // height: clamp(500px, 65vh, 700px) !important;
+        height: calc(100vh - 120px);
     }
 }
 
@@ -58,7 +59,8 @@
 
 @media screen and (min-height: 2000px) and (max-width: 1600px) and (orientation: portrait) {
     #hero {
-        height: clamp(600px, 90dvh, 960px) !important;
+        // height: clamp(600px, 90dvh, 960px) !important;
+        height: calc(100vh - 120px);
 
     }
 
@@ -66,7 +68,8 @@
 
     @media screen and (min-height: 1560px) and (max-height: 1920px) and (orientation: portrait) {
         #hero {
-            height: clamp(600px, 92dvh, 1000px) !important;
+            // height: clamp(600px, 92dvh, 1000px) !important;
+            height: calc(100vh - 120px);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
