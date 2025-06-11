@@ -21,7 +21,7 @@
 
       <div class="row">
         <div class="field-top">
-          <input type="text" formControlName="name" maxlength="120" [placeholder]="'CONTACT.NAME' | translate" />
+          <input id="contact-name" type="text" formControlName="name" maxlength="120" [placeholder]="'CONTACT.NAME' | translate" />
           <div class="error"
             *ngIf="(submitted || contactForm.get('name')?.touched) && contactForm.get('name')?.invalid">
             {{ 'CONTACT.ERROR_NAME' | translate }}
@@ -29,7 +29,7 @@
         </div>
 
         <div class="field-top">
-          <input type="email" formControlName="email" maxlength="254" [placeholder]="'CONTACT.EMAIL' | translate" />
+          <input id="contact-email" type="email" formControlName="email" maxlength="254" [placeholder]="'CONTACT.EMAIL' | translate" />
           <div class="error"
             *ngIf="(submitted || contactForm.get('email')?.touched) && contactForm.get('email')?.errors?.['required']">
             {{ 'CONTACT.ERROR_EMAIL_REQUIRED' | translate }}
@@ -42,7 +42,7 @@
       </div>
 
       <div class="field textarea-wrapper">
-        <textarea formControlName="message" rows="5" maxlength="500" (input)="updateRemainingChars()"
+        <textarea id="contact-message" formControlName="message" rows="5" maxlength="500" (input)="updateRemainingChars()"
           [placeholder]="'CONTACT.MESSAGE' | translate"></textarea>
 
         <div class="char-counter-inside">{{ remainingChars }} / 500</div>

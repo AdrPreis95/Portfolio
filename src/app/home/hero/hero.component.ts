@@ -123,8 +123,26 @@ export class HeroComponent implements OnInit {
   * Smoothly scrolls the view to the Navbar sections.
   */
   scrollToContact(): void {
-    this.scrollToSection('contact');
-  }
+  this.scrollToSection('contact');
+
+  setTimeout(() => {
+    const nameInput = document.getElementById('contact-name') as HTMLInputElement;
+    const emailInput = document.getElementById('contact-email') as HTMLInputElement;
+    const messageInput = document.getElementById('contact-message') as HTMLTextAreaElement;
+
+    if (nameInput) {
+      nameInput.focus();
+    }
+
+    [nameInput, emailInput, messageInput].forEach(el => {
+      if (el) {
+        el.classList.add('highlight');
+        setTimeout(() => el.classList.remove('highlight'), 1500);
+      }
+    });
+  }, 600);
+}
+
 
   scrollToWhyMe(): void {
     if (typeof window === 'undefined') return;
