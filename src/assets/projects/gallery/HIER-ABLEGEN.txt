@@ -1,0 +1,13 @@
+Screenshots hier ablegen (PNG). Fehlende Dateien werden in der Galerie automatisch übersprungen.
+
+zusteller/login.png      Login Verwaltung
+zusteller/carrier.png    Zusteller – Mein Bereich
+zusteller/tickets.png    Ticketsystem
+zusteller/map.png        Touren & Karte
+zusteller/mobile.png     Mobile App
+
+join/login.png           Join Login
+join/add-task.png        Task anlegen
+join/summary.png         Summary
+
+pollo/start.png          Spiel-Startbildschirm

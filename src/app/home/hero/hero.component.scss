@@ -38,7 +38,8 @@
 
 @media (min-height: 1081px) {
   #hero {
-    height: 920px !important;
+    // height: 920px !important;
+    height: 100vh;
     overflow: hidden;
   }
 }
@@ -238,6 +239,7 @@
   align-items: center;
   text-align: center;
   gap: 1.2rem;
+  height: 100vh !important;
 
 
   .top-logo {

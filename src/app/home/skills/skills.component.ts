@@ -30,11 +30,11 @@ export class SkillsComponent implements OnInit {
     { name: 'JavaScript', icon: '/assets/skills/icons/JavaScript.svg' },
     { name: 'HTML', icon: '/assets/skills/icons/HTML.svg' },
     { name: 'CSS', icon: '/assets/skills/icons/CSS.svg' },
+    { name: 'Python', icon: '/assets/skills/icons/Python.svg' },
+    { name: 'Django', icon: '/assets/skills/icons/Django.svg' },
     { name: 'Rest-Api', icon: '/assets/skills/icons/RestApi.svg' },
-    { name: 'Firebase', icon: '/assets/skills/icons/Firebase.svg' },
-    { name: 'GIT', icon: '/assets/skills/icons/GIT.svg' },
-    { name: 'Material Design', icon: '/assets/skills/icons/MaterialDesign.svg' },
-    { name: 'Scrum', icon: '/assets/skills/icons/Scrum.svg' }
+    { name: 'SQL', icon: '/assets/skills/icons/SQL.svg' },
+    { name: 'GIT', icon: '/assets/skills/icons/GIT.svg' }
   ];
 
   /**

@@ -1,6 +1,6 @@
 {
     "HERO": {
-        "ROLE": "FRONTEND DEVELOPER",
+        "ROLE": "JUNIOR FULLSTACK",
         "LOGO_NAME": "A.Preis",
         "LOGO_ROLE": "Developer",
         "ALT_MAIL": "Mail",
@@ -18,7 +18,7 @@
     },
     "WHYME": {
         "TITLE": "Why me",
-        "TEXT": "I’m a focused career-changer with a clear passion for frontend development. My portfolio doesn't just show projects – it reflects my learning journey. I build with structure, clarity and passion. I understand design, think in components and love solving problems. If I don’t know something yet, I’ll learn it – quickly, thoroughly, and with excitement.",
+        "TEXT": "I’m a junior fullstack developer focused on Angular on the frontend and Django/Python on the backend. This portfolio shows the real path: from a 2D game to Join to a delivery app with API, web portal and mobile. I build with structure, think in components and learn fast – frontend, backend and everything in between.",
         "IAM": "I am",
         "LOCATION": " located in Bedesbach...",
         "REMOTE": " open to remote work...",
@@ -27,13 +27,17 @@
     "SKILLS": {
         "TITLE": "My Skills",
         "CURRENTLY_LEARNING": "I am currently learning",
-        "LEARNING_TEXT": "I enjoy expanding my skills and exploring new technologies like React and Vue.js."
+        "LEARNING_TEXT": "Besides Angular and Django I also explore other frontend frameworks like React and Vue.js."
     },
     "PROJECTS": {
         "PROJECT": "Project",
         "TITLE": "My Projects",
         "LIVE": "Live Test",
         "TECHNOLOGIES": "Technologies",
+        "GALLERY_HINT": "Click for a walkthrough",
+        "GALLERY_CLOSE": "Close",
+        "GALLERY_PREV": "Previous",
+        "GALLERY_NEXT": "Next",
         "EL_POLLO": {
             "LABEL": "El Pollo Loco",
             "POINTS": [
@@ -50,41 +54,132 @@
                     "TITLE": "My group work experience",
                     "TEXT": "Solo project with mentoring, focused on OOP and animations."
                 }
-            ]
-        },
-        "JOIN": {
-            "LABEL": "Join",
-            "POINTS": [
+            ],
+            "GALLERY": [
                 {
-                    "TITLE": "About the project",
-                    "DURATION": "Duration: 2 weeks",
-                    "TEXT": "Join is a task management tool inspired by Trello. It enables collaborative task organization."
+                    "IMAGE": "/assets/projects/img/ElPolloLoco.svg",
+                    "TITLE": "Gameplay",
+                    "TEXT": "Jump & run in the browser: character, enemies, collision and camera – all in JavaScript classes."
                 },
                 {
-                    "TITLE": "How I have organised my work process",
-                    "TEXT": "I focused on clean code and reusable components using vanilla JavaScript."
-                },
-                {
-                    "TITLE": "My group work experience",
-                    "TEXT": "I worked with a small team, coordinating tasks via Git and applying agile workflows."
+                    "IMAGE": "/assets/projects/gallery/pollo/start.png",
+                    "TITLE": "Start screen",
+                    "TEXT": "Entry into the game: start, controls, goal of the round."
                 }
             ]
         },
-        "DA_BUBBLE": {
-            "LABEL": "Ongoing Project",
+        "JOIN": {
+            "LABEL": "Join Django",
             "POINTS": [
                 {
                     "TITLE": "About the project",
-                    "DURATION": "Duration: 3 weeks",
-                    "TEXT": "Da Bubble is a Slack-inspired team communication app developed with Angular and Firebase."
+                    "DURATION": "Fullstack",
+                    "TEXT": "Join as a fullstack Kanban app: Angular frontend, Django REST API, PostgreSQL – login, board, tasks, contacts, notifications and i18n."
                 },
                 {
                     "TITLE": "How I have organised my work process",
-                    "TEXT": "I structured the app with Angular modules, routing, services, and reusable UI components."
+                    "TEXT": "UI and API stay separate, with Docker and a real database instead of Firebase."
                 },
                 {
                     "TITLE": "My group work experience",
-                    "TEXT": "We worked collaboratively using GitHub Projects and daily check-ins."
+                    "TEXT": "Built on from the team Join: frontend and backend as one deployable product."
+                }
+            ],
+            "GALLERY": [
+                {
+                    "IMAGE": "/assets/projects/img/JoinDjango.png",
+                    "TITLE": "Board",
+                    "TEXT": "Kanban board: To do, In progress, Await feedback, Done – tasks live in PostgreSQL behind the Django API."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/join/login.png",
+                    "TITLE": "Login",
+                    "TEXT": "Own auth instead of Firebase: Django session/JWT, then the Angular frontend."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/join/add-task.png",
+                    "TITLE": "Add task",
+                    "TEXT": "New ticket with category, priority, assignee – the UI only talks to the REST API."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/join/summary.png",
+                    "TITLE": "Summary",
+                    "TEXT": "Overview of open and done tasks once a user is signed in."
+                }
+            ]
+        },
+        "ZUSTELLER": {
+            "LABEL": "Zusteller",
+            "POINTS": [
+                {
+                    "TITLE": "About the project",
+                    "DURATION": "Real-world project",
+                    "TEXT": "Delivery management for Rheinpfalz and Wochenblatt: Django API, Angular web portal and Ionic app for routes, complaints, vacations and newspaper boxes."
+                },
+                {
+                    "TITLE": "How I have organised my work process",
+                    "TEXT": "Roles are split (carrier vs. office), shared REST API, route guards and reusable components."
+                },
+                {
+                    "TITLE": "My group work experience",
+                    "TEXT": "Independent fullstack project with a clear split between backend, web portal and mobile."
+                }
+            ],
+            "GALLERY": [
+                {
+                    "IMAGE": "/assets/projects/img/Zusteller.png",
+                    "TITLE": "Admin dashboard",
+                    "TEXT": "Office view: open complaints, vacations, sickness rate, Rheinpfalz and Wochenblatt at a glance."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/zusteller/login.png",
+                    "TITLE": "Login",
+                    "TEXT": "Entry into the delivery portal. The role decides which menu comes next."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/zusteller/carrier.png",
+                    "TITLE": "Carrier – My area",
+                    "TEXT": "Carriers don’t see the admin menu – only routes, vacation, tickets and messages."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/zusteller/tickets.png",
+                    "TITLE": "Ticket system",
+                    "TEXT": "Request from the carrier, handled in the office – same API, different permissions."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/zusteller/map.png",
+                    "TITLE": "Routes & map",
+                    "TEXT": "Routes and Rheinpfalz boxes on the Leaflet map."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/zusteller/mobile.png",
+                    "TITLE": "Mobile app",
+                    "TEXT": "Ionic app for carriers only: routes, complaints and vacation on the go."
+                }
+            ]
+        },
+        "PORTFOLIO": {
+            "LABEL": "Portfolio",
+            "POINTS": [
+                {
+                    "TITLE": "About the project",
+                    "DURATION": "Personal project",
+                    "TEXT": "This site: an Angular portfolio with DE/EN – the front door to my work as a junior fullstack developer."
+                },
+                {
+                    "TITLE": "How I have organised my work process",
+                    "TEXT": "Components, SCSS and translations stay separate so design and content can change independently."
+                },
+                {
+                    "TITLE": "My group work experience",
+                    "TEXT": "Solo project – focused on UX, performance and an honest view of my learning path."
+                }
+            ],
+            "GALLERY": [
+                {
+                    "IMAGE": "/assets/projects/img/Portfolio.png",
+                    "TITLE": "This site",
+                    "TEXT": "Angular portfolio with DE/EN – the projects above are the actual content."
                 }
             ]
         }
@@ -100,7 +195,7 @@
     },
     "CONTACT": {
         "TITLE": "Contact me",
-        "INFO": "I’m always happy to hear about exciting jobs or cool projects.",
+        "INFO": "I’m looking for a junior fullstack role – exciting jobs or projects are welcome.",
         "NAME": "Your name",
         "EMAIL": "Your Email",
         "MESSAGE": "Your Message",

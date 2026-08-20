@@ -1,6 +1,13 @@
-import { Component, HostListener, OnInit, Inject, PLATFORM_ID } from '@angular/core';
+import { Component, HostListener, OnDestroy, OnInit, Inject, PLATFORM_ID } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 import { isPlatformBrowser } from '@angular/common';
+
+interface GallerySlide {
+  src: string;
+  title: string;
+  text: string;
+  broken?: boolean;
+}
 
 /**
  * Displays a set of portfolio projects with dynamic content
@@ -12,7 +19,7 @@ import { isPlatformBrowser } from '@angular/common';
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss']
 })
-export class ProjectsComponent implements OnInit {
+export class ProjectsComponent implements OnInit, OnDestroy {
   /**
    * Index of the currently selected project tab.
    */
@@ -32,6 +39,16 @@ export class ProjectsComponent implements OnInit {
    * Indicates whether the code is executing in the browser.
    */
   isBrowser: boolean;
+
+  /**
+   * Whether the screenshot walkthrough overlay is open.
+   */
+  galleryOpen = false;
+
+  /**
+   * Index of the visible gallery slide.
+   */
+  galleryIndex = 0;
 
   /**
    * Constructs the ProjectsComponent.
@@ -57,6 +74,10 @@ export class ProjectsComponent implements OnInit {
     }
   }
 
+  ngOnDestroy(): void {
+    this.unlockScroll();
+  }
+
   /**
    * Updates mobile state on window resize.
    */
@@ -64,6 +85,23 @@ export class ProjectsComponent implements OnInit {
   onResize(): void {
     if (this.isBrowser) {
       this.checkViewport();
+    }
+  }
+
+  /**
+   * Keyboard controls for the walkthrough overlay.
+   */
+  @HostListener('document:keydown', ['$event'])
+  onKeydown(event: KeyboardEvent): void {
+    if (!this.galleryOpen) {
+      return;
+    }
+    if (event.key === 'Escape') {
+      this.closeGallery();
+    } else if (event.key === 'ArrowRight') {
+      this.nextSlide();
+    } else if (event.key === 'ArrowLeft') {
+      this.prevSlide();
     }
   }
 
@@ -86,6 +124,15 @@ export class ProjectsComponent implements OnInit {
     }
   }
 
+  get currentGallery(): GallerySlide[] {
+    const slides = this.tabs[this.selectedTab]?.gallery as GallerySlide[] | undefined;
+    return (slides || []).filter(slide => !slide.broken);
+  }
+
+  get currentSlide(): GallerySlide | null {
+    return this.currentGallery[this.galleryIndex] || this.currentGallery[0] || null;
+  }
+
   /**
    * Loads the translated project data and prepares the tabs.
    * Triggered on component load and language change.
@@ -94,7 +141,8 @@ export class ProjectsComponent implements OnInit {
     this.translate.get([
       'PROJECTS.EL_POLLO',
       'PROJECTS.JOIN',
-      'PROJECTS.DA_BUBBLE'
+      'PROJECTS.ZUSTELLER',
+      'PROJECTS.PORTFOLIO'
     ]).subscribe(translations => {
       this.tabs = [
         {
@@ -108,45 +156,51 @@ export class ProjectsComponent implements OnInit {
           ],
           live: 'https://adrian-preis.de/ElPolloLoco',
           github: 'https://github.com/AdrPreis95/2d-Game-Pollo-Loco',
-          points: translations['PROJECTS.EL_POLLO'].POINTS?.map((p: any) => ({
-            title: p.TITLE,
-            duration: p.DURATION,
-            text: p.TEXT
-          })) || []
+          points: this.mapPoints(translations['PROJECTS.EL_POLLO']),
+          gallery: this.mapGallery(translations['PROJECTS.EL_POLLO'])
         },
         {
           label: '2. ' + translations['PROJECTS.JOIN'].LABEL,
-          screenshot: '/assets/projects/img/Join.svg',
+          screenshot: '/assets/projects/img/JoinDjango.png',
           technologies: [
-            'assets/skills/icons/JavaScript.svg',
-            'assets/skills/icons/CSS.svg',
-            'assets/skills/icons/HTML.svg',
-            'assets/skills/icons/GIT.svg',
-            'assets/projects/icons/Firebase.svg'
+            'assets/skills/icons/Angular.svg',
+            'assets/skills/icons/TypeScript.svg',
+            'assets/skills/icons/Django.svg',
+            'assets/skills/icons/Python.svg',
+            'assets/skills/icons/SQL.svg'
           ],
-          live: 'https://adrian-preis.de/join',
-          github: 'https://github.com/AdrPreis95/Join-376',
-          points: translations['PROJECTS.JOIN'].POINTS?.map((p: any) => ({
-            title: p.TITLE,
-            duration: p.DURATION,
-            text: p.TEXT
-          })) || []
+          live: 'http://167.233.146.186',
+          github: 'https://github.com/AdrPreis95/Join-Django',
+          points: this.mapPoints(translations['PROJECTS.JOIN']),
+          gallery: this.mapGallery(translations['PROJECTS.JOIN'])
         },
         {
-          label: '3. ' + translations['PROJECTS.DA_BUBBLE'].LABEL,
-          screenshot: '/assets/projects/img/DaBubble.svg',
+          label: '3. ' + translations['PROJECTS.ZUSTELLER'].LABEL,
+          screenshot: '/assets/projects/img/Zusteller.png',
           technologies: [
-            'assets/skills/icons/JavaScript.svg',
-            'assets/skills/icons/CSS.svg',
-            'assets/skills/icons/HTML.svg',
-            'assets/skills/icons/GIT.svg',
-            'assets/projects/icons/Firebase.svg'
+            'assets/skills/icons/Angular.svg',
+            'assets/skills/icons/TypeScript.svg',
+            'assets/skills/icons/Django.svg',
+            'assets/skills/icons/Python.svg',
+            'assets/skills/icons/SQL.svg'
           ],
-          points: translations['PROJECTS.DA_BUBBLE'].POINTS?.map((p: any) => ({
-            title: p.TITLE,
-            duration: p.DURATION,
-            text: p.TEXT
-          })) || []
+          points: this.mapPoints(translations['PROJECTS.ZUSTELLER']),
+          gallery: this.mapGallery(translations['PROJECTS.ZUSTELLER'])
+        },
+        {
+          label: '4. ' + translations['PROJECTS.PORTFOLIO'].LABEL,
+          screenshot: '/assets/projects/img/Portfolio.png',
+          technologies: [
+            'assets/skills/icons/Angular.svg',
+            'assets/skills/icons/TypeScript.svg',
+            'assets/skills/icons/HTML.svg',
+            'assets/skills/icons/CSS.svg',
+            'assets/skills/icons/GIT.svg'
+          ],
+          live: 'https://adrian-preis.de',
+          github: 'https://github.com/AdrPreis95/Portfolio',
+          points: this.mapPoints(translations['PROJECTS.PORTFOLIO']),
+          gallery: this.mapGallery(translations['PROJECTS.PORTFOLIO'])
         }
       ];
     });
@@ -158,5 +212,74 @@ export class ProjectsComponent implements OnInit {
    */
   selectTab(index: number): void {
     this.selectedTab = index;
+    this.closeGallery();
+  }
+
+  openGallery(): void {
+    if (!this.currentGallery.length) {
+      return;
+    }
+    this.galleryIndex = 0;
+    this.galleryOpen = true;
+    this.lockScroll();
+  }
+
+  closeGallery(): void {
+    this.galleryOpen = false;
+    this.unlockScroll();
+  }
+
+  nextSlide(): void {
+    if (this.currentGallery.length < 2) {
+      return;
+    }
+    this.galleryIndex = (this.galleryIndex + 1) % this.currentGallery.length;
+  }
+
+  prevSlide(): void {
+    if (this.currentGallery.length < 2) {
+      return;
+    }
+    this.galleryIndex =
+      (this.galleryIndex - 1 + this.currentGallery.length) % this.currentGallery.length;
+  }
+
+  markBroken(slide: GallerySlide): void {
+    slide.broken = true;
+    if (this.galleryIndex >= this.currentGallery.length) {
+      this.galleryIndex = Math.max(0, this.currentGallery.length - 1);
+    }
+    if (!this.currentGallery.length) {
+      this.closeGallery();
+    }
+  }
+
+  private mapPoints(block: any): { title: string; duration?: string; text: string }[] {
+    return block.POINTS?.map((p: any) => ({
+      title: p.TITLE,
+      duration: p.DURATION,
+      text: p.TEXT
+    })) || [];
+  }
+
+  private mapGallery(block: any): GallerySlide[] {
+    return block.GALLERY?.map((item: any) => ({
+      src: item.IMAGE,
+      title: item.TITLE,
+      text: item.TEXT,
+      broken: false
+    })) || [];
+  }
+
+  private lockScroll(): void {
+    if (this.isBrowser) {
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  private unlockScroll(): void {
+    if (this.isBrowser) {
+      document.body.style.overflow = '';
+    }
   }
 }

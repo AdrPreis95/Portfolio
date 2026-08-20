@@ -1,6 +1,6 @@
 {
     "HERO": {
-        "ROLE": "FRONTEND-ENTWICKLER",
+        "ROLE": "JUNIOR FULLSTACK",
         "LOGO_NAME": "A.Preis",
         "LOGO_ROLE": "Entwickler",
         "ALT_MAIL": "E-Mail",
@@ -18,7 +18,7 @@
     },
     "WHYME": {
         "TITLE": "Über mich",
-        "TEXT": "Ich bin ein zielstrebiger Quereinsteiger mit klarem Fokus auf Frontend-Entwicklung. Mein Portfolio zeigt nicht nur Projekte, sondern meinen echten Lernweg – ich baue strukturiert, sauber und mit Leidenschaft. Ich verstehe Design, denke in Komponenten und bin technisch neugierig. Wenn ich etwas noch nicht kann, bringe ich es mir bei – schnell, gründlich und mit Begeisterung.",
+        "TEXT": "Ich bin Junior-Fullstack-Entwickler mit Fokus auf Angular im Frontend und Django/Python im Backend. Mein Portfolio zeigt den echten Weg dorthin: vom 2D-Spiel über Join bis zur Zusteller-App mit API, Webportal und Mobile. Ich baue strukturiert, denke in Komponenten und lerne schnell – Frontend, Backend und alles dazwischen.",
         "IAM": "Ich bin",
         "LOCATION": " wohnhaft in Bedesbach...",
         "REMOTE": " offen für Remote-Arbeit...",
@@ -27,13 +27,17 @@
     "SKILLS": {
         "TITLE": "Fähigkeiten",
         "CURRENTLY_LEARNING": "Ich lerne derzeit",
-        "LEARNING_TEXT": "Ich erweitere ständig meine Skills und entdecke neue Technologien wie React und Vue.js."
+        "LEARNING_TEXT": "Neben Angular und Django schaue ich mir weitere Frontend-Frameworks wie React und Vue.js an."
     },
     "PROJECTS": {
         "PROJECT": "Projekt",
         "TITLE": "Meine Projekte",
         "LIVE": "Demo",
         "TECHNOLOGIES": "Technologien",
+        "GALLERY_HINT": "Klick für Einblicke",
+        "GALLERY_CLOSE": "Schließen",
+        "GALLERY_PREV": "Zurück",
+        "GALLERY_NEXT": "Weiter",
         "EL_POLLO": {
             "LABEL": "El Pollo Loco",
             "POINTS": [
@@ -50,41 +54,132 @@
                     "TITLE": "Meine Gruppenerfahrung",
                     "TEXT": "Ein Solo-Projekt mit Mentor, Fokus auf OOP und Animationen."
                 }
-            ]
-        },
-        "JOIN": {
-            "LABEL": "Join",
-            "POINTS": [
+            ],
+            "GALLERY": [
                 {
-                    "TITLE": "Über das Projekt",
-                    "DURATION": "Dauer: 2 Wochen",
-                    "TEXT": "Join ist ein Aufgabenmanagement-Tool inspiriert von Trello und ermöglicht die Zusammenarbeit im Team."
+                    "IMAGE": "/assets/projects/img/ElPolloLoco.svg",
+                    "TITLE": "Gameplay",
+                    "TEXT": "Jump-&-Run im Browser: Figur, Gegner, Kollision und Kamera – alles in JavaScript-Klassen."
                 },
                 {
-                    "TITLE": "Wie ich meinen Arbeitsprozess organisiert habe",
-                    "TEXT": "Ich habe sauberen Code und wiederverwendbare Komponenten mit Vanilla JavaScript umgesetzt."
-                },
-                {
-                    "TITLE": "Meine Gruppenerfahrung",
-                    "TEXT": "Ich arbeitete in einem kleinen Team, koordinierte Aufgaben über Git und wendete agile Methoden an."
+                    "IMAGE": "/assets/projects/gallery/pollo/start.png",
+                    "TITLE": "Startbildschirm",
+                    "TEXT": "Einstieg ins Spiel: Start, Steuerung, Ziel der Runde."
                 }
             ]
         },
-        "DA_BUBBLE": {
-            "LABEL": "Laufendes Projekt",
+        "JOIN": {
+            "LABEL": "Join Django",
             "POINTS": [
                 {
                     "TITLE": "Über das Projekt",
-                    "DURATION": "Dauer: 3 Wochen",
-                    "TEXT": "Da Bubble ist eine Slack-inspirierte Kommunikations-App, entwickelt mit Angular und Firebase."
+                    "DURATION": "Fullstack",
+                    "TEXT": "Join als Fullstack-Kanban: Angular-Frontend, Django REST API, PostgreSQL – Login, Board, Tasks, Kontakte, Benachrichtigungen und i18n."
                 },
                 {
                     "TITLE": "Wie ich meinen Arbeitsprozess organisiert habe",
-                    "TEXT": "Die App ist modular aufgebaut mit Angular-Routing, Services und wiederverwendbaren Komponenten."
+                    "TEXT": "UI und API klar getrennt, Docker-Setup, eigene Datenbank statt Firebase."
                 },
                 {
                     "TITLE": "Meine Gruppenerfahrung",
-                    "TEXT": "Wir arbeiteten kollaborativ mit GitHub Projects und täglichen Abstimmungen."
+                    "TEXT": "Aus dem Team-Join weitergebaut: Frontend und Backend als ein deploybares Produkt."
+                }
+            ],
+            "GALLERY": [
+                {
+                    "IMAGE": "/assets/projects/img/JoinDjango.png",
+                    "TITLE": "Board",
+                    "TEXT": "Kanban-Board: To do, In progress, Await feedback, Done – Tasks liegen in PostgreSQL hinter der Django-API."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/join/login.png",
+                    "TITLE": "Login",
+                    "TEXT": "Eigene Auth statt Firebase: Session/JWT über Django, danach das Angular-Frontend."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/join/add-task.png",
+                    "TITLE": "Task anlegen",
+                    "TEXT": "Neues Ticket mit Kategorie, Priorität, Assignee – UI spricht nur die REST-API an."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/join/summary.png",
+                    "TITLE": "Summary",
+                    "TEXT": "Überblick über offene und erledigte Tasks, sobald jemand eingeloggt ist."
+                }
+            ]
+        },
+        "ZUSTELLER": {
+            "LABEL": "Zusteller",
+            "POINTS": [
+                {
+                    "TITLE": "Über das Projekt",
+                    "DURATION": "Praxisprojekt",
+                    "TEXT": "Zustell-Verwaltung für Rheinpfalz und Wochenblatt: Django-API, Angular-Webportal und Ionic-App für Touren, Reklamationen, Urlaub und Kästen."
+                },
+                {
+                    "TITLE": "Wie ich meinen Arbeitsprozess organisiert habe",
+                    "TEXT": "Rollen getrennt (Zusteller vs. Verwaltung), gemeinsame REST-API, Route-Guards und wiederverwendbare Komponenten."
+                },
+                {
+                    "TITLE": "Meine Gruppenerfahrung",
+                    "TEXT": "Eigenständiges Fullstack-Projekt mit klarem Schnitt zwischen Backend, Web-Portal und Mobile."
+                }
+            ],
+            "GALLERY": [
+                {
+                    "IMAGE": "/assets/projects/img/Zusteller.png",
+                    "TITLE": "Admin-Dashboard",
+                    "TEXT": "Verwaltung: offene Reklamationen, Urlaub, Krankheitsstand, Rheinpfalz und Wochenblatt auf einen Blick."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/zusteller/login.png",
+                    "TITLE": "Login",
+                    "TEXT": "Einstieg in die Zusteller-Verwaltung. Die Rolle entscheidet, welches Menü danach kommt."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/zusteller/carrier.png",
+                    "TITLE": "Zusteller – Mein Bereich",
+                    "TEXT": "Zusteller sehen nicht das Admin-Menü, sondern Touren, Urlaub, Tickets und Nachrichten."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/zusteller/tickets.png",
+                    "TITLE": "Ticketsystem",
+                    "TEXT": "Anfrage vom Zusteller, Bearbeitung im Büro – dieselbe API, andere Rechte."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/zusteller/map.png",
+                    "TITLE": "Touren & Karte",
+                    "TEXT": "Touren und Rheinpfalz-Kästen auf der Leaflet-Karte."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/zusteller/mobile.png",
+                    "TITLE": "Mobile App",
+                    "TEXT": "Ionic-App nur für Zusteller: Touren, Reklamationen und Urlaub unterwegs."
+                }
+            ]
+        },
+        "PORTFOLIO": {
+            "LABEL": "Portfolio",
+            "POINTS": [
+                {
+                    "TITLE": "Über das Projekt",
+                    "DURATION": "Eigenes Projekt",
+                    "TEXT": "Diese Website: Angular-Portfolio mit DE/EN – die Visitenkarte für meinen Weg als Junior Fullstack."
+                },
+                {
+                    "TITLE": "Wie ich meinen Arbeitsprozess organisiert habe",
+                    "TEXT": "Komponenten, SCSS und Übersetzungen sauber getrennt, damit Design und Inhalt unabhängig bleiben."
+                },
+                {
+                    "TITLE": "Meine Gruppenerfahrung",
+                    "TEXT": "Solo-Projekt – Fokus auf UX, Performance und eine ehrliche Darstellung meines Lernwegs."
+                }
+            ],
+            "GALLERY": [
+                {
+                    "IMAGE": "/assets/projects/img/Portfolio.png",
+                    "TITLE": "Diese Seite",
+                    "TEXT": "Angular-Portfolio mit DE/EN – die Projekte oben sind der eigentliche Inhalt."
                 }
             ]
         }
@@ -100,7 +195,7 @@
     },
     "CONTACT": {
         "TITLE": "Kontaktiere mich",
-        "INFO": "Ich freue mich über spannende Jobs oder coole Projekte.",
+        "INFO": "Ich suche einen Einstieg als Junior Fullstack – spannende Jobs oder Projekte sind willkommen.",
         "NAME": "Dein Name",
         "EMAIL": "Deine E-Mail",
         "MESSAGE": "Deine Nachricht",
