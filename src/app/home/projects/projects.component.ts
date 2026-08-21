@@ -146,46 +146,48 @@ export class ProjectsComponent implements OnInit, OnDestroy {
     ]).subscribe(translations => {
       this.tabs = [
         {
-          label: '1. ' + translations['PROJECTS.EL_POLLO'].LABEL,
-          screenshot: '/assets/projects/img/ElPolloLoco.svg',
-          technologies: [
-            'assets/skills/icons/JavaScript.svg',
-            'assets/skills/icons/CSS.svg',
-            'assets/skills/icons/HTML.svg',
-            'assets/skills/icons/GIT.svg'
-          ],
-          live: 'https://adrian-preis.de/ElPolloLoco',
-          github: 'https://github.com/AdrPreis95/2d-Game-Pollo-Loco',
-          points: this.mapPoints(translations['PROJECTS.EL_POLLO']),
-          gallery: this.mapGallery(translations['PROJECTS.EL_POLLO'])
-        },
-        {
-          label: '2. ' + translations['PROJECTS.JOIN'].LABEL,
+          label: '1. ' + translations['PROJECTS.JOIN'].LABEL,
           screenshot: '/assets/projects/img/JoinDjango.png',
           technologies: [
             'assets/skills/icons/Angular.svg',
             'assets/skills/icons/TypeScript.svg',
             'assets/skills/icons/Django.svg',
             'assets/skills/icons/Python.svg',
+            'assets/skills/icons/RestApi.svg',
             'assets/skills/icons/SQL.svg'
           ],
-          live: 'http://167.233.146.186',
+          live: 'http://167.233.146.186:8080',
           github: 'https://github.com/AdrPreis95/Join-Django',
           points: this.mapPoints(translations['PROJECTS.JOIN']),
           gallery: this.mapGallery(translations['PROJECTS.JOIN'])
         },
         {
-          label: '3. ' + translations['PROJECTS.ZUSTELLER'].LABEL,
+          label: '2. ' + translations['PROJECTS.ZUSTELLER'].LABEL,
           screenshot: '/assets/projects/img/Zusteller.png',
           technologies: [
             'assets/skills/icons/Angular.svg',
             'assets/skills/icons/TypeScript.svg',
             'assets/skills/icons/Django.svg',
             'assets/skills/icons/Python.svg',
+            'assets/skills/icons/RestApi.svg',
             'assets/skills/icons/SQL.svg'
           ],
           points: this.mapPoints(translations['PROJECTS.ZUSTELLER']),
           gallery: this.mapGallery(translations['PROJECTS.ZUSTELLER'])
+        },
+        {
+          label: '3. ' + translations['PROJECTS.EL_POLLO'].LABEL,
+          screenshot: '/assets/projects/img/ElPolloLoco.png',
+          technologies: [
+            'assets/skills/icons/JavaScript.svg',
+            'assets/skills/icons/HTML.svg',
+            'assets/skills/icons/CSS.svg',
+            'assets/skills/icons/GIT.svg'
+          ],
+          live: 'http://167.233.146.186/ElPolloLoco/',
+          github: 'https://github.com/AdrPreis95/2d-Game-Pollo-Loco',
+          points: this.mapPoints(translations['PROJECTS.EL_POLLO']),
+          gallery: this.mapGallery(translations['PROJECTS.EL_POLLO'])
         },
         {
           label: '4. ' + translations['PROJECTS.PORTFOLIO'].LABEL,
@@ -197,7 +199,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
             'assets/skills/icons/CSS.svg',
             'assets/skills/icons/GIT.svg'
           ],
-          live: 'https://adrian-preis.de',
+          live: 'http://167.233.146.186',
           github: 'https://github.com/AdrPreis95/Portfolio',
           points: this.mapPoints(translations['PROJECTS.PORTFOLIO']),
           gallery: this.mapGallery(translations['PROJECTS.PORTFOLIO'])

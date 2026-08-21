@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 /**
  * Represents the contact form component.
  * Handles user input, validation, spam protection,
- * and form submission via PHP backend.
+ * and form submission via FormSubmit (email to inbox).
  */
 @Component({
   selector: 'app-contact',
@@ -72,7 +72,7 @@ export class ContactComponent {
 
   /**
    * Handles the actual form submission if valid and not marked as spam.
-   * Sends data to a PHP backend and shows confirmation on success.
+   * Sends data via FormSubmit and shows confirmation on success.
    */
   onSubmit(): void {
     if (this.contactForm.get('honeypot')?.value) {
@@ -87,15 +87,22 @@ export class ContactComponent {
     if (this.contactForm.valid && !this.showConfirmation) {
       const data = this.contactForm.value;
 
-      const formData = new FormData();
-      formData.append('name', data.name);
-      formData.append('email', data.email);
-      formData.append('message', data.message);
-
-      fetch('send.php', {
+      fetch('https://formsubmit.co/ajax/adrianpreis86@gmail.com', {
         method: 'POST',
-        body: formData
-      }).then(() => {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name: data.name,
+          email: data.email,
+          message: data.message,
+          _subject: 'Neue Nachricht von der Portfolio-Website'
+        })
+      }).then((response) => {
+        if (!response.ok) {
+          throw new Error('Form submit failed');
+        }
         this.showConfirmation = true;
         this.contactForm.reset();
         this.submitted = false;

@@ -57,14 +57,19 @@
             ],
             "GALLERY": [
                 {
-                    "IMAGE": "/assets/projects/img/ElPolloLoco.svg",
-                    "TITLE": "Gameplay",
-                    "TEXT": "Jump & run in the browser: character, enemies, collision and camera – all in JavaScript classes."
+                    "IMAGE": "/assets/projects/img/ElPolloLoco.png",
+                    "TITLE": "Start screen",
+                    "TEXT": "Entry into the game: start, controls, goal of the round – all vanilla JavaScript."
                 },
                 {
                     "IMAGE": "/assets/projects/gallery/pollo/start.png",
-                    "TITLE": "Start screen",
-                    "TEXT": "Entry into the game: start, controls, goal of the round."
+                    "TITLE": "Gameplay structure",
+                    "TEXT": "Jump & run in the browser: character, enemies, collision and camera in JavaScript classes."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/pollo/game.png",
+                    "TITLE": "Game world",
+                    "TEXT": "Levels, sounds and animations live as files in the game folder – no framework."
                 }
             ]
         },
@@ -88,23 +93,13 @@
             "GALLERY": [
                 {
                     "IMAGE": "/assets/projects/img/JoinDjango.png",
-                    "TITLE": "Board",
-                    "TEXT": "Kanban board: To do, In progress, Await feedback, Done – tasks live in PostgreSQL behind the Django API."
+                    "TITLE": "Kanban board",
+                    "TEXT": "To do, In progress, Await feedback, Done. Angular only talks to the Django REST API; tasks live in PostgreSQL."
                 },
                 {
-                    "IMAGE": "/assets/projects/gallery/join/login.png",
-                    "TITLE": "Login",
-                    "TEXT": "Own auth instead of Firebase: Django session/JWT, then the Angular frontend."
-                },
-                {
-                    "IMAGE": "/assets/projects/gallery/join/add-task.png",
-                    "TITLE": "Add task",
-                    "TEXT": "New ticket with category, priority, assignee – the UI only talks to the REST API."
-                },
-                {
-                    "IMAGE": "/assets/projects/gallery/join/summary.png",
-                    "TITLE": "Summary",
-                    "TEXT": "Overview of open and done tasks once a user is signed in."
+                    "IMAGE": "/assets/projects/gallery/join/board.png",
+                    "TITLE": "Fullstack split",
+                    "TEXT": "Navigation on the left (Summary, Add Task, Board, Contacts), board on the right – frontend and API are separate containers."
                 }
             ]
         },
@@ -129,32 +124,12 @@
                 {
                     "IMAGE": "/assets/projects/img/Zusteller.png",
                     "TITLE": "Admin dashboard",
-                    "TEXT": "Office view: open complaints, vacations, sickness rate, Rheinpfalz and Wochenblatt at a glance."
+                    "TEXT": "Office view: complaints, vacation, sickness rate, Rheinpfalz and Wochenblatt – Angular portal on the Django API."
                 },
                 {
-                    "IMAGE": "/assets/projects/gallery/zusteller/login.png",
-                    "TITLE": "Login",
-                    "TEXT": "Entry into the delivery portal. The role decides which menu comes next."
-                },
-                {
-                    "IMAGE": "/assets/projects/gallery/zusteller/carrier.png",
-                    "TITLE": "Carrier – My area",
-                    "TEXT": "Carriers don’t see the admin menu – only routes, vacation, tickets and messages."
-                },
-                {
-                    "IMAGE": "/assets/projects/gallery/zusteller/tickets.png",
-                    "TITLE": "Ticket system",
-                    "TEXT": "Request from the carrier, handled in the office – same API, different permissions."
-                },
-                {
-                    "IMAGE": "/assets/projects/gallery/zusteller/map.png",
-                    "TITLE": "Routes & map",
-                    "TEXT": "Routes and Rheinpfalz boxes on the Leaflet map."
-                },
-                {
-                    "IMAGE": "/assets/projects/gallery/zusteller/mobile.png",
-                    "TITLE": "Mobile app",
-                    "TEXT": "Ionic app for carriers only: routes, complaints and vacation on the go."
+                    "IMAGE": "/assets/projects/gallery/zusteller/dashboard.png",
+                    "TITLE": "Roles & modules",
+                    "TEXT": "Sidebar: complaints, districts, routes & map, tickets. Carriers see a different menu, same API."
                 }
             ]
         },

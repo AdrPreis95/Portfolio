@@ -57,14 +57,19 @@
             ],
             "GALLERY": [
                 {
-                    "IMAGE": "/assets/projects/img/ElPolloLoco.svg",
-                    "TITLE": "Gameplay",
-                    "TEXT": "Jump-&-Run im Browser: Figur, Gegner, Kollision und Kamera – alles in JavaScript-Klassen."
+                    "IMAGE": "/assets/projects/img/ElPolloLoco.png",
+                    "TITLE": "Startbildschirm",
+                    "TEXT": "Einstieg ins Spiel: Start, Steuerung, Ziel der Runde – alles vanilla JavaScript."
                 },
                 {
                     "IMAGE": "/assets/projects/gallery/pollo/start.png",
-                    "TITLE": "Startbildschirm",
-                    "TEXT": "Einstieg ins Spiel: Start, Steuerung, Ziel der Runde."
+                    "TITLE": "Gameplay-Aufbau",
+                    "TEXT": "Jump-&-Run im Browser: Figur, Gegner, Kollision und Kamera in JavaScript-Klassen."
+                },
+                {
+                    "IMAGE": "/assets/projects/gallery/pollo/game.png",
+                    "TITLE": "Spielwelt",
+                    "TEXT": "Level, Sounds und Animationen liegen als Dateien im Spielordner, kein Framework."
                 }
             ]
         },
@@ -88,23 +93,13 @@
             "GALLERY": [
                 {
                     "IMAGE": "/assets/projects/img/JoinDjango.png",
-                    "TITLE": "Board",
-                    "TEXT": "Kanban-Board: To do, In progress, Await feedback, Done – Tasks liegen in PostgreSQL hinter der Django-API."
+                    "TITLE": "Kanban-Board",
+                    "TEXT": "To do, In progress, Await feedback, Done. Angular spricht nur die Django REST API an, Tasks liegen in PostgreSQL."
                 },
                 {
-                    "IMAGE": "/assets/projects/gallery/join/login.png",
-                    "TITLE": "Login",
-                    "TEXT": "Eigene Auth statt Firebase: Session/JWT über Django, danach das Angular-Frontend."
-                },
-                {
-                    "IMAGE": "/assets/projects/gallery/join/add-task.png",
-                    "TITLE": "Task anlegen",
-                    "TEXT": "Neues Ticket mit Kategorie, Priorität, Assignee – UI spricht nur die REST-API an."
-                },
-                {
-                    "IMAGE": "/assets/projects/gallery/join/summary.png",
-                    "TITLE": "Summary",
-                    "TEXT": "Überblick über offene und erledigte Tasks, sobald jemand eingeloggt ist."
+                    "IMAGE": "/assets/projects/gallery/join/board.png",
+                    "TITLE": "Fullstack-Schnitt",
+                    "TEXT": "Links die Navigation (Summary, Add Task, Board, Contacts), rechts das Board – Frontend und API sind getrennte Container."
                 }
             ]
         },
@@ -129,32 +124,12 @@
                 {
                     "IMAGE": "/assets/projects/img/Zusteller.png",
                     "TITLE": "Admin-Dashboard",
-                    "TEXT": "Verwaltung: offene Reklamationen, Urlaub, Krankheitsstand, Rheinpfalz und Wochenblatt auf einen Blick."
+                    "TEXT": "Verwaltung: Reklamationen, Urlaub, Krankheitsstand, Rheinpfalz und Wochenblatt – Angular-Portal auf der Django-API."
                 },
                 {
-                    "IMAGE": "/assets/projects/gallery/zusteller/login.png",
-                    "TITLE": "Login",
-                    "TEXT": "Einstieg in die Zusteller-Verwaltung. Die Rolle entscheidet, welches Menü danach kommt."
-                },
-                {
-                    "IMAGE": "/assets/projects/gallery/zusteller/carrier.png",
-                    "TITLE": "Zusteller – Mein Bereich",
-                    "TEXT": "Zusteller sehen nicht das Admin-Menü, sondern Touren, Urlaub, Tickets und Nachrichten."
-                },
-                {
-                    "IMAGE": "/assets/projects/gallery/zusteller/tickets.png",
-                    "TITLE": "Ticketsystem",
-                    "TEXT": "Anfrage vom Zusteller, Bearbeitung im Büro – dieselbe API, andere Rechte."
-                },
-                {
-                    "IMAGE": "/assets/projects/gallery/zusteller/map.png",
-                    "TITLE": "Touren & Karte",
-                    "TEXT": "Touren und Rheinpfalz-Kästen auf der Leaflet-Karte."
-                },
-                {
-                    "IMAGE": "/assets/projects/gallery/zusteller/mobile.png",
-                    "TITLE": "Mobile App",
-                    "TEXT": "Ionic-App nur für Zusteller: Touren, Reklamationen und Urlaub unterwegs."
+                    "IMAGE": "/assets/projects/gallery/zusteller/dashboard.png",
+                    "TITLE": "Rollen & Module",
+                    "TEXT": "Sidebar: Reklamationen, Bezirke, Touren & Karte, Tickets. Zusteller sehen ein anderes Menü, dieselbe API."
                 }
             ]
         },
