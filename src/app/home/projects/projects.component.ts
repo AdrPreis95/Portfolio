@@ -278,7 +278,7 @@ export class ProjectsComponent implements OnInit, OnDestroy {
   private tech(name: string, file: string) {
     return {
       name,
-      icon: 'assets/skills/icons/' + file
+      icon: 'assets/skills/icons/' + file + '?v=2'
     };
   }
 

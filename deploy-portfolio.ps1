@@ -11,6 +11,7 @@ $to     = "/var/www/portfolio/"
 # 1) TypeScript/HTML in normale Browser-Dateien uebersetzen
 Set-Location "C:\Coding\portfolio-classic"
 npm run build
+if ($LASTEXITCODE -ne 0) { throw "Build failed, nothing was uploaded." }
 
 # 2) Fertige Seite auf den Server kopieren (alter Stand wird ueberschrieben)
 scp -o BatchMode=yes -i $key -r $from "${server}:${to}"

@@ -25,30 +25,34 @@ export class SkillsComponent implements OnInit {
    * Main technical skills with associated icons.
    */
   mainSkills = [
-    { name: 'Angular', icon: '/assets/skills/icons/Angular.svg' },
-    { name: 'TypeScript', icon: '/assets/skills/icons/TypeScript.svg' },
-    { name: 'JavaScript', icon: '/assets/skills/icons/JavaScript.svg' },
-    { name: 'HTML', icon: '/assets/skills/icons/HTML.svg' },
-    { name: 'CSS', icon: '/assets/skills/icons/CSS.svg' },
-    { name: 'Python', icon: '/assets/skills/icons/Python.svg' },
-    { name: 'Django', icon: '/assets/skills/icons/Django.svg' },
-    { name: 'DRF', icon: '/assets/skills/icons/DRF.svg' },
-    { name: 'Rest-Api', icon: '/assets/skills/icons/RestApi.svg' },
-    { name: 'SQL', icon: '/assets/skills/icons/SQL.svg' },
-    { name: 'PostgreSQL', icon: '/assets/skills/icons/PostgreSQL.svg' },
-    { name: 'GIT', icon: '/assets/skills/icons/GIT.svg' },
-    { name: 'Docker', icon: '/assets/skills/icons/Docker.svg' },
-    { name: 'Linux', icon: '/assets/skills/icons/Linux.svg' },
-    { name: 'Firebase', icon: '/assets/skills/icons/Firebase.svg' }
+    { name: 'Angular', icon: this.icon('Angular.svg') },
+    { name: 'TypeScript', icon: this.icon('TypeScript.svg') },
+    { name: 'JavaScript', icon: this.icon('JavaScript.svg') },
+    { name: 'HTML', icon: this.icon('HTML.svg') },
+    { name: 'CSS', icon: this.icon('CSS.svg') },
+    { name: 'Python', icon: this.icon('Python.svg') },
+    { name: 'Django', icon: this.icon('Django.svg') },
+    { name: 'DRF', icon: this.icon('DRF.svg') },
+    { name: 'Rest-Api', icon: this.icon('RestApi.svg') },
+    { name: 'SQL', icon: this.icon('SQL.svg') },
+    { name: 'PostgreSQL', icon: this.icon('PostgreSQL.svg') },
+    { name: 'GIT', icon: this.icon('GIT.svg') },
+    { name: 'Docker', icon: this.icon('Docker.svg') },
+    { name: 'Linux', icon: this.icon('Linux.svg') },
+    { name: 'Firebase', icon: this.icon('Firebase.svg') }
   ];
 
   /**
    * Technologies the user is currently learning.
    */
   learning = [
-    { name: 'React', icon: '/assets/skills/icons/React.svg' },
-    { name: 'Vue Js', icon: '/assets/skills/icons/VueJs.svg' }
+    { name: 'React', icon: this.icon('React.svg') },
+    { name: 'Vue Js', icon: this.icon('VueJs.svg') }
   ];
+
+  private icon(file: string): string {
+    return '/assets/skills/icons/' + file + '?v=2';
+  }
 
   /**
    * Constructs the SkillsComponent and detects platform type.
