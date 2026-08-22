@@ -32,9 +32,14 @@ export class SkillsComponent implements OnInit {
     { name: 'CSS', icon: '/assets/skills/icons/CSS.svg' },
     { name: 'Python', icon: '/assets/skills/icons/Python.svg' },
     { name: 'Django', icon: '/assets/skills/icons/Django.svg' },
+    { name: 'DRF', icon: '/assets/skills/icons/DRF.svg' },
     { name: 'Rest-Api', icon: '/assets/skills/icons/RestApi.svg' },
     { name: 'SQL', icon: '/assets/skills/icons/SQL.svg' },
-    { name: 'GIT', icon: '/assets/skills/icons/GIT.svg' }
+    { name: 'PostgreSQL', icon: '/assets/skills/icons/PostgreSQL.svg' },
+    { name: 'GIT', icon: '/assets/skills/icons/GIT.svg' },
+    { name: 'Docker', icon: '/assets/skills/icons/Docker.svg' },
+    { name: 'Linux', icon: '/assets/skills/icons/Linux.svg' },
+    { name: 'Firebase', icon: '/assets/skills/icons/Firebase.svg' }
   ];
 
   /**

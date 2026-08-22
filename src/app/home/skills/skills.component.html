@@ -10,7 +10,10 @@
     <div class="skills-wrapper">
       <div class="skills-icons">
         <div class="skill" *ngFor="let skill of mainSkills">
-          <img [src]="skill.icon" [alt]="skill.name" />
+          <div class="icon-frame">
+            <img [src]="skill.icon" [alt]="skill.name" />
+          </div>
+          <span>{{ skill.name }}</span>
         </div>
       </div>
 
@@ -19,7 +22,10 @@
 
         <div class="learning-icons">
           <div class="skill" *ngFor="let tech of learning">
-            <img [src]="tech.icon" [alt]="tech.name" />
+            <div class="icon-frame">
+              <img [src]="tech.icon" [alt]="tech.name" />
+            </div>
+            <span>{{ tech.name }}</span>
           </div>
         </div>
 
@@ -39,7 +45,10 @@
     <div class="skills-wrapper">
       <div class="skills-icons">
         <div class="skill" *ngFor="let skill of mainSkills">
-          <img [src]="skill.icon" [alt]="skill.name" />
+          <div class="icon-frame">
+            <img [src]="skill.icon" [alt]="skill.name" />
+          </div>
+          <span>{{ skill.name }}</span>
         </div>
       </div>
       <div class="container">
@@ -53,7 +62,10 @@
 
             <div class="learning-icons">
               <div class="skill" *ngFor="let tech of learning">
-                <img [src]="tech.icon" [alt]="tech.name" />
+                <div class="icon-frame">
+                  <img [src]="tech.icon" [alt]="tech.name" />
+                </div>
+                <span>{{ tech.name }}</span>
               </div>
             </div>
 

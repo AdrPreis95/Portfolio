@@ -25,7 +25,12 @@
           <div class="preview">
             <h5>{{ 'PROJECTS.TECHNOLOGIES' | translate }}</h5>
             <div class="techs">
-              <img *ngFor="let tech of tabs[selectedTab].technologies" [src]="tech" />
+              <div class="tech" *ngFor="let tech of tabs[selectedTab].technologies">
+                <div class="icon-frame">
+                  <img [src]="tech.icon" [alt]="tech.name" />
+                </div>
+                <span>{{ tech.name }}</span>
+              </div>
             </div>
             <div class="image-container" (click)="openGallery()" role="button" tabindex="0"
               (keydown.enter)="openGallery()">
@@ -75,7 +80,7 @@
         <p class="technologies">
           <strong>{{ 'PROJECTS.TECHNOLOGIES' | translate }}:</strong>
           <span *ngFor="let tech of tabs[selectedTab].technologies; let isLast = last">
-            {{ tech.split('/').pop()?.replace('.svg', '') }}<span *ngIf="!isLast">, </span>
+            {{ tech.name }}<span *ngIf="!isLast">, </span>
           </span>
         </p>
 

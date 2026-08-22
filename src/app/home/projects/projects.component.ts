@@ -149,12 +149,13 @@ export class ProjectsComponent implements OnInit, OnDestroy {
           label: '1. ' + translations['PROJECTS.JOIN'].LABEL,
           screenshot: '/assets/projects/img/JoinDjango.png',
           technologies: [
-            'assets/skills/icons/Angular.svg',
-            'assets/skills/icons/TypeScript.svg',
-            'assets/skills/icons/Django.svg',
-            'assets/skills/icons/Python.svg',
-            'assets/skills/icons/RestApi.svg',
-            'assets/skills/icons/SQL.svg'
+            this.tech('Angular', 'Angular.svg'),
+            this.tech('TypeScript', 'TypeScript.svg'),
+            this.tech('Django', 'Django.svg'),
+            this.tech('Python', 'Python.svg'),
+            this.tech('DRF', 'DRF.svg'),
+            this.tech('Rest-Api', 'RestApi.svg'),
+            this.tech('SQL', 'SQL.svg')
           ],
           live: 'http://167.233.146.186:8080',
           github: 'https://github.com/AdrPreis95/Join-Django',
@@ -165,12 +166,13 @@ export class ProjectsComponent implements OnInit, OnDestroy {
           label: '2. ' + translations['PROJECTS.ZUSTELLER'].LABEL,
           screenshot: '/assets/projects/img/Zusteller.png',
           technologies: [
-            'assets/skills/icons/Angular.svg',
-            'assets/skills/icons/TypeScript.svg',
-            'assets/skills/icons/Django.svg',
-            'assets/skills/icons/Python.svg',
-            'assets/skills/icons/RestApi.svg',
-            'assets/skills/icons/SQL.svg'
+            this.tech('Angular', 'Angular.svg'),
+            this.tech('TypeScript', 'TypeScript.svg'),
+            this.tech('Django', 'Django.svg'),
+            this.tech('Python', 'Python.svg'),
+            this.tech('DRF', 'DRF.svg'),
+            this.tech('Rest-Api', 'RestApi.svg'),
+            this.tech('SQL', 'SQL.svg')
           ],
           points: this.mapPoints(translations['PROJECTS.ZUSTELLER']),
           gallery: this.mapGallery(translations['PROJECTS.ZUSTELLER'])
@@ -179,10 +181,10 @@ export class ProjectsComponent implements OnInit, OnDestroy {
           label: '3. ' + translations['PROJECTS.EL_POLLO'].LABEL,
           screenshot: '/assets/projects/img/ElPolloLoco.png',
           technologies: [
-            'assets/skills/icons/JavaScript.svg',
-            'assets/skills/icons/HTML.svg',
-            'assets/skills/icons/CSS.svg',
-            'assets/skills/icons/GIT.svg'
+            this.tech('JavaScript', 'JavaScript.svg'),
+            this.tech('HTML', 'HTML.svg'),
+            this.tech('CSS', 'CSS.svg'),
+            this.tech('GIT', 'GIT.svg')
           ],
           live: 'http://167.233.146.186/ElPolloLoco/',
           github: 'https://github.com/AdrPreis95/2d-Game-Pollo-Loco',
@@ -193,11 +195,11 @@ export class ProjectsComponent implements OnInit, OnDestroy {
           label: '4. ' + translations['PROJECTS.PORTFOLIO'].LABEL,
           screenshot: '/assets/projects/img/Portfolio.png',
           technologies: [
-            'assets/skills/icons/Angular.svg',
-            'assets/skills/icons/TypeScript.svg',
-            'assets/skills/icons/HTML.svg',
-            'assets/skills/icons/CSS.svg',
-            'assets/skills/icons/GIT.svg'
+            this.tech('Angular', 'Angular.svg'),
+            this.tech('TypeScript', 'TypeScript.svg'),
+            this.tech('HTML', 'HTML.svg'),
+            this.tech('CSS', 'CSS.svg'),
+            this.tech('GIT', 'GIT.svg')
           ],
           live: 'http://167.233.146.186',
           github: 'https://github.com/AdrPreis95/Portfolio',
@@ -271,6 +273,13 @@ export class ProjectsComponent implements OnInit, OnDestroy {
       text: item.TEXT,
       broken: false
     })) || [];
+  }
+
+  private tech(name: string, file: string) {
+    return {
+      name,
+      icon: 'assets/skills/icons/' + file
+    };
   }
 
   private lockScroll(): void {
